@@ -1,4 +1,4 @@
-.datavis-diagram.line_chart .tooltip {
+.datavis-diagram.line_chart_time_scale .tooltip {
     display: none;
     position: absolute;
     padding: 8px;

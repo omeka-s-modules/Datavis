@@ -6,11 +6,11 @@ use Laminas\Form\Fieldset;
 use Laminas\View\Renderer\PhpRenderer;
 use Omeka\Api\Representation\SiteRepresentation;
 
-class LineChart implements DiagramTypeInterface
+class LineChartTimeScale implements DiagramTypeInterface
 {
     public function getLabel() : string
     {
-        return 'Line chart'; // @translate
+        return 'Line chart (time scale)'; // @translate
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
@@ -128,7 +128,7 @@ class LineChart implements DiagramTypeInterface
     public function prepareRender(PhpRenderer $view) : void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
-        $view->headScript()->appendFile($view->assetUrl('js/block-layout-render/line_chart.js', 'Datavis'));
-        $view->headLink()->appendStylesheet($view->assetUrl('css/block-layout-render/line_chart.css', 'Datavis'));
+        $view->headScript()->appendFile($view->assetUrl('js/block-layout-render/line_chart_time_scale.js', 'Datavis'));
+        $view->headLink()->appendStylesheet($view->assetUrl('css/block-layout-render/line_chart_time_scale.css', 'Datavis'));
     }
 }

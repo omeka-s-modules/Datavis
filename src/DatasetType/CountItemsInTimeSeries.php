@@ -21,7 +21,7 @@ class CountItemsInTimeSeries extends AbstractDatasetType
 
     public function getDiagramTypeNames() : array
     {
-        return ['line_chart'];
+        return ['line_chart_time_scale'];
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
