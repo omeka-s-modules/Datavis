@@ -123,16 +123,6 @@ class LineChart implements DiagramTypeInterface
                 'required' => true,
             ],
         ]);
-        $fieldset->add([
-            'type' => Element\Checkbox::class,
-            'name' => 'points',
-            'options' => [
-                'label' => 'Add points',
-            ],
-            'attributes' => [
-                'value' => $defaults['points'],
-            ],
-        ]);
     }
 
     public function prepareRender(PhpRenderer $view) : void

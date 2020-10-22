@@ -141,20 +141,6 @@ Datavis.addDiagramType('line_chart', div => {
                 .curve(curveType)
             );
 
-        // Add the points if configured to do so.
-        if (Number(diagramData.points)) {
-            svg
-              .append('g')
-              .selectAll('dot')
-              .data(data)
-              .enter()
-              .append('circle')
-                .attr('cx', d => x(d.datetime))
-                .attr('cy', d => y(d.value))
-                .attr('r', 3)
-                .attr('fill', 'steelblue');
-        }
-
         // Add the overlay rectangle that enables mouse position.
         const bisect = d3.bisector(d => d.datetime).left;
         svg.append('rect')
