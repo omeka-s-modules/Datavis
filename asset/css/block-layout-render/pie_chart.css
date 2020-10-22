@@ -1,0 +1,11 @@
+.datavis-diagram.pie_chart .tooltip {
+    display: none;
+    position: absolute;
+    padding: 8px;
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid gray;
+    font-size: 14px;
+    min-width: 80px;
+    height: auto;
+    text-align: center;
+}
