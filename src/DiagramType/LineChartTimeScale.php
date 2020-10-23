@@ -16,16 +16,51 @@ class LineChartTimeScale implements DiagramTypeInterface
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
     {
         $defaults = [
+            'plot_type' => 'line',
+            'line_type' => 'linear',
             'width' => 700,
             'height' => 700,
             'margin_top' => 30,
             'margin_right' => 30,
             'margin_bottom' => 100,
             'margin_left' => 60,
-            'curve_type' => 'linear',
-            'points' => false,
         ];
 
+        $fieldset->add([
+            'type' => Element\Select::class,
+            'name' => 'plot_type',
+            'options' => [
+                'label' => 'Plot type',
+                'value_options' => [
+                    'line' => 'Line (no points)', // @translate
+                    'points' => 'Points (no line)', // @translate
+                    'line_points' => 'Line and points', // @translate
+                ],
+            ],
+            'attributes' => [
+                'value' => $defaults['plot_type'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Select::class,
+            'name' => 'line_type',
+            'options' => [
+                'label' => 'Line type',
+                'value_options' => [
+                    'linear' => 'Linear',
+                    'monotonex' => 'MonotoneX',
+                    'natural' => 'Natural',
+                    'step' => 'Step',
+                    'stepafter' => 'StepAfter',
+                    'stepbefore' => 'StepBefore',
+                ],
+            ],
+            'attributes' => [
+                'value' => $defaults['line_type'],
+                'required' => true,
+            ],
+        ]);
         $fieldset->add([
             'type' => Element\Number::class,
             'name' => 'width',
@@ -101,25 +136,6 @@ class LineChartTimeScale implements DiagramTypeInterface
                 'min' => 0,
                 'value' => $defaults['margin_left'],
                 'placeholder' => $defaults['margin_left'],
-                'required' => true,
-            ],
-        ]);
-        $fieldset->add([
-            'type' => Element\Select::class,
-            'name' => 'curve_type',
-            'options' => [
-                'label' => 'Curve type',
-                'value_options' => [
-                    'linear' => 'Linear',
-                    'monotonex' => 'MonotoneX',
-                    'natural' => 'Natural',
-                    'step' => 'Step',
-                    'stepafter' => 'StepAfter',
-                    'stepbefore' => 'StepBefore',
-                ],
-            ],
-            'attributes' => [
-                'value' => $defaults['curve_type'],
                 'required' => true,
             ],
         ]);

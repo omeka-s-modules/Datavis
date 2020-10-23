@@ -48,7 +48,7 @@ Datavis.addDiagramType('line_chart_time_scale', div => {
     // curve intersects all points on the chart.
     // @see https://github.com/d3/d3-shape#curves
     let curveType;
-    switch (diagramData.curve_type) {
+    switch (diagramData.line_type) {
         case 'monotonex':
             curveType = d3.curveMonotoneX;
             break;
@@ -129,17 +129,31 @@ Datavis.addDiagramType('line_chart_time_scale', div => {
             .style('font-size', '14px')
             .call(d3.axisLeft(y));
 
-        // Add the line.
-        svg.append('path')
-            .datum(data)
-            .attr('fill', 'none')
-            .attr('stroke', 'steelblue')
-            .attr('stroke-width', 1.5)
-            .attr('d', d3.line()
-                .x(d => x(d.datetime))
-                .y(d => y(d.value))
-                .curve(curveType)
-            );
+        if ('points' !== diagramData.plot_type) {
+            // Add the line.
+            svg.append('path')
+                .datum(data)
+                .attr('fill', 'none')
+                .attr('stroke', 'steelblue')
+                .attr('stroke-width', 1.5)
+                .attr('d', d3.line()
+                    .x(d => x(d.datetime))
+                    .y(d => y(d.value))
+                    .curve(curveType)
+                );
+        }
+        if ('line' !== diagramData.plot_type) {
+            svg
+              .append('g')
+              .selectAll('dot')
+              .data(data)
+              .enter()
+              .append('circle')
+                .attr('cx', d => x(d.datetime))
+                .attr('cy', d => y(d.value))
+                .attr('r', 3)
+                .attr('fill', 'steelblue');
+        }
 
         // Add the overlay rectangle that enables mouse position.
         const bisect = d3.bisector(d => d.datetime).left;
@@ -150,6 +164,7 @@ Datavis.addDiagramType('line_chart_time_scale', div => {
             .style('pointer-events', 'all')
             .on('mouseover', () => {
                 cursor.style('display', 'inline-block');
+                tooltip.style('display', 'none')
             })
             .on('mousemove', (e) => {
                 const x0 = x.invert(Math.round(d3.pointer(e)[0]));
@@ -165,6 +180,7 @@ Datavis.addDiagramType('line_chart_time_scale', div => {
             })
             .on('mouseout', () => {
                 cursor.style('display', 'none');
+                tooltip.style('display', 'none')
             });
     });
 });
