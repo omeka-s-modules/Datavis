@@ -66,7 +66,7 @@ class PieChart implements DiagramTypeInterface
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
         $view->headScript()->appendFile('https://d3js.org/d3-collection.v1.min.js');
-        $view->headScript()->appendFile($view->assetUrl('js/block-layout-render/pie_chart.js', 'Datavis'));
-        $view->headLink()->appendStylesheet($view->assetUrl('css/block-layout-render/pie_chart.css', 'Datavis'));
+        $view->headScript()->appendFile($view->assetUrl('js/diagram-render/pie_chart.js', 'Datavis'));
+        $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/pie_chart.css', 'Datavis'));
     }
 }

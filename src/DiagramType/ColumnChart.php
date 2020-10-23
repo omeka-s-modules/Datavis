@@ -125,7 +125,7 @@ class ColumnChart implements DiagramTypeInterface
     public function prepareRender(PhpRenderer $view) : void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
-        $view->headScript()->appendFile($view->assetUrl('js/block-layout-render/column_chart.js', 'Datavis'));
-        $view->headLink()->appendStylesheet($view->assetUrl('css/block-layout-render/column_chart.css', 'Datavis'));
+        $view->headScript()->appendFile($view->assetUrl('js/diagram-render/column_chart.js', 'Datavis'));
+        $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/column_chart.css', 'Datavis'));
     }
 }

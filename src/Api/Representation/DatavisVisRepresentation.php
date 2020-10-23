@@ -154,7 +154,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
 
     public function diagram(PhpRenderer $view, array $blockData)
     {
-        $view->headScript()->appendFile($view->assetUrl('js/block-layout-render.js', 'Datavis'));
+        $view->headScript()->appendFile($view->assetUrl('js/diagram-render.js', 'Datavis'));
         $this->getDiagramType()->prepareRender($view);
         return sprintf(
             '<h5>%s</h5>
