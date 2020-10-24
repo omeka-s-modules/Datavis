@@ -6,7 +6,7 @@
  * }
  * It will also read the sample rate from the dataset data.
  */
-Datavis.addDiagramType('line_chart_time_scale', div => {
+Datavis.addDiagramType('line_chart_time_series', div => {
 
     const datasetData = Datavis.getDatasetData(div);
     const diagramData = Datavis.getDiagramData(div);
