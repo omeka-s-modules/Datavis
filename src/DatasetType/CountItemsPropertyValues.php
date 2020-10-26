@@ -8,7 +8,7 @@ use Laminas\ServiceManager\ServiceManager;
 use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Form\Element\PropertySelect;
 
-class CountItemsWithPropertyValues extends AbstractDatasetType
+class CountItemsPropertyValues extends AbstractDatasetType
 {
     public function getLabel() : string
     {

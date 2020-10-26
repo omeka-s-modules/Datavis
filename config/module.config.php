@@ -6,11 +6,11 @@ use Laminas\Router\Http;
 return [
     'datavis_dataset_types' => [
         'invokables' => [
-            'count_items_in_item_sets' => DatasetType\CountItemsInItemSets::class,
-            'count_items_with_classes' => DatasetType\CountItemsWithClasses::class,
-            'count_items_with_properties' => DatasetType\CountItemsWithProperties::class,
-            'count_items_with_property_values' => DatasetType\CountItemsWithPropertyValues::class,
-            'count_items_in_time_series' => DatasetType\CountItemsInTimeSeries::class,
+            'count_items_item_sets' => DatasetType\CountItemsItemSets::class,
+            'count_items_classes' => DatasetType\CountItemsClasses::class,
+            'count_items_properties' => DatasetType\CountItemsProperties::class,
+            'count_items_property_values' => DatasetType\CountItemsPropertyValues::class,
+            'count_items_time_series' => DatasetType\CountItemsTimeSeries::class,
         ],
     ],
     'datavis_diagram_types' => [

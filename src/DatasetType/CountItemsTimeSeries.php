@@ -12,7 +12,7 @@ use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Form\Element\PropertySelect;
 use Omeka\Job\Exception;
 
-class CountItemsInTimeSeries extends AbstractDatasetType
+class CountItemsTimeSeries extends AbstractDatasetType
 {
     public function getLabel() : string
     {
@@ -89,7 +89,7 @@ class CountItemsInTimeSeries extends AbstractDatasetType
             ],
             'attributes' => [
                 'id' => 'sample_rate',
-                'value' => 'day',
+                'value' => '1_year',
                 'required' => true,
             ],
         ]);
