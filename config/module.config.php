@@ -19,6 +19,7 @@ return [
             'bar_chart' => DiagramType\BarChart::class,
             'pie_chart' => DiagramType\PieChart::class,
             'line_chart_time_series' => DiagramType\LineChartTimeSeries::class,
+            'histogram_time_series' => DiagramType\HistogramTimeSeries::class,
         ],
     ],
     'translator' => [
