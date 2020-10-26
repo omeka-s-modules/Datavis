@@ -1,9 +1,6 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * {
- *     label: "{YYYY-MM-DDTHH:MM:SS}",
- *     value: {int}
- * }
+ * [{label: "{YYYY-MM-DDTHH:MM:SS}", value: {int}}]
  * It will also read the sample rate from the dataset data.
  */
 Datavis.addDiagramType('histogram_time_series', div => {
@@ -25,10 +22,10 @@ Datavis.addDiagramType('histogram_time_series', div => {
     height = height - margin.top - margin.bottom;
 
     // Add the svg.
+    div.style.maxWidth = `${width + margin.left + margin.right}px`
     const svg = d3.select(div)
         .append('svg')
-            .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
+            .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
         .append('g')
             .attr('transform', `translate(${margin.left},${margin.top})`);
 

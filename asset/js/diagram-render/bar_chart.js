@@ -1,9 +1,6 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * {
- *     label: {string},
- *     value: {int}
- * }
+ * [{label: {string}, value: {int}}]
  */
 Datavis.addDiagramType('bar_chart', div => {
 
@@ -24,10 +21,10 @@ Datavis.addDiagramType('bar_chart', div => {
     height = height - margin.top - margin.bottom;
 
     // Add the svg.
+    div.style.maxWidth = `${width + margin.left + margin.right}px`
     const svg = d3.select(div)
         .append('svg')
-            .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
+            .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
         .append('g')
             .attr('transform', `translate(${margin.left},${margin.top})`);
 

@@ -1,9 +1,6 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * {
- *     label: {string},
- *     value: {int}
- * }
+ * [{label: {string}, value: {int}}]
  */
 Datavis.addDiagramType('pie_chart', div => {
 
@@ -17,10 +14,10 @@ Datavis.addDiagramType('pie_chart', div => {
     const margin = diagramData.margin ? parseInt(diagramData.margin) : 30;
     const radius = Math.min(width, height) / 2 - margin;
 
+    div.style.maxWidth = `${width}px`
     const svg = d3.select(div)
         .append('svg')
-            .attr('width', width)
-            .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`)
         .append('g')
             .attr('transform', `translate(${width/2}, ${height/2})`);
 
