@@ -6,6 +6,11 @@ use Laminas\ServiceManager\ServiceManager;
 
 abstract class AbstractDatasetType implements DatasetTypeInterface
 {
+    public function getDescription() : ?string
+    {
+        return null;
+    }
+
     /**
      * Get all IDs of items that are in the dataset's item pool.
      *

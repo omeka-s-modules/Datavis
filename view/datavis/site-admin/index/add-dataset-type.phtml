@@ -9,7 +9,18 @@
 
 <h3><?php echo $this->translate('What would you like to visualize?'); ?></h3>
 
-<?php echo $this->formElement($form->get('o-module-datavis:dataset_type')); ?>
+<?php foreach ($this->datavis()->getDatasetTypeNames() as $datasetTypeName): ?>
+<?php $datasetType = $this->datavis()->getDatasetType($datasetTypeName); ?>
+<div class="dataset-type">
+    <label>
+        <input type="radio" name="<?php echo $this->escapeHtml('o-module-datavis:dataset_type'); ?>" value="<?php echo $this->escapeHtml($datasetTypeName); ?>">
+        <?php echo $this->escapeHtml($this->translate($datasetType->getLabel())); ?>
+    </label>
+    <?php if ($datasetType->getDescription()): ?>
+    <div class="dataset-type-description"><?php echo $this->translate($datasetType->getDescription()); ?></div>
+    <?php endif; ?>
+</div>
+<?php endforeach; ?>
 
 <?php echo $this->formHidden($form->get('csrf')); ?>
 <?php echo $this->form()->closeTag(); ?>

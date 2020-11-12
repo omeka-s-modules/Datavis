@@ -16,6 +16,13 @@ interface DatasetTypeInterface
     public function getLabel() : string;
 
     /**
+     * Get the description of this dataset type.
+     *
+     * @return string
+     */
+    public function getDescription() : ?string;
+
+    /**
      * Get the names of the diagram types that are compatible with this dataset.
      *
      * @return array

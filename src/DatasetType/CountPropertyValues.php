@@ -15,6 +15,11 @@ class CountPropertyValues extends AbstractDatasetType
         return 'Count of property values'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return 'Visualize the count of values of a selected property.'; // @translate
+    }
+
     public function getDiagramTypeNames() : array
     {
         return ['bar_chart', 'column_chart', 'pie_chart'];

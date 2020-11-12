@@ -19,6 +19,11 @@ class CountItemsTimeSeries extends AbstractDatasetType
         return 'Count of items in a time series'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return 'Visualize the count of items over a selected period of time.'; // @translate
+    }
+
     public function getDiagramTypeNames() : array
     {
         return ['line_chart_time_series', 'histogram_time_series'];

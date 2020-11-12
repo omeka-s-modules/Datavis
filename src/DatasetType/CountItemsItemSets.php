@@ -14,6 +14,11 @@ class CountItemsItemSets extends AbstractDatasetType
         return 'Count of items in item sets'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return 'Visualize the count of items that are assigned to selected item sets.'; // @translate
+    }
+
     public function getDiagramTypeNames() : array
     {
         return ['bar_chart', 'column_chart', 'pie_chart'];

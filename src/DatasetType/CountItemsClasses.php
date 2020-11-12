@@ -14,6 +14,11 @@ class CountItemsClasses extends AbstractDatasetType
         return 'Count of items with classes'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return 'Visualize the count of items that are instances of selected resource classes.'; // @translate
+    }
+
     public function getDiagramTypeNames() : array
     {
         return ['bar_chart', 'column_chart', 'pie_chart'];

@@ -14,6 +14,11 @@ class CountItemsProperties extends AbstractDatasetType
         return 'Count of items with properties'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return 'Visualize the count of items that have selected properties.'; // @translate
+    }
+
     public function getDiagramTypeNames() : array
     {
         return ['bar_chart', 'column_chart', 'pie_chart'];
