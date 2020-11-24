@@ -124,7 +124,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
         return $diagramTypes->get($this->diagramType());
     }
 
-    public function datasetUrl()
+    public function datasetUrl(array $options = [])
     {
         $url = $this->getViewHelper('Url');
         return $url(
@@ -134,7 +134,10 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
                 'action' => 'dataset',
                 'id' => $this->id(),
             ],
-            ['force_canonical' => true]
+            [
+                'force_canonical' => true,
+                'query' => ['pretty_print' => $options['pretty_print'] ?? false],
+            ]
         );
     }
 

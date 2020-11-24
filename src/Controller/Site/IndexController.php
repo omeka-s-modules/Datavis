@@ -37,7 +37,10 @@ class IndexController extends AbstractActionController
             // Send the first payload and tell the browser to cache it.
             $responseHeaders->addHeaderLine('Content-Type: application/json');
             $responseHeaders->addHeaderLine(sprintf('Last-Modified: %s', $lastModified));
-            $response->setContent(json_encode($vis->dataset()));
+            $dataset = $this->params()->fromQuery('pretty_print')
+                ? json_encode($vis->dataset(), JSON_PRETTY_PRINT)
+                : json_encode($vis->dataset());
+            $response->setContent($dataset);
         }
         return $response;
     }
