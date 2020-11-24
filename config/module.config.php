@@ -12,6 +12,7 @@ return [
             'count_items_property_values' => DatasetType\CountItemsPropertyValues::class,
             'count_property_values' => DatasetType\CountPropertyValues::class,
             'count_items_time_series' => DatasetType\CountItemsTimeSeries::class,
+            'count_items_property_values_time_series' => DatasetType\CountItemsPropertyValuesTimeSeries::class,
         ],
     ],
     'datavis_diagram_types' => [
