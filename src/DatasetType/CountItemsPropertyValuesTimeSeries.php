@@ -181,7 +181,7 @@ class CountItemsPropertyValuesTimeSeries extends AbstractDatasetType
         $dql = '
         SELECT COUNT(DISTINCT t.resource)
         FROM NumericDataTypes\Entity\NumericDataTypesTimestamp t
-        LEFT JOIN Omeka\Entity\Value v WITH v.resource = t.resource
+        JOIN Omeka\Entity\Value v WITH v.resource = t.resource
         WHERE t.resource IN (:item_ids)
         AND t.property = :timestamp_property_id
         AND t.value >= :start
