@@ -47,9 +47,12 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
                 <ul class="actions">
                     <?php if ($vis->userIsAllowed('update')): ?>
                     <?php if ($vis->datasetModified() && $vis->diagramType()): ?>
-                    <li><?php echo $this->hyperlink('', $vis->diagramUrl(), ['class' => 'o-icon-external', 'title' => $this->translate('View'), 'target' => '_blank']); ?></li>
+                    <li><?php echo $this->hyperlink('', $vis->diagramUrl(), ['class' => 'fa fa-chart-pie', 'title' => $this->translate('View diagram'), 'target' => '_blank']); ?></li>
                     <?php endif; ?>
-                    <li><?php echo $vis->link('', 'edit', ['class' => 'o-icon-edit', 'title' => $this->translate('Edit')]) ?></li>
+                    <?php if ($vis->datasetModified()): ?>
+                    <li><?php echo $this->hyperlink('', $vis->datasetUrl(['pretty_print' => true]), ['class' => 'fa fa-table', 'title' => $this->translate('View dataset'), 'target' => '_blank']); ?></li>
+                    <?php endif; ?>
+                    <li><?php echo $vis->link('', 'edit', ['class' => 'fa fa-pencil-alt', 'title' => $this->translate('Edit')]) ?></li>
                     <?php endif; ?>
                 </ul>
             </td>
