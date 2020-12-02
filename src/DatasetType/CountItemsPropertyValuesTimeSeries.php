@@ -26,7 +26,7 @@ class CountItemsPropertyValuesTimeSeries extends AbstractDatasetType
 
     public function getDiagramTypeNames() : array
     {
-        return [];
+        return ['line_chart_time_series_grouped'];
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
