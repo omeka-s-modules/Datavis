@@ -171,8 +171,7 @@ Datavis.addDiagramType('line_chart_time_series', div => {
                     .attr('cy', y(thisData.value));
                 tooltip.style('display', 'inline-block')
                     .style('left', `${e.pageX}px`)
-                    .style('top', `${e.pageY - 90}px`)
-                    .style('opacity', 0.8)
+                    .style('top', `${e.pageY + 10}px`)
                     .html(`${thisData.label}<br>${Number(thisData.value).toLocaleString()}`);
             })
             .on('mouseout', () => {

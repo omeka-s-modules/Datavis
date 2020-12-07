@@ -29,6 +29,11 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
         .append('g')
             .attr('transform', `translate(${margin.left},${margin.top})`);
 
+    // Add the tooltip div.
+    const tooltip = d3.select(div)
+        .append('div')
+        .attr('class', 'tooltip');
+
     // Set the curve type. Note that we limit the curve types to those where the
     // curve intersects all points on the chart.
     // @see https://github.com/d3/d3-shape#curves
@@ -138,5 +143,45 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
                     .y(d => y(d.value))
                     .curve(curveType)(d.values)
                 );
+
+        // Add the overlay rectangle that enables mouse position.
+        const bisect = d3.bisector(d => d.datetime).left;
+        svg.append('rect')
+            .attr('width', width)
+            .attr('height', height)
+            .style('fill', 'none')
+            .style('pointer-events', 'all')
+            .on('mouseover', () => {
+                tooltip.style('display', 'none')
+            })
+            .on('mousemove', (e) => {
+                div.querySelectorAll('g.cursor').forEach(cursor => cursor.remove());
+
+                // Add the cursors that snap to the lines.
+                const x0 = x.invert(Math.round(d3.pointer(e)[0]));
+                let tooltipLabel;
+                let tooltipContent = '';
+                nestedData.forEach(d => {
+                    const thisData = d.values[bisect(d.values, x0, 0)];
+                    const cursor = svg.append('g')
+                        .attr('class', 'cursor')
+                        .append('circle')
+                            .attr('stroke', 'black')
+                            .attr('r', 8)
+                            .style('fill', 'none')
+                            .style('display', 'inline-block')
+                            .attr('cx', x(thisData.datetime))
+                            .attr('cy', y(thisData.value));
+                    tooltipLabel = `<div>${thisData.label}</div>`;
+                    tooltipContent += `<div style="color: ${color(d.key)};">${thisData.label_2}<br>${Number(thisData.value).toLocaleString()}</div>`;
+                });
+                tooltip.style('display', 'inline-block')
+                    .style('left', `${e.pageX}px`)
+                    .style('top', `${e.pageY + 10}px`)
+                    .html(tooltipLabel + tooltipContent);
+            })
+            .on('mouseout', () => {
+                tooltip.style('display', 'none')
+            });
     });
 });
