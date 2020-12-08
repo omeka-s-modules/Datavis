@@ -18,16 +18,8 @@ Datavis.addDiagramType('pie_chart', div => {
     const svg = d3.select(div)
         .append('svg')
             .attr('viewBox', `0 0 ${width} ${height}`)
-        .append('g')
-            .attr('transform', `translate(${width/2}, ${height/2})`);
-
-    // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
-
-    const color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
-    const arcGenerator = d3.arc().innerRadius(0).outerRadius(radius);
+            .append('g')
+                .attr('transform', `translate(${width/2}, ${height/2})`);
 
     // Parse the data.
     d3.json(div.dataset.datasetUrl).then(data => {
@@ -40,6 +32,14 @@ Datavis.addDiagramType('pie_chart', div => {
         // Calculate slice positions.
         const pie = d3.pie().value(d => d.value.value);
         const dataReady = pie(d3.entries(data));
+
+        // Add the tooltip div.
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
+
+        const color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+        const arcGenerator = d3.arc().innerRadius(0).outerRadius(radius);
 
         // Add the slices.
         svg.selectAll('slices')

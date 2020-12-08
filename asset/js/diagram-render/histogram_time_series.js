@@ -26,24 +26,8 @@ Datavis.addDiagramType('histogram_time_series', div => {
     const svg = d3.select(div)
         .append('svg')
             .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-        .append('g')
-            .attr('transform', `translate(${margin.left},${margin.top})`);
-
-    // Add the cursor and text that snaps to the line.
-    const cursor = svg.append('g')
-        .append('circle')
-            .attr('stroke', 'black')
-            .attr('r', 8)
-            .style('fill', 'none')
-            .style('display', 'none');
-    // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
-
-    // Set the x and y scales.
-    const x = d3.scaleTime().range([0, width]);
-    const y = d3.scaleLinear().range([height, 0]);
+            .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
 
     // Parse the data.
     d3.json(div.dataset.datasetUrl).then(data => {
@@ -81,9 +65,13 @@ Datavis.addDiagramType('histogram_time_series', div => {
             return d;
         });
 
-        // Set the x and y domains.
-        x.domain(d3.extent(data, d => d.datetime));
-        y.domain([0, d3.max(data, d => d.value)]);
+        // Set the x and y scales.
+        const x = d3.scaleTime()
+            .range([0, width])
+            .domain(d3.extent(data, d => d.datetime));
+        const y = d3.scaleLinear()
+            .range([height, 0])
+            .domain([0, d3.max(data, d => d.value)]);
 
         // Add the X axis.
         const xGroup = svg.append('g')
@@ -100,6 +88,11 @@ Datavis.addDiagramType('histogram_time_series', div => {
         const yGroup = svg.append('g')
             .style('font-size', '14px')
             .call(d3.axisLeft(y));
+
+        // Add the tooltip div.
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
 
         // Add the bars.
         svg.selectAll('bar')

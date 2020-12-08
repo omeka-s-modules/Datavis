@@ -26,42 +26,8 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
     const svg = d3.select(div)
         .append('svg')
             .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-        .append('g')
-            .attr('transform', `translate(${margin.left},${margin.top})`);
-
-    // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
-
-    // Set the curve type. Note that we limit the curve types to those where the
-    // curve intersects all points on the chart.
-    // @see https://github.com/d3/d3-shape#curves
-    let curveType;
-    switch (diagramData.line_type) {
-        case 'monotonex':
-            curveType = d3.curveMonotoneX;
-            break;
-        case 'natural':
-            curveType = d3.curveNatural;
-            break;
-        case 'step':
-            curveType = d3.curveStep;
-            break;
-        case 'stepafter':
-            curveType = d3.curveStepAfter;
-            break;
-        case 'stepbefore':
-            curveType = d3.curveStepBefore;
-            break;
-        case 'linear':
-        default:
-            curveType = d3.curveLinear;
-    }
-
-    // Set the x and y scales.
-    const x = d3.scaleTime().range([0, width]);
-    const y = d3.scaleLinear().range([height, 0]);
+            .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
 
     // Parse the data.
     d3.json(div.dataset.datasetUrl).then(data => {
@@ -110,9 +76,13 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
             return d;
         });
 
-        // Set the x and y domains.
-        x.domain(d3.extent(data, d => d.datetime));
-        y.domain([0, d3.max(data, d => d.value)]);
+        // Set the x and y scales.
+        const x = d3.scaleTime()
+            .range([0, width])
+            .domain(d3.extent(data, d => d.datetime));
+        const y = d3.scaleLinear()
+            .range([height, 0])
+            .domain([0, d3.max(data, d => d.value)]);
 
         // Add the X axis.
         const xGroup = svg.append('g')
@@ -130,6 +100,31 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
             .style('font-size', '14px')
             .call(d3.axisLeft(y));
 
+        // Set the curve type. Note that we limit the curve types to those where
+        // the curve intersects all points on the chart.
+        // @see https://github.com/d3/d3-shape#curves
+        let curveType;
+        switch (diagramData.line_type) {
+            case 'monotonex':
+                curveType = d3.curveMonotoneX;
+                break;
+            case 'natural':
+                curveType = d3.curveNatural;
+                break;
+            case 'step':
+                curveType = d3.curveStep;
+                break;
+            case 'stepafter':
+                curveType = d3.curveStepAfter;
+                break;
+            case 'stepbefore':
+                curveType = d3.curveStepBefore;
+                break;
+            case 'linear':
+            default:
+                curveType = d3.curveLinear;
+        }
+
         // Add the line.
         svg.selectAll('.line')
             .data(nestedData)
@@ -143,6 +138,11 @@ Datavis.addDiagramType('line_chart_time_series_grouped', div => {
                     .y(d => y(d.value))
                     .curve(curveType)(d.values)
                 );
+
+        // Add the tooltip div.
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
 
         // Add the overlay rectangle that enables mouse position.
         const bisect = d3.bisector(d => d.datetime).left;

@@ -25,17 +25,8 @@ Datavis.addDiagramType('column_chart', div => {
     const svg = d3.select(div)
         .append('svg')
             .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
-        .append('g')
-            .attr('transform', `translate(${margin.left},${margin.top})`);
-
-    // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
-
-    // Set the x and y scales.
-    const x = d3.scaleBand().range([0, width]).padding(0.2);
-    const y = d3.scaleLinear().range([height, 0]);
+            .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
 
     // Parse the data.
     d3.json(div.dataset.datasetUrl).then(data => {
@@ -58,10 +49,13 @@ Datavis.addDiagramType('column_chart', div => {
             }
         });
 
-        // Set the x and y domains.
-        const maxValue = Math.max(...data.map(d => d.value));
-        x.domain(data.map(d => d.label));
-        y.domain([0, maxValue]);
+        // Set the x and y scales.
+        const x = d3.scaleBand()
+            .range([0, width]).padding(0.2)
+            .domain(data.map(d => d.label));
+        const y = d3.scaleLinear()
+            .range([height, 0])
+            .domain([0, Math.max(...data.map(d => d.value))]);
 
         // Add the X axis.
         const xGroup = svg.append('g')
@@ -78,6 +72,11 @@ Datavis.addDiagramType('column_chart', div => {
         svg.append('g')
             .style('font-size', '14px')
             .call(d3.axisLeft(y));
+
+        // Add the tooltip div.
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
 
         // Add the bars.
         svg.selectAll('bar')
