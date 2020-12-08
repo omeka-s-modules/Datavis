@@ -2,11 +2,7 @@
  * This diagram type will consume a dataset in the following format:
  * [{label: {string}, value: {int}}]
  */
-Datavis.addDiagramType('column_chart', div => {
-
-    const datasetData = Datavis.getDatasetData(div);
-    const diagramData = Datavis.getDiagramData(div);
-    const blockData = Datavis.getBlockData(div);
+Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, blockData) => {
 
     // Set the dimensions and margins of the graph.
     let width = diagramData.width ? parseInt(diagramData.width) : 700;
@@ -28,82 +24,78 @@ Datavis.addDiagramType('column_chart', div => {
             .append('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    // Parse the data.
-    d3.json(div.dataset.datasetUrl).then(data => {
+    // Sort the dataset.
+    dataset.sort((b, a) => {
+        switch (diagramData.order) {
+            case 'label_desc':
+                return a.label.localeCompare(b.label);
+                break;
+            case 'label_asc':
+                return b.label.localeCompare(a.label);
+                break;
+            case 'value_desc':
+                return a.value - b.value;
+                break;
+            case 'value_asc':
+            default:
+                return b.value - a.value;
+        }
+    });
 
-        // Sort the data.
-        data.sort((b, a) => {
-            switch (diagramData.order) {
-                case 'label_desc':
-                    return a.label.localeCompare(b.label);
-                    break;
-                case 'label_asc':
-                    return b.label.localeCompare(a.label);
-                    break;
-                case 'value_desc':
-                    return a.value - b.value;
-                    break;
-                case 'value_asc':
-                default:
-                    return b.value - a.value;
-            }
-        });
+    // Set the x and y scales.
+    const x = d3.scaleBand()
+        .range([0, width]).padding(0.2)
+        .domain(dataset.map(d => d.label));
+    const y = d3.scaleLinear()
+        .range([height, 0])
+        .domain([0, Math.max(...dataset.map(d => d.value))]);
 
-        // Set the x and y scales.
-        const x = d3.scaleBand()
-            .range([0, width]).padding(0.2)
-            .domain(data.map(d => d.label));
-        const y = d3.scaleLinear()
-            .range([height, 0])
-            .domain([0, Math.max(...data.map(d => d.value))]);
+    // Add the X axis.
+    const xGroup = svg.append('g')
+        .attr('transform', `translate(0, ${height})`)
+        .style('font-size', '14px')
+        .call(d3.axisBottom(x));
+    // Adjust the label position.
+    const labels = xGroup.selectAll('text')
+        .data(dataset)
+        .attr('transform', 'translate(-10,0)rotate(-45)')
+        .style('text-anchor', 'end');
 
-        // Add the X axis.
-        const xGroup = svg.append('g')
-            .attr('transform', `translate(0, ${height})`)
-            .style('font-size', '14px')
-            .call(d3.axisBottom(x));
-        // Adjust the label position.
-        const labels = xGroup.selectAll('text')
-            .data(data)
-            .attr('transform', 'translate(-10,0)rotate(-45)')
-            .style('text-anchor', 'end');
+    // Add the Y axis.
+    svg.append('g')
+        .style('font-size', '14px')
+        .call(d3.axisLeft(y));
 
-        // Add the Y axis.
-        svg.append('g')
-            .style('font-size', '14px')
-            .call(d3.axisLeft(y));
+    // Add the tooltip div.
+    const tooltip = d3.select(div)
+        .append('div')
+        .attr('class', 'tooltip');
 
-        // Add the tooltip div.
-        const tooltip = d3.select(div)
-            .append('div')
-            .attr('class', 'tooltip');
+    // Add the bars.
+    svg.selectAll('bar')
+        .data(dataset)
+        .enter()
+        .append('rect')
+            .attr('x', d => x(d.label))
+            .attr('y', d => y(d.value))
+            .attr('width', x.bandwidth())
+            .attr('height', d => height - y(d.value))
+            .attr('fill', '#69b3a2')
+            .on('mousemove', (e, d) => {
+                tooltip.style('display', 'inline-block')
+                    .style('left', `${e.pageX}px`)
+                    .style('top', `${e.pageY - 90}px`)
+                    .style('opacity', 0.8)
+                    .html(`${d.label_long ? d.label_long : d.label}<br>${Number(d.value).toLocaleString()}`);
+            })
+            .on('mouseout', (e, d) => {
+                tooltip.style('display', 'none');
+            });
 
-        // Add the bars.
-        svg.selectAll('bar')
-            .data(data)
-            .enter()
-            .append('rect')
-                .attr('x', d => x(d.label))
-                .attr('y', d => y(d.value))
-                .attr('width', x.bandwidth())
-                .attr('height', d => height - y(d.value))
-                .attr('fill', '#69b3a2')
-                .on('mousemove', (e, d) => {
-                    tooltip.style('display', 'inline-block')
-                        .style('left', `${e.pageX}px`)
-                        .style('top', `${e.pageY - 90}px`)
-                        .style('opacity', 0.8)
-                        .html(`${d.label_long ? d.label_long : d.label}<br>${Number(d.value).toLocaleString()}`);
-                })
-                .on('mouseout', (e, d) => {
-                    tooltip.style('display', 'none');
-                });
-
-        // Enable label links. Note that the data must include a "url" key.
-        labels.on('click', (e, d) => {
-            if (d.url) {
-                window.location.href = d.url;
-            }
-        });
-    })
+    // Enable label links. Note that the dataset must include a "url" key.
+    labels.on('click', (e, d) => {
+        if (d.url) {
+            window.location.href = d.url;
+        }
+    });
 });

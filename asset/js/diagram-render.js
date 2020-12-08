@@ -22,7 +22,17 @@ const Datavis = {
     renderDiagram: div => {
         const diagramType = div.dataset.diagramType;
         if (diagramType in Datavis.diagramTypes) {
-            Datavis.diagramTypes[diagramType](div);
+            // Fetch the dataset from the endpoint then call the function that
+            // is responsible for rendering the diagram.
+            d3.json(div.dataset.datasetUrl).then(dataset => {
+                Datavis.diagramTypes[diagramType](
+                    div,
+                    dataset,
+                    JSON.parse(div.dataset.datasetData),
+                    JSON.parse(div.dataset.diagramData),
+                    JSON.parse(div.dataset.blockData)
+                );
+            });
         }
     },
 
@@ -35,28 +45,4 @@ const Datavis = {
     addDiagramType: (diagramType, callback) => {
         Datavis.diagramTypes[diagramType] = callback;
     },
-
-    /**
-     * Get dataset data.
-     *
-     * @param object div The diagram container div
-     * @return object
-     */
-    getDatasetData: div => JSON.parse(div.dataset.datasetData),
-
-    /**
-     * Get diagram data.
-     *
-     * @param object div The diagram container div
-     * @return object
-     */
-    getDiagramData: div => JSON.parse(div.dataset.diagramData),
-
-    /**
-     * Get block data.
-     *
-     * @param object div The diagram container div
-     * @return object
-     */
-    getBlockData: div => JSON.parse(div.dataset.blockData)
 };
