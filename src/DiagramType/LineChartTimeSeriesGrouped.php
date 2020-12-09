@@ -28,6 +28,22 @@ class LineChartTimeSeriesGrouped implements DiagramTypeInterface
 
         $fieldset->add([
             'type' => Element\Select::class,
+            'name' => 'plot_type',
+            'options' => [
+                'label' => 'Plot type',
+                'value_options' => [
+                    'line' => 'Line (no points)', // @translate
+                    'points' => 'Points (no line)', // @translate
+                    'line_points' => 'Line and points', // @translate
+                ],
+            ],
+            'attributes' => [
+                'value' => $defaults['plot_type'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Select::class,
             'name' => 'line_type',
             'options' => [
                 'label' => 'Line type',

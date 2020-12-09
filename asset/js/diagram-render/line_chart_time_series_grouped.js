@@ -118,19 +118,34 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
             curveType = d3.curveLinear;
     }
 
-    // Add the line.
-    svg.selectAll('.line')
-        .data(nestedDataset)
-        .enter()
-        .append('path')
-            .attr('fill', 'none')
-            .attr('stroke', d => color(d.key))
-            .attr('stroke-width', 1.5)
-            .attr('d', d => d3.line()
-                .x(d => x(d.datetime))
-                .y(d => y(d.value))
-                .curve(curveType)(d.values)
-            );
+    if ('points' !== diagramData.plot_type) {
+        // Add the line.
+        svg.selectAll('.line')
+            .data(nestedDataset)
+            .enter()
+            .append('path')
+                .attr('fill', 'none')
+                .attr('stroke', d => color(d.key))
+                .attr('stroke-width', 1.5)
+                .attr('d', d => d3.line()
+                    .x(d => x(d.datetime))
+                    .y(d => y(d.value))
+                    .curve(curveType)(d.values)
+                );
+    }
+
+    if ('line' !== diagramData.plot_type) {
+        // Add the dots.
+        svg.append('g')
+            .selectAll('dot')
+            .data(dataset)
+            .enter()
+            .append('circle')
+                .attr('cx', d => x(d.datetime))
+                .attr('cy', d => y(d.value))
+                .attr('r', 3)
+                .attr('fill', d => color(d.label_2));
+    }
 
     // Add the tooltip div.
     const tooltip = d3.select(div)
