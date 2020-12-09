@@ -5,9 +5,25 @@
     background: none repeat scroll 0 0 #ffffff;
     border: 1px solid gray;
     font-size: 14px;
-    font-weight: bold;
     min-width: 80px;
     height: auto;
     text-align: center;
     opacity: 0.8;
+}
+
+.datavis-diagram.line_chart_time_series_grouped .tooltip table {
+    margin: 0;
+}
+
+.datavis-diagram.line_chart_time_series_grouped .tooltip table td {
+    border: none;
+}
+
+.datavis-diagram.line_chart_time_series_grouped .tooltip table td:first-child {
+    padding: 0 4px 0 0;
+}
+
+.datavis-diagram.line_chart_time_series_grouped .tooltip table td:last-child {
+    text-align: right;
+    padding: 0;
 }

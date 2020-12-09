@@ -101,8 +101,7 @@ Datavis.addDiagramType('histogram_time_series', (div, dataset, datasetData, diag
                 tooltip.style('display', 'inline-block')
                     .style('left', `${e.pageX}px`)
                     .style('top', `${e.pageY - 90}px`)
-                    .style('opacity', 0.8)
-                    .html(`${d.label_long ? d.label_long : d.label}<br>${Number(d.value).toLocaleString()}`);
+                    .html(`${d.label_long ? d.label_long : d.label}: ${Number(d.value).toLocaleString()}`);
             })
             .on('mouseout', (e, d) => {
                 tooltip.style('display', 'none');

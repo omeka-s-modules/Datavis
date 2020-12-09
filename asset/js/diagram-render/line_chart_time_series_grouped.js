@@ -32,9 +32,7 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
 
     // Set the color palette.
     const keys = nestedDataset.map(d => d.key);
-    const color = d3.scaleOrdinal()
-        .domain(keys)
-        .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999']);
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     dataset.map(d => {
         // Set the Date object needed by d3.
@@ -168,7 +166,7 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
             // Add the cursors that snap to the lines.
             const x0 = x.invert(Math.round(d3.pointer(e)[0]));
             let tooltipLabel;
-            let tooltipContent = '';
+            let tooltipContent = '<table>';
             nestedDataset.forEach(d => {
                 const thisDataset = d.values[bisect(d.values, x0, 0)];
                 const cursor = svg.append('g')
@@ -180,13 +178,17 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
                         .style('display', 'inline-block')
                         .attr('cx', x(thisDataset.datetime))
                         .attr('cy', y(thisDataset.value));
-                tooltipLabel = `<div>${thisDataset.label}</div>`;
-                tooltipContent += `<div style="color: ${color(d.key)};">${thisDataset.label_2}<br>${Number(thisDataset.value).toLocaleString()}</div>`;
+                tooltipLabel = `<span>${thisDataset.label}</span>`;
+                tooltipContent += `
+                <tr>
+                    <td style="color: ${color(d.key)};">${thisDataset.label_2}</td>
+                    <td>${Number(thisDataset.value).toLocaleString()}</td>
+                </tr>`;
             });
             tooltip.style('display', 'inline-block')
                 .style('left', `${e.pageX}px`)
                 .style('top', `${e.pageY + 10}px`)
-                .html(tooltipLabel + tooltipContent);
+                .html(tooltipLabel + tooltipContent + '</table>');
         })
         .on('mouseout', () => {
             tooltip.style('display', 'none')

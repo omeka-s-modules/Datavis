@@ -31,7 +31,7 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
         .append('div')
         .attr('class', 'tooltip');
 
-    const color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+    const color = d3.scaleOrdinal(d3.schemeSet3);
     const arcGenerator = d3.arc().innerRadius(0).outerRadius(radius);
 
     // Add the slices.
@@ -43,13 +43,11 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
             .attr('fill', d => color(d.data.key))
             .attr('stroke', 'black')
             .style('stroke-width', '1px')
-            .style('opacity', 0.7)
             .on('mousemove', (e, d) => {
                 tooltip.style('display', 'inline-block')
                     .style('left', `${e.pageX}px`)
                     .style('top', `${e.pageY - 90}px`)
-                    .style('opacity', 0.8)
-                    .html(`${d.data.value.label_long ? d.data.value.label_long : d.data.value.label}<br>${Number(d.data.value.value).toLocaleString()}`);
+                    .html(`${d.data.value.label_long ? d.data.value.label_long : d.data.value.label}: ${Number(d.data.value.value).toLocaleString()}`);
             })
             .on('mouseout', (e, d) => {
                 tooltip.style('display', 'none');

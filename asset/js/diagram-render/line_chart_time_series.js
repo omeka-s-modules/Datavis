@@ -165,7 +165,7 @@ Datavis.addDiagramType('line_chart_time_series', (div, dataset, datasetData, dia
             tooltip.style('display', 'inline-block')
                 .style('left', `${e.pageX}px`)
                 .style('top', `${e.pageY + 10}px`)
-                .html(`${thisDataset.label}<br>${Number(thisDataset.value).toLocaleString()}`);
+                .html(`${thisDataset.label}: ${Number(thisDataset.value).toLocaleString()}`);
         })
         .on('mouseout', () => {
             cursor.style('display', 'none');
