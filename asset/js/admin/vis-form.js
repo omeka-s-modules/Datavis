@@ -5,17 +5,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     const diagramElements = document.getElementById('o-module-datavis:diagram_data');
     const diagramElementsUrl = new URL(diagramElements.dataset.diagramElementsUrl);
     diagramType.addEventListener('focus', e => {
-        // Save previous value on focus for change confirmation.
-        diagramType.dataset.previousValue = diagramType.value;
+        if ('' !== diagramType.value) {
+            alert(diagramElements.dataset.diagramChangeConfirm);
+        }
     });
     diagramType.addEventListener('change', e => {
-        if ('' !== diagramType.dataset.previousValue) {
-            if (!confirm(diagramElements.dataset.diagramChangeConfirm)) {
-                // Revert to the previous value and do nothing.
-                diagramType.value = diagramType.dataset.previousValue;
-                return;
-            }
-        }
         diagramType.blur();
         if ('' === diagramType.value) {
             diagramElements.innerHTML = '';
