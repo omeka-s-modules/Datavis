@@ -43,10 +43,11 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
             .attr('fill', d => color(d.data.key))
             .attr('stroke', 'black')
             .style('stroke-width', '1px')
+            .style('cursor', 'crosshair')
             .on('mousemove', (e, d) => {
                 tooltip.style('display', 'inline-block')
-                    .style('left', `${e.pageX}px`)
-                    .style('top', `${e.pageY - 90}px`)
+                    .style('left', `${e.pageX + 2}px`)
+                    .style('top', `${e.pageY + 2}px`)
                     .html(`${d.data.value.label_long ? d.data.value.label_long : d.data.value.label}: ${Number(d.data.value.value).toLocaleString()}`);
             })
             .on('mouseout', (e, d) => {

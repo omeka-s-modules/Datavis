@@ -152,6 +152,7 @@ Datavis.addDiagramType('line_chart_time_series', (div, dataset, datasetData, dia
         .attr('height', height)
         .style('fill', 'none')
         .style('pointer-events', 'all')
+        .style('cursor', 'crosshair')
         .on('mouseover', () => {
             cursor.style('display', 'inline-block');
             tooltip.style('display', 'none')
@@ -163,8 +164,8 @@ Datavis.addDiagramType('line_chart_time_series', (div, dataset, datasetData, dia
                 .attr('cx', x(thisDataset.datetime))
                 .attr('cy', y(thisDataset.value));
             tooltip.style('display', 'inline-block')
-                .style('left', `${e.pageX}px`)
-                .style('top', `${e.pageY + 10}px`)
+                .style('left', `${e.pageX + 2}px`)
+                .style('top', `${e.pageY + 2}px`)
                 .html(`${thisDataset.label}: ${Number(thisDataset.value).toLocaleString()}`);
         })
         .on('mouseout', () => {

@@ -81,10 +81,11 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
             .attr('width', x.bandwidth())
             .attr('height', d => height - y(d.value))
             .attr('fill', '#69b3a2')
+            .style('cursor', 'crosshair')
             .on('mousemove', (e, d) => {
                 tooltip.style('display', 'inline-block')
-                    .style('left', `${e.pageX}px`)
-                    .style('top', `${e.pageY - 90}px`)
+                    .style('left', `${e.pageX + 2}px`)
+                    .style('top', `${e.pageY + 2}px`)
                     .html(`${d.label_long ? d.label_long : d.label}: ${Number(d.value).toLocaleString()}`);
             })
             .on('mouseout', (e, d) => {
