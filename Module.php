@@ -18,9 +18,9 @@ class Module extends AbstractModule
         parent::onBootstrap($event);
 
         $acl = $this->getServiceLocator()->get('Omeka\Acl');
-        // Allow all users to view visualization datasets.
-        $acl->allow(null, 'Datavis\Controller\Site\Index', 'index');
-        $acl->allow(null, 'Datavis\Api\Adapter\DatavisVisAdapter', 'read');
+        // Allow all users to view visualizations.
+        $acl->allow(null, 'Datavis\Controller\Site\Index', ['dataset', 'diagram']);
+        $acl->allow(null, 'Datavis\Api\Adapter\DatavisVisAdapter', ['search', 'read']);
         $acl->allow(null, 'Datavis\Entity\DatavisVis', 'read');
     }
 
