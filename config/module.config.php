@@ -93,7 +93,6 @@ return [
             [
                 'label' => 'Data Visualization', // @translate
                 'route' => 'admin/site/slug/datavis',
-                'action' => 'index',
                 'useRouteMatch' => true,
             ],
         ],
