@@ -29,7 +29,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
             'o-module-datavis:diagram_data' => $this->diagramData(),
             'o:title' => $this->title(),
             'o:description' => $this->description(),
-            'o:item_pool' => $this->itemPool(),
+            'o:query' => $this->query(),
         ];
     }
 
@@ -107,9 +107,9 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
         return $this->resource->getDescription();
     }
 
-    public function itemPool()
+    public function query()
     {
-        return $this->resource->getItemPool();
+        return $this->resource->getQuery();
     }
 
     public function getDatasetType()

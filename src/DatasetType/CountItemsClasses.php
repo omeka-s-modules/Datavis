@@ -54,7 +54,7 @@ class CountItemsClasses extends AbstractDatasetType
         WHERE i.id IN (:item_ids)
         AND rc.id = :class_id';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
 
         $dataset = [];
         $classIds = $vis->datasetData()['class_ids'] ?? [];

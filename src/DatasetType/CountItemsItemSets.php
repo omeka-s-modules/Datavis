@@ -55,7 +55,7 @@ class CountItemsItemSets extends AbstractDatasetType
         WHERE i.id IN (:item_ids)
         AND iset.id = :item_set_id';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
 
         $dataset = [];
         $itemSetIds = $vis->datasetData()['item_set_ids'] ?? [];

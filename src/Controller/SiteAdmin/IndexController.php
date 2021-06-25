@@ -74,7 +74,6 @@ class IndexController extends AbstractActionController
                 $formData = $form->getData();
                 // Prepare form data for creation.
                 $formData['o:site'] = ['o:id' => $this->currentSite()->id()];
-                parse_str(ltrim($formData['o:item_pool'], '?'), $formData['o:item_pool']);
                 $response = $this->api($form)->create('datavis_visualizations', $formData);
                 if ($response) {
                     $vis = $response->getContent();
@@ -122,7 +121,6 @@ class IndexController extends AbstractActionController
                 $formData = $form->getData();
                 // Prepare form data for creation.
                 $formData['o:site'] = ['o:id' => $this->currentSite()->id()];
-                parse_str(ltrim($formData['o:item_pool'], '?'), $formData['o:item_pool']);
                 $response = $this->api($form)->update('datavis_visualizations', $vis->id(), $formData);
                 if ($response) {
                     $this->messenger()->addSuccess('Successfully edited your visualization.'); // @translate
@@ -140,7 +138,6 @@ class IndexController extends AbstractActionController
             }
         } else {
             $data = $vis->getJsonLd();
-            $data['o:item_pool'] = http_build_query($data['o:item_pool']);
             $form->setData($data);
         }
 

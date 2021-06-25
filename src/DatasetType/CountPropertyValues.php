@@ -82,7 +82,7 @@ class CountPropertyValues extends AbstractDatasetType
         AND v.type = \'literal\'
         GROUP BY v.value';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
         $query->setParameter('property_id', $datasetData['property_id']);
 
         $dataset = [];

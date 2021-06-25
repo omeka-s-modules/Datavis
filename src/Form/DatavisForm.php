@@ -7,6 +7,7 @@ use Datavis\Form\Element as DatavisElement;
 use Laminas\Form\Element as LaminasElement;
 use Laminas\Form\Fieldset;
 use Laminas\Form\Form;
+use Omeka\Form\Element as OmekaElement;
 
 class DatavisForm extends Form
 {
@@ -51,16 +52,20 @@ class DatavisForm extends Form
         ]);
 
         $this->add([
-            'type' => LaminasElement\Text::class,
-            'name' => 'o:item_pool',
+            'type' => OmekaElement\Query::class,
+            'name' => 'o:query',
             'options' => [
-                'label' => 'Item pool', // @translate
-                'info' => 'Enter the URL query string that delineates the pool of items that will be used for your dataset. Only items assigned to this site will be included. ', // @translate
-            ],
-            'attributes' => [
-                'id' => 'o:item_pool',
+                'label' => 'Search query', // @translate
+                'info' => 'Configure the logical grouping of items that will be used for your dataset. No query means all items assigned to this site.', // @translate
+                'query_resource_type' => 'items',
+                'query_partial_excludelist' => [
+                    'common/advanced-search/site',
+                    'common/advanced-search/sort',
+                ],
+                'query_preview_append_query' => ['site_id' => $this->getOption('site')->id()],
             ],
         ]);
+
 
         // Dataset elements
         $datasetTypeName = $this->getOption('dataset_type');

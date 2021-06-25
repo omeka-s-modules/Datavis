@@ -26,7 +26,7 @@ class DatavisVis extends \Datavis\Entity\DatavisVis implements \Doctrine\ORM\Pro
     /**
      * @var boolean flag indicating if this object was already initialized
      *
-     * @see \Doctrine\Common\Persistence\Proxy::__isInitialized
+     * @see \Doctrine\Persistence\Proxy::__isInitialized
      */
     public $__isInitialized__ = false;
 
@@ -66,10 +66,10 @@ class DatavisVis extends \Datavis\Entity\DatavisVis implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'owner', 'site', 'created', 'modified', 'datasetModified', 'datasetType', 'diagramType', 'datasetData', 'diagramData', 'dataset', 'title', 'description', 'itemPool'];
+            return ['__isInitialized__', 'id', 'owner', 'site', 'created', 'modified', 'datasetModified', 'datasetType', 'diagramType', 'datasetData', 'diagramData', 'dataset', 'title', 'description', 'query'];
         }
 
-        return ['__isInitialized__', 'id', 'owner', 'site', 'created', 'modified', 'datasetModified', 'datasetType', 'diagramType', 'datasetData', 'diagramData', 'dataset', 'title', 'description', 'itemPool'];
+        return ['__isInitialized__', 'id', 'owner', 'site', 'created', 'modified', 'datasetModified', 'datasetType', 'diagramType', 'datasetData', 'diagramData', 'dataset', 'title', 'description', 'query'];
     }
 
     /**
@@ -458,23 +458,23 @@ class DatavisVis extends \Datavis\Entity\DatavisVis implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function setItemPool(array $itemPool): void
+    public function setQuery(string $query): void
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setItemPool', [$itemPool]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setQuery', [$query]);
 
-        parent::setItemPool($itemPool);
+        parent::setQuery($query);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getItemPool(): array
+    public function getQuery(): string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getItemPool', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getQuery', []);
 
-        return parent::getItemPool();
+        return parent::getQuery();
     }
 
     /**

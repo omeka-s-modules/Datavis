@@ -71,7 +71,7 @@ class CountItemsPropertyValues extends AbstractDatasetType
         AND v.value = :value
         AND v.type = \'literal\'';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
         $query->setParameter('property_id', $datasetData['property_id']);
 
         $dataset = [];

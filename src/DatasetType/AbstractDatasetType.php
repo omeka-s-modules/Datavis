@@ -12,7 +12,7 @@ abstract class AbstractDatasetType implements DatasetTypeInterface
     }
 
     /**
-     * Get all IDs of items that are in the dataset's item pool.
+     * Get all IDs of items that are in the dataset's search query.
      *
      * Note that the items are restricted to the visualization's site.
      *
@@ -20,12 +20,12 @@ abstract class AbstractDatasetType implements DatasetTypeInterface
      * @param  DatavisVisRepresentation $vis
      * @return array
      */
-    public function getItemPoolIds(ServiceManager $services, DatavisVisRepresentation $vis)
+    public function getItemIds(ServiceManager $services, DatavisVisRepresentation $vis)
     {
         $api = $services->get('Omeka\ApiManager');
 
-        $itemPool = $vis->itemPool();
-        $itemPool['site_id'] = $vis->site()->id();
-        return $api->search('items', $itemPool, ['returnScalar' => 'id'])->getContent();
+        parse_str($vis->query(), $query);
+        $query['site_id'] = $vis->site()->id();
+        return $api->search('items', $query, ['returnScalar' => 'id'])->getContent();
     }
 }

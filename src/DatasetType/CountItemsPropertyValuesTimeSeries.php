@@ -190,7 +190,7 @@ class CountItemsPropertyValuesTimeSeries extends AbstractDatasetType
         AND v.value = :value
         AND v.type = \'literal\'';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
         $query->setParameter('timestamp_property_id', $datasetData['timestamp_property_id']);
         $query->setParameter('value_property_id', $datasetData['value_property_id']);
 

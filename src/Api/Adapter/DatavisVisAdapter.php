@@ -95,8 +95,8 @@ class DatavisVisAdapter extends AbstractEntityAdapter
         if ($this->shouldHydrate($request, 'o:description')) {
             $entity->setDescription($request->getValue('o:description'));
         }
-        if ($this->shouldHydrate($request, 'o:item_pool')) {
-            $entity->setItemPool($request->getValue('o:item_pool'));
+        if ($this->shouldHydrate($request, 'o:query')) {
+            $entity->setQuery($request->getValue('o:query'));
         }
     }
 

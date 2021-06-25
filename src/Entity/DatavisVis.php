@@ -132,11 +132,11 @@ class DatavisVis extends AbstractEntity
 
     /**
      * @Column(
-     *     type="json",
+     *     type="text",
      *     nullable=false
      * )
      */
-    protected $itemPool;
+    protected $query;
 
     public function getId()
     {
@@ -269,14 +269,14 @@ class DatavisVis extends AbstractEntity
         return $this->description;
     }
 
-    public function setItemPool(array $itemPool) : void
+    public function setQuery(string $query) : void
     {
-        $this->itemPool = $itemPool;
+        $this->query = $query;
     }
 
-    public function getItemPool() : array
+    public function getQuery() : string
     {
-        return $this->itemPool;
+        return $this->query;
     }
 
     /**

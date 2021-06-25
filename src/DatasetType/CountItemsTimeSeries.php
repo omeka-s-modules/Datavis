@@ -158,7 +158,7 @@ class CountItemsTimeSeries extends AbstractDatasetType
         AND t.value >= :start
         AND t.value < :end';
         $query = $em->createQuery($dql);
-        $query->setParameter('item_ids', $this->getItemPoolIds($services, $vis));
+        $query->setParameter('item_ids', $this->getItemIds($services, $vis));
         $query->setParameter('property_id', $datasetData['property_id']);
 
         $dataset = [];
