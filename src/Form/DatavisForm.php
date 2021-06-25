@@ -112,6 +112,7 @@ class DatavisForm extends Form
             'name' => 'o-module-datavis:diagram_type',
             'options' => [
                 'label' => 'Diagram type', // @translate
+                'info' => 'Warning: you will lose the current diagram configuration if you change the diagram type.', // @translate
                 'empty_option' => 'Select diagram type', // @translate
                 'value_options' => $valueOptions,
             ],

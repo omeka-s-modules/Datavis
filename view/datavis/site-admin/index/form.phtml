@@ -11,7 +11,6 @@ if ('add' === $action) {
 $form->prepare();
 $form->get('o-module-datavis:diagram_data')->setAttributes([
     'data-diagram-elements-url' => $this->url(null, ['action' => 'get-diagram-fieldset'], ['force_canonical' => true], true),
-    'data-diagram-change-confirm' => $this->translate('Warning: you will lose the current diagram configuration if you change the diagram type.'),
 ]);
 
 $sectionNavs = ['vis-configuration' => 'Configuration'];

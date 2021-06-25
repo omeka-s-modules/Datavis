@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     const diagramType = document.getElementById('o-module-datavis:diagram_type');
     const diagramElements = document.getElementById('o-module-datavis:diagram_data');
     const diagramElementsUrl = new URL(diagramElements.dataset.diagramElementsUrl);
-    diagramType.addEventListener('focus', e => {
-        if ('' !== diagramType.value) {
-            alert(diagramElements.dataset.diagramChangeConfirm);
-        }
-    });
     diagramType.addEventListener('change', e => {
         diagramType.blur();
         if ('' === diagramType.value) {
