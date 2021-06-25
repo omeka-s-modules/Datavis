@@ -75,14 +75,13 @@ class DatavisForm extends Form
             'attributes' => [
                 'id' => 'dataset_type',
                 'disabled' => true,
-                'value' => $datasetType->getLabel(),
             ],
         ]);
         $this->add([
             'type' => LaminasElement\Hidden::class,
             'name' => 'o-module-datavis:dataset_type',
             'options' => [
-                'label' => 'Dataset type',
+                'label' => 'Dataset type', // @translate
             ],
             'attributes' => [
                 'id' => 'o-module-datavis:dataset_type',

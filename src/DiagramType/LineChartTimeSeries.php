@@ -46,14 +46,14 @@ class LineChartTimeSeries implements DiagramTypeInterface
             'type' => Element\Select::class,
             'name' => 'line_type',
             'options' => [
-                'label' => 'Line type',
+                'label' => 'Line type', // @translate
                 'value_options' => [
-                    'linear' => 'Linear',
-                    'monotonex' => 'MonotoneX',
-                    'natural' => 'Natural',
-                    'step' => 'Step',
-                    'stepafter' => 'StepAfter',
-                    'stepbefore' => 'StepBefore',
+                    'linear' => 'Linear', // @translate
+                    'monotonex' => 'MonotoneX', // @translate
+                    'natural' => 'Natural', // @translate
+                    'step' => 'Step', // @translate
+                    'stepafter' => 'StepAfter', // @translate
+                    'stepbefore' => 'StepBefore', // @translate
                 ],
             ],
             'attributes' => [

@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 21:42-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Controller/SiteAdmin/IndexController.php:202
+msgid "See this job for progress."
+msgstr ""
+
+#: view/datavis/site-admin/index/add-dataset-type.phtml:1
+#: view/datavis/site-admin/index/browse.phtml:5
+#: view/datavis/site-admin/index/form.phtml:23
+#: view/datavis/site-admin/index/form.phtml:25
+msgid "Data Visualization"
+msgstr ""
+
+#: view/datavis/site-admin/index/add-dataset-type.phtml:10
+msgid "What would you like to visualize?"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:10
+msgid "Add new visualization"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:19
+msgid "Date created"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:34
+msgid "Visualization"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:35
+msgid "Dataset type"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:36
+msgid "Diagram type"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:50
+msgid "View diagram"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:53
+msgid "View dataset"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:84
+#, php-format
+msgid "No visualizations found. %s"
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:85
+msgid "Add a new visualization."
+msgstr ""
+
+#: view/datavis/site-admin/index/browse.phtml:88
+msgid "No visualizations found."
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:14
+msgid ""
+"Warning: you will lose the current diagram configuration if you change the "
+"diagram type."
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:37
+msgid "Save and&hellip;"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:39
+msgid "Generate dataset"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:40
+msgid "Return to visualizations"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:41
+msgid "Stay on this visualization"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:53
+msgid "Dataset configuration"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:58
+msgid "Diagram configuration"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:71
+msgid "No dataset generated"
+msgstr ""
+
+#: view/datavis/site-admin/index/form.phtml:73
+#, php-format
+msgid "Last generated: %s"
+msgstr ""
+
+#: src/BlockLayout/Datavis.php:17
+msgid "Data visualization"
+msgstr ""
+
+#: src/BlockLayout/Datavis.php:36 src/DatasetType/Unknown.php:20
+#: src/DiagramType/Unknown.php:19
+msgid "[Unknown]"
+msgstr ""
+
+#: src/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:55
+msgid "A site must have an ID"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:58
+msgid "dataset_type must be a string"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:62
+msgid "dataset_data must be an array"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:65
+msgid "diagram_data must be an array"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:106
+msgid "A visualization must have a site"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:109
+msgid "A visualization must have a dataset type"
+msgstr ""
+
+#: src/Api/Adapter/DatavisVisAdapter.php:112
+msgid "A visualization must have a title"
+msgstr ""
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr ""
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr ""
+
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:19
+msgid "Count of items with property values in a time series"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:24
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property over a selected period of time."
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:38
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:45
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:73
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountItemsTimeSeries.php:45
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:54
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:66
+msgid "Timestamp property"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:82
+#: src/DatasetType/CountItemsTimeSeries.php:54
+msgid ""
+"Enter the start of the time series in ISO 8601 format: YYYY-MM-DDTHH:MM:SS"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:96
+#: src/DatasetType/CountItemsTimeSeries.php:68
+msgid ""
+"Enter the end of the time series in ISO 8601 format: YYYY-MM-DDTHH:MM:SS"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:109
+#: src/DatasetType/CountItemsTimeSeries.php:81
+msgid "Sample rate"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:111
+#: src/DatasetType/CountItemsTimeSeries.php:83
+msgid "1 second"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:112
+#: src/DatasetType/CountItemsTimeSeries.php:84
+msgid "1 minute"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:113
+#: src/DatasetType/CountItemsTimeSeries.php:85
+msgid "1 hour"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:114
+#: src/DatasetType/CountItemsTimeSeries.php:86
+msgid "1 day"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:115
+#: src/DatasetType/CountItemsTimeSeries.php:87
+msgid "7 days"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:116
+#: src/DatasetType/CountItemsTimeSeries.php:88
+msgid "1 month"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:117
+#: src/DatasetType/CountItemsTimeSeries.php:89
+msgid "6 months"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:118
+#: src/DatasetType/CountItemsTimeSeries.php:90
+msgid "1 year"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:119
+#: src/DatasetType/CountItemsTimeSeries.php:91
+msgid "5 years"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValuesTimeSeries.php:120
+#: src/DatasetType/CountItemsTimeSeries.php:92
+msgid "10 years"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr ""
+
+#: src/DatasetType/CountItemsTimeSeries.php:19
+msgid "Count of items in a time series"
+msgstr ""
+
+#: src/DatasetType/CountItemsTimeSeries.php:24
+msgid "Visualize the count of items over a selected period of time."
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource classes."
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr ""
+
+#: src/Form/DatavisForm.php:57
+msgid "Item pool"
+msgstr ""
+
+#: src/Form/DatavisForm.php:58
+msgid ""
+"Enter the URL query string that delineates the pool of items that will be "
+"used for your dataset. Only items assigned to this site will be included. "
+msgstr ""
+
+#: src/Form/DatavisForm.php:115
+msgid "Select diagram type"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:13
+msgid "Column chart"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:32 src/DiagramType/PieChart.php:28
+#: src/DiagramType/BarChart.php:32 src/DiagramType/LineChartTimeSeries.php:68
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:68
+#: src/DiagramType/HistogramTimeSeries.php:31
+msgid "Width"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
+#: src/DiagramType/BarChart.php:45 src/DiagramType/LineChartTimeSeries.php:81
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:81
+#: src/DiagramType/HistogramTimeSeries.php:44
+msgid "Height"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:58 src/DiagramType/BarChart.php:58
+#: src/DiagramType/LineChartTimeSeries.php:94
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:94
+#: src/DiagramType/HistogramTimeSeries.php:57
+msgid "Margin top"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
+#: src/DiagramType/LineChartTimeSeries.php:107
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:107
+#: src/DiagramType/HistogramTimeSeries.php:70
+msgid "Margin right"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:84 src/DiagramType/BarChart.php:84
+#: src/DiagramType/LineChartTimeSeries.php:120
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:120
+#: src/DiagramType/HistogramTimeSeries.php:83
+msgid "Margin bottom"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:97 src/DiagramType/BarChart.php:97
+#: src/DiagramType/LineChartTimeSeries.php:133
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:133
+#: src/DiagramType/HistogramTimeSeries.php:96
+msgid "Margin left"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
+msgid "Order"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
+msgid "By value (ascending)"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:113 src/DiagramType/BarChart.php:113
+msgid "By value (descending)"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
+msgid "By label (ascending)"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
+msgid "By label (descending)"
+msgstr ""
+
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr ""
+
+#: src/DiagramType/PieChart.php:54
+msgid "Margin"
+msgstr ""
+
+#: src/DiagramType/BarChart.php:13
+msgid "Bar chart"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:13
+msgid "Line chart (time series)"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:35
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:35
+msgid "Line (no points)"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:36
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:36
+msgid "Points (no line)"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:37
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:37
+msgid "Line and points"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:49
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:49
+msgid "Line type"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:51
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:51
+msgid "Linear"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:52
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:52
+msgid "MonotoneX"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:53
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:53
+msgid "Natural"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:54
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:54
+msgid "Step"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:55
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:55
+msgid "StepAfter"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeries.php:56
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:56
+msgid "StepBefore"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:13
+msgid "Grouped line chart (time series)"
+msgstr ""
+
+#: src/DiagramType/LineChartTimeSeriesGrouped.php:33
+msgid "Plot type"
+msgstr ""
+
+#: src/DiagramType/HistogramTimeSeries.php:13
+msgid "Histogram (time series)"
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:39
+msgid "Configure your visualization below."
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:81
+msgid "Successfully added your visualization."
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:128
+msgid "Successfully edited your visualization."
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:198
+#, php-format
+msgid "Generating dataset. This may take a while. %s"
+msgstr ""

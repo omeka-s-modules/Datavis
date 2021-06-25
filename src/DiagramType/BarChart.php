@@ -109,10 +109,10 @@ class BarChart implements DiagramTypeInterface
             'options' => [
                 'label' => 'Order', // @translate
                 'value_options' => [
-                    'value_asc' => 'By value (ascending)',
-                    'value_desc' => 'By value (descending)',
-                    'label_asc' => 'By label (ascending)',
-                    'label_desc' => 'By label (descending)',
+                    'value_asc' => 'By value (ascending)', // @translate
+                    'value_desc' => 'By value (descending)', // @translate
+                    'label_asc' => 'By label (ascending)', // @translate
+                    'label_desc' => 'By label (descending)', // @translate
                 ],
             ],
             'attributes' => [

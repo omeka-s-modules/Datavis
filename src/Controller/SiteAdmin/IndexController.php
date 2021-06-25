@@ -64,6 +64,9 @@ class IndexController extends AbstractActionController
             'site' => $this->currentSite(),
         ]);
 
+        $datasetTypeLabel = $this->datavis()->getDatasetType($datasetTypeName)->getLabel();
+        $form->get('dataset_type')->setValue($this->translate($datasetTypeLabel));
+
         if ($this->getRequest()->isPost()) {
             $postData = $this->params()->fromPost();
             $form->setData($postData);
@@ -108,6 +111,9 @@ class IndexController extends AbstractActionController
             'diagram_type' => $diagramTypeName,
             'site' => $this->currentSite(),
         ]);
+
+        $datasetTypeLabel = $this->datavis()->getDatasetType($datasetTypeName)->getLabel();
+        $form->get('dataset_type')->setValue($this->translate($datasetTypeLabel));
 
         if ($this->getRequest()->isPost()) {
             $postData = $this->params()->fromPost();

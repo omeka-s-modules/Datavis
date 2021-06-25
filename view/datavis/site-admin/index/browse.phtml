@@ -56,8 +56,8 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
                     <?php endif; ?>
                 </ul>
             </td>
-            <td><?php echo $vis->getDatasetType()->getLabel(); ?></td>
-            <td><?php echo $vis->getDiagramType()->getLabel(); ?></td>
+            <td><?php echo $this->translate($vis->getDatasetType()->getLabel()); ?></td>
+            <td><?php echo $this->translate($vis->getDiagramType()->getLabel()); ?></td>
             <td><?php echo $owner ? $owner->link($owner->name()) : ''; ?></td>
             <td><?php echo $this->i18n()->dateFormat($vis->created()); ?></td>
         </tr>

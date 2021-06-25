@@ -37,6 +37,7 @@ class CountItemsClasses extends AbstractDatasetType
                 'multiple' => true,
                 'required' => false,
                 'class' => 'chosen-select',
+                'data-placeholder' => 'Select classes…', // @translate
             ],
         ]);
     }

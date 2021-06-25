@@ -50,7 +50,7 @@ class CountPropertyValues extends AbstractDatasetType
             ],
             'attributes' => [
                 'id' => 'count_min',
-                'placeholder' => 'No minimum',
+                'placeholder' => 'No minimum', // @translate
                 'required' => false,
             ],
         ]);
@@ -62,7 +62,7 @@ class CountPropertyValues extends AbstractDatasetType
             ],
             'attributes' => [
                 'id' => 'count_max',
-                'placeholder' => 'No maximum',
+                'placeholder' => 'No maximum', // @translate
                 'required' => false,
             ],
         ]);
