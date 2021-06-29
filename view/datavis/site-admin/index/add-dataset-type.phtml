@@ -1,4 +1,7 @@
-<?php echo $this->pageTitle($this->translate('Add'), 1, $this->translate('Data Visualization')); ?>
+<?php 
+$this->headLink()->appendStylesheet($this->assetUrl('css/admin/vis-form.css', 'Datavis'));
+echo $this->pageTitle($this->translate('Add'), 1, $this->translate('Data Visualization')); 
+?>
 
 <?php echo $this->form()->openTag($form); ?>
 

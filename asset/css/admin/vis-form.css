@@ -84,6 +84,23 @@
     text-align: left;
 }
 
+#page-action-menu li label {
+    display: inline-block;
+    height: 36px;
+    padding: 6px 1em;
+    min-height: 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+#page-action-menu li label input {
+    margin-left: .25em;7
+}
+
+#page-action-menu li:not(:last-child) label {
+    border-bottom: 1px solid #dfdfdf;
+}
+
 #page-action-menu .expand:after {
     content: "\f0d7";
 }
@@ -96,4 +113,22 @@
 #page-action-menu .collapse + .collapsible {
     overflow: visible;
     display: block;
+}
+
+.dataset-type {
+    margin-bottom: 1rem;
+}
+
+.dataset-type label {
+    font-weight: bold;
+    display: flex;
+}
+
+.dataset-type input {
+    display: inline-block;
+    width: 1rem;
+}
+
+.dataset-type-description {
+    margin-left: 1.5rem;
 }
