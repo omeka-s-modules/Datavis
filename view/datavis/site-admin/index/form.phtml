@@ -2,10 +2,10 @@
 $this->headLink()->appendStylesheet($this->assetUrl('css/admin/vis-form.css', 'Datavis'));
 $this->headScript()->appendFile($this->assetUrl('js/admin/vis-form.js', 'Datavis'));
 
-if ('add' === $action) {
-    $this->htmlElement('body')->appendAttribute('class', 'datavis vis add');
-} else {
+if (isset($vis)) {
     $this->htmlElement('body')->appendAttribute('class', 'datavis vis edit');
+} else {
+    $this->htmlElement('body')->appendAttribute('class', 'datavis vis add');
 }
 
 $form->prepare();
@@ -14,26 +14,26 @@ $form->get('o-module-datavis:diagram_data')->setAttributes([
 ]);
 
 $sectionNavs = ['vis-configuration' => 'Configuration'];
-if ('edit' === $action) {
+if (isset($vis)) {
     $sectionNavs['vis-dataset'] = 'Dataset';
 }
 ?>
-<?php if ('add' === $action): ?>
-<?php echo $this->pageTitle($this->translate('Add'), 1, $this->translate('Data Visualization'), $datasetType->getLabel()); ?>
-<?php else: ?>
+<?php if (isset($vis)): ?>
 <?php echo $this->pageTitle($this->translate('Edit'), 1, $this->translate('Data Visualization'), $vis->title()); ?>
+<?php else: ?>
+<?php echo $this->pageTitle($this->translate('Add'), 1, $this->translate('Data Visualization'), $datasetType->getLabel()); ?>
 <?php endif; ?>
 
 <?php echo $this->form()->openTag($form); ?>
 
 <div id="page-actions">
-    <?php if ('edit' === $action): ?>
+    <?php if (isset($vis)): ?>
     <a href="#" id="delete-button" class="delete button"><?php echo $this->translate('Delete'); ?></a>
-    <?php if ($vis->diagramType()): ?>
-    <?php echo $this->hyperlink($this->translate('View diagram'), $vis->diagramUrl(), ['target' => '_blank', 'class' => 'button']); ?>
-    <?php endif; ?>
     <?php endif; ?>
     <?php echo $this->hyperlink($this->translate('Cancel'), $this->url(null, ['action' => 'browse'], true), ['class' => 'button']); ?>
+    <?php if (isset($vis) && $vis->diagramType()): ?>
+    <?php echo $this->hyperlink($this->translate('View diagram'), $vis->diagramUrl(), ['target' => '_blank', 'class' => 'button']); ?>
+    <?php endif; ?>
     <div id="page-action-menu">
         <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
             <?php echo $this->translate('Save and&hellip;'); ?></a>
@@ -79,6 +79,6 @@ if ('edit' === $action) {
     <?php endif; ?>
 </div>
 
-<?php if ('edit' === $action): ?>
+<?php if (isset($vis)): ?>
 <?php echo $this->deleteConfirm($vis, 'visualization'); ?>
 <?php endif; ?>

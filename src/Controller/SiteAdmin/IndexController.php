@@ -93,7 +93,6 @@ class IndexController extends AbstractActionController
         }
 
         $view = new ViewModel;
-        $view->setVariable('action', 'add');
         $view->setVariable('form', $form);
         $view->setVariable('datasetType', $this->datavis()->getDatasetType($datasetTypeName));
         return $view;
@@ -142,7 +141,6 @@ class IndexController extends AbstractActionController
         }
 
         $view = new ViewModel;
-        $view->setVariable('action', 'edit');
         $view->setVariable('vis', $vis);
         $view->setVariable('form', $form);
         $view->setVariable('datasetType', $this->datavis()->getDatasetType($vis->datasetType()));
