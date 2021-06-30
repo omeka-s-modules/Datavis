@@ -29,7 +29,9 @@ if ('edit' === $action) {
 <div id="page-actions">
     <?php if ('edit' === $action): ?>
     <a href="#" id="delete-button" class="delete button"><?php echo $this->translate('Delete'); ?></a>
+    <?php if ($vis->diagramType()): ?>
     <?php echo $this->hyperlink($this->translate('View diagram'), $vis->diagramUrl(), ['target' => '_blank', 'class' => 'button']); ?>
+    <?php endif; ?>
     <?php endif; ?>
     <?php echo $this->hyperlink($this->translate('Cancel'), $this->url(null, ['action' => 'browse'], true), ['class' => 'button']); ?>
     <div id="page-action-menu">
