@@ -26,13 +26,4 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 diagramElements.innerHTML = error;
             });
     });
-    // Close page action menu if it is open and the user clicks outside it.
-    document.addEventListener('click', e => {
-        if (null === e.target.closest('#page-action-menu')) {
-            const button = document.querySelector('#page-action-menu .collapse');
-            if (button) {
-                button.click()
-            }
-        }
-    });
 });
