@@ -11,8 +11,6 @@ return [
             'count_items_properties' => DatasetType\CountItemsProperties::class,
             'count_items_property_values' => DatasetType\CountItemsPropertyValues::class,
             'count_property_values' => DatasetType\CountPropertyValues::class,
-            'count_items_time_series' => DatasetType\CountItemsTimeSeries::class,
-            'count_items_property_values_time_series' => DatasetType\CountItemsPropertyValuesTimeSeries::class,
         ],
     ],
     'datavis_diagram_types' => [
@@ -20,9 +18,6 @@ return [
             'column_chart' => DiagramType\ColumnChart::class,
             'bar_chart' => DiagramType\BarChart::class,
             'pie_chart' => DiagramType\PieChart::class,
-            'line_chart_time_series' => DiagramType\LineChartTimeSeries::class,
-            'histogram_time_series' => DiagramType\HistogramTimeSeries::class,
-            'line_chart_time_series_grouped' => DiagramType\LineChartTimeSeriesGrouped::class,
         ],
     ],
     'translator' => [

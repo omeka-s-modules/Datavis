@@ -20,6 +20,11 @@ class Unknown implements DatasetTypeInterface
         return '[Unknown]'; // @translate
     }
 
+    public function getDescription() : ?string
+    {
+        return null;
+    }
+
     public function getDiagramTypeNames() : array
     {
         return [];
