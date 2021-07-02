@@ -12,11 +12,6 @@ $form->prepare();
 $form->get('o-module-datavis:diagram_data')->setAttributes([
     'data-diagram-elements-url' => $this->url(null, ['action' => 'get-diagram-fieldset'], ['force_canonical' => true], true),
 ]);
-
-$sectionNavs = ['vis-configuration' => 'Configuration'];
-if (isset($vis)) {
-    $sectionNavs['vis-dataset'] = 'Dataset';
-}
 ?>
 <?php if (isset($vis)): ?>
 <?php echo $this->pageTitle($this->translate('Edit'), 1, $this->translate('Data Visualization'), $vis->title()); ?>
@@ -31,8 +26,17 @@ if (isset($vis)) {
     <a href="#" id="delete-button" class="delete button"><?php echo $this->translate('Delete'); ?></a>
     <?php endif; ?>
     <?php echo $this->hyperlink($this->translate('Cancel'), $this->url(null, ['action' => 'browse'], true), ['class' => 'button']); ?>
-    <?php if (isset($vis) && $vis->diagramType()): ?>
-    <?php echo $this->hyperlink($this->translate('View diagram'), $vis->diagramUrl(), ['target' => '_blank', 'class' => 'button']); ?>
+    <?php if (isset($vis) && $vis->datasetModified()): ?>
+    <div id="page-action-menu">
+        <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
+            <?php echo $this->translate('View &hellip;'); ?></a>
+            <ul class="collapsible">
+                <li><?php echo $this->hyperlink($this->translate('Dataset'), $vis->datasetUrl(['pretty_print' => true]), ['target' => '_blank']); ?></li>
+                <?php if ($vis->diagramType()): ?>
+                <li><?php echo $this->hyperlink($this->translate('Diagram'), $vis->diagramUrl(), ['target' => '_blank']); ?></li>
+                <?php endif; ?>
+            </ul>
+    </div>
     <?php endif; ?>
     <div id="page-action-menu">
         <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
@@ -45,39 +49,21 @@ if (isset($vis)) {
     </div>
 </div>
 
-<?php echo $this->sectionNav($sectionNavs); ?>
+<?php echo $this->formRow($form->get('o:title')); ?>
+<?php echo $this->formRow($form->get('o:description')); ?>
+<?php echo $this->formRow($form->get('o:query')); ?>
 
-<div id="vis-configuration" class="active section">
-    <?php echo $this->formRow($form->get('o:title')); ?>
-    <?php echo $this->formRow($form->get('o:description')); ?>
-    <?php echo $this->formRow($form->get('o:query')); ?>
+<h4><?php echo $this->translate('Dataset configuration'); ?></h4>
+<?php echo $this->formRow($form->get('dataset_type')); ?>
+<?php echo $this->formHidden($form->get('o-module-datavis:dataset_type')); ?>
+<?php echo $this->formCollection($form->get('o-module-datavis:dataset_data')); ?>
 
-    <h4><?php echo $this->translate('Dataset configuration'); ?></h4>
-    <?php echo $this->formRow($form->get('dataset_type')); ?>
-    <?php echo $this->formHidden($form->get('o-module-datavis:dataset_type')); ?>
-    <?php echo $this->formCollection($form->get('o-module-datavis:dataset_data')); ?>
+<h4><?php echo $this->translate('Diagram configuration'); ?></h4>
+<?php echo $this->formRow($form->get('o-module-datavis:diagram_type')); ?>
+<?php echo $this->formCollection($form->get('o-module-datavis:diagram_data')); ?>
 
-    <h4><?php echo $this->translate('Diagram configuration'); ?></h4>
-    <?php echo $this->formRow($form->get('o-module-datavis:diagram_type')); ?>
-    <?php echo $this->formCollection($form->get('o-module-datavis:diagram_data')); ?>
-
-    <?php echo $this->formHidden($form->get('csrf')); ?>
-    <?php echo $this->form()->closeTag(); ?>
-</div>
-
-<div id="vis-dataset" class="section">
-    <?php if (isset($vis)): ?>
-    <?php $dataset = $vis->dataset(); ?>
-    <div>
-        <?php if (null === $dataset): ?>
-        <?php echo $this->translate('No dataset generated'); ?>
-        <?php else: ?>
-        <?php echo sprintf($this->translate('Last generated: %s'), $this->i18n()->dateFormat($vis->datasetModified(), 'medium', 'medium')); ?>
-        <textarea style="width: 100%; height: 700px;" disabled><?php echo json_encode($dataset, JSON_PRETTY_PRINT); ?></textarea>
-        <?php endif; ?>
-    </div>
-    <?php endif; ?>
-</div>
+<?php echo $this->formHidden($form->get('csrf')); ?>
+<?php echo $this->form()->closeTag(); ?>
 
 <?php if (isset($vis)): ?>
 <?php echo $this->deleteConfirm($vis, 'visualization'); ?>
