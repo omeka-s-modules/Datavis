@@ -29,7 +29,7 @@ $form->get('o-module-datavis:diagram_data')->setAttributes([
     <?php if (isset($vis) && $vis->datasetModified()): ?>
     <div class="page-action-menu">
         <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
-            <?php echo $this->translate('View &hellip;'); ?></a>
+            <?php echo $this->translate('View&hellip;'); ?></a>
             <ul class="collapsible">
                 <li><?php echo $this->hyperlink($this->translate('Dataset'), $vis->datasetUrl(['pretty_print' => true]), ['target' => '_blank']); ?></li>
                 <?php if ($vis->diagramType()): ?>
