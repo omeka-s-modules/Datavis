@@ -27,7 +27,7 @@ $form->get('o-module-datavis:diagram_data')->setAttributes([
     <?php endif; ?>
     <?php echo $this->hyperlink($this->translate('Cancel'), $this->url(null, ['action' => 'browse'], true), ['class' => 'button']); ?>
     <?php if (isset($vis) && $vis->datasetModified()): ?>
-    <div id="page-action-menu">
+    <div class="page-action-menu">
         <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
             <?php echo $this->translate('View &hellip;'); ?></a>
             <ul class="collapsible">
@@ -38,7 +38,7 @@ $form->get('o-module-datavis:diagram_data')->setAttributes([
             </ul>
     </div>
     <?php endif; ?>
-    <div id="page-action-menu">
+    <div class="page-action-menu">
         <a href="#" class="button expand" aria-label="<?php echo $this->translate('Expand'); ?>" title="<?php echo $this->translate('Expand'); ?>">
             <?php echo $this->translate('Save and&hellip;'); ?></a>
             <ul class="collapsible">
