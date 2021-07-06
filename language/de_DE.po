@@ -2,20 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Tobias Hodel <tobias.hodel@wbkolleg.unibe.ch>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-06 14:59-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-06-25 00:54+0000\n"
+"Last-Translator: Tobias Hodel <tobias.hodel@wbkolleg.unibe.ch>, 2021\n"
+"Language-Team: German (Germany) (https://www.transifex.com/omeka/teams/14184/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 msgid "See this job for progress."
@@ -31,11 +35,11 @@ msgstr ""
 #: view/datavis/site-admin/index/form.phtml:17
 #: view/datavis/site-admin/index/form.phtml:19
 msgid "Data Visualization"
-msgstr ""
+msgstr "Datenvisualisierung"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:13
 msgid "What would you like to visualize?"
-msgstr ""
+msgstr "Was möchtest du visualisieren?"
 
 #: view/datavis/site-admin/index/browse.phtml:5
 msgid "Visualizations"
@@ -43,31 +47,31 @@ msgstr ""
 
 #: view/datavis/site-admin/index/browse.phtml:10
 msgid "Add new visualization"
-msgstr ""
+msgstr "Eine neue Visualisierung hinzufügen"
 
 #: view/datavis/site-admin/index/browse.phtml:19
 msgid "Date created"
-msgstr ""
+msgstr "Erstellungsdatum"
 
 #: view/datavis/site-admin/index/browse.phtml:34
 msgid "Visualization"
-msgstr ""
+msgstr "Visualisierung"
 
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
-msgstr ""
+msgstr "Typ des Datensatzes"
 
 #: view/datavis/site-admin/index/browse.phtml:36
 msgid "Diagram type"
-msgstr ""
+msgstr "Diagrammtyp"
 
 #: view/datavis/site-admin/index/browse.phtml:50
 msgid "View diagram"
-msgstr ""
+msgstr "Diagramm anzeigen"
 
 #: view/datavis/site-admin/index/browse.phtml:53
 msgid "View dataset"
-msgstr ""
+msgstr "Datensatz anzeigen"
 
 #: view/datavis/site-admin/index/browse.phtml:84
 #, php-format
@@ -76,11 +80,11 @@ msgstr ""
 
 #: view/datavis/site-admin/index/browse.phtml:85
 msgid "Add a new visualization."
-msgstr ""
+msgstr "Eine neue Visualisierung hinzufügen."
 
 #: view/datavis/site-admin/index/browse.phtml:88
 msgid "No visualizations found."
-msgstr ""
+msgstr "Keine Visualisierung gefunden."
 
 #: view/datavis/site-admin/index/form.phtml:17
 msgid "Edit visualization"
@@ -100,48 +104,48 @@ msgstr ""
 
 #: view/datavis/site-admin/index/form.phtml:45
 msgid "Generate dataset"
-msgstr ""
+msgstr "Datensatz generieren"
 
 #: view/datavis/site-admin/index/form.phtml:46
 msgid "Return to visualizations"
-msgstr ""
+msgstr "Zurück zu den Visualisierungen"
 
 #: view/datavis/site-admin/index/form.phtml:47
 msgid "Stay on this visualization"
-msgstr ""
+msgstr "Bei dieser Visualisierung bleiben"
 
 #: view/datavis/site-admin/index/form.phtml:56
 msgid "Dataset configuration"
-msgstr ""
+msgstr "Konfiguration des Datensatzes"
 
 #: view/datavis/site-admin/index/form.phtml:61
 msgid "Diagram configuration"
-msgstr ""
+msgstr "Konfiguration des Diagrammes"
 
 #: src/BlockLayout/Datavis.php:17
 msgid "Data visualization"
-msgstr ""
+msgstr "Datenvisualisierung"
 
 #: src/BlockLayout/Datavis.php:36 src/DatasetType/Unknown.php:20
 #: src/DiagramType/Unknown.php:19
 msgid "[Unknown]"
-msgstr ""
+msgstr "Unbekannt"
 
 #: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
-msgstr ""
+msgstr "Wähle eine Visualisierung..."
 
 #: src/Api/Adapter/DatavisVisAdapter.php:55
 msgid "A site must have an ID"
-msgstr ""
+msgstr "Ein Standort benötigt eine ID "
 
 #: src/Api/Adapter/DatavisVisAdapter.php:58
 msgid "dataset_type must be a string"
-msgstr ""
+msgstr "dataset_type (Typ des Datensatzes) muss ein string sein"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:62
 msgid "dataset_data must be an array"
-msgstr ""
+msgstr "dataset_data muss ein array sein"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:65
 msgid "diagram_data must be an array"
@@ -237,7 +241,8 @@ msgstr ""
 
 #: src/DatasetType/CountItemsClasses.php:19
 msgid ""
-"Visualize the count of items that are instances of selected resource classes."
+"Visualize the count of items that are instances of selected resource "
+"classes."
 msgstr ""
 
 #: src/DatasetType/CountItemsClasses.php:40
@@ -259,6 +264,8 @@ msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
 msgstr ""
+"Warnung: Die aktuelle Konfiguration des Diagramms geht verloren, sollte der "
+"Typ geändert werden."
 
 #: src/Form/DatavisForm.php:121
 msgid "Select diagram type"

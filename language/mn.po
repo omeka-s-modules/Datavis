@@ -2,20 +2,24 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Khaidav T. <khaidaw@yahoo.com>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-06 14:59-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-06-25 00:54+0000\n"
+"Last-Translator: Khaidav T. <khaidaw@yahoo.com>, 2021\n"
+"Language-Team: Mongolian (https://www.transifex.com/omeka/teams/14184/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: mn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 msgid "See this job for progress."
@@ -47,7 +51,7 @@ msgstr ""
 
 #: view/datavis/site-admin/index/browse.phtml:19
 msgid "Date created"
-msgstr ""
+msgstr "Үүсгэсэн огноо"
 
 #: view/datavis/site-admin/index/browse.phtml:34
 msgid "Visualization"
@@ -55,11 +59,11 @@ msgstr ""
 
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
-msgstr ""
+msgstr "Өгөгдлийн багцын төрөл"
 
 #: view/datavis/site-admin/index/browse.phtml:36
 msgid "Diagram type"
-msgstr ""
+msgstr "Диаграмын төрөл"
 
 #: view/datavis/site-admin/index/browse.phtml:50
 msgid "View diagram"
@@ -125,7 +129,7 @@ msgstr ""
 #: src/BlockLayout/Datavis.php:36 src/DatasetType/Unknown.php:20
 #: src/DiagramType/Unknown.php:19
 msgid "[Unknown]"
-msgstr ""
+msgstr "[Тодорхойгүй]"
 
 #: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
@@ -169,7 +173,7 @@ msgstr ""
 
 #: src/DatasetType/CountItemsProperties.php:40
 msgid "Select properties…"
-msgstr ""
+msgstr "Тохиргоо сонгох…"
 
 #: src/DatasetType/CountItemsPropertyValues.php:15
 msgid "Count of items with property values"
@@ -189,7 +193,7 @@ msgstr ""
 #: src/DatasetType/CountItemsPropertyValues.php:41
 #: src/DatasetType/CountPropertyValues.php:41
 msgid "Select one…"
-msgstr ""
+msgstr "Аль нэгийг сонгох…"
 
 #: src/DatasetType/CountItemsPropertyValues.php:50
 msgid "Enter values, separated by new lines."
@@ -205,7 +209,7 @@ msgstr ""
 
 #: src/DatasetType/CountItemsItemSets.php:41
 msgid "Select item sets…"
-msgstr ""
+msgstr "Баримтын бүрдэл сонгох…"
 
 #: src/DatasetType/CountPropertyValues.php:15
 msgid "Count of property values"
@@ -229,7 +233,7 @@ msgstr ""
 
 #: src/DatasetType/CountPropertyValues.php:65
 msgid "No maximum"
-msgstr ""
+msgstr "Дээд хязгааргүй"
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
@@ -237,7 +241,8 @@ msgstr ""
 
 #: src/DatasetType/CountItemsClasses.php:19
 msgid ""
-"Visualize the count of items that are instances of selected resource classes."
+"Visualize the count of items that are instances of selected resource "
+"classes."
 msgstr ""
 
 #: src/DatasetType/CountItemsClasses.php:40
@@ -262,7 +267,7 @@ msgstr ""
 
 #: src/Form/DatavisForm.php:121
 msgid "Select diagram type"
-msgstr ""
+msgstr "Диаграмын төрөл сонгох"
 
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
@@ -271,12 +276,12 @@ msgstr ""
 #: src/DiagramType/ColumnChart.php:32 src/DiagramType/PieChart.php:28
 #: src/DiagramType/BarChart.php:32
 msgid "Width"
-msgstr ""
+msgstr "Өргөн"
 
 #: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
 #: src/DiagramType/BarChart.php:45
 msgid "Height"
-msgstr ""
+msgstr "Өндөр"
 
 #: src/DiagramType/ColumnChart.php:58 src/DiagramType/BarChart.php:58
 msgid "Margin top"
