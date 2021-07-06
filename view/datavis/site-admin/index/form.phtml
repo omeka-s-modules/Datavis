@@ -14,9 +14,9 @@ $form->get('o-module-datavis:diagram_data')->setAttributes([
 ]);
 ?>
 <?php if (isset($vis)): ?>
-<?php echo $this->pageTitle($this->translate('Edit'), 1, $this->translate('Data Visualization'), $vis->title()); ?>
+<?php echo $this->pageTitle($this->translate('Edit visualization'), 1, $this->translate('Data Visualization'), $vis->title()); ?>
 <?php else: ?>
-<?php echo $this->pageTitle($this->translate('Add'), 1, $this->translate('Data Visualization'), $datasetType->getLabel()); ?>
+<?php echo $this->pageTitle($this->translate('Add visualization'), 1, $this->translate('Data Visualization'), $datasetType->getLabel()); ?>
 <?php endif; ?>
 
 <?php echo $this->form()->openTag($form); ?>
