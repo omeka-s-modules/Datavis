@@ -22,5 +22,10 @@ interface DiagramTypeInterface
      */
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void;
 
+    /**
+     * Prepare the render of this diagram type.
+     *
+     * @param PhpRenderer $view
+     */
     public function prepareRender(PhpRenderer $view) : void;
 }
