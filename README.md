@@ -293,7 +293,13 @@ class MyDiagram implements DiagramTypeInterface
 }
 ```
 
-Then, the last things to do is write the Javascript this is responsible for rendering the diagram. Do this by assigning a callback to `Datavis.addDiagramType()`:
+Then, the last things to do is write the Javascript this is responsible for rendering the diagram. Do this by registering a callback to `Datavis.addDiagramType()` and using [D3](https://d3js.org/) (or your of choice of visualization library) to draw the diagram on the page. The passed arguments are:
+
+- `div`: Draw the diagram within this DOM element;
+- `dataset`: The dataset (in JSON format) to represent using the diagram;
+- `datasetData`: The configured dataset-specific data;
+- `diagramData`: The configured diagram-specific data;
+- `blockData`: The configured block-specific data.
 
 ```js
 /**
