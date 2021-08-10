@@ -161,6 +161,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
         $this->getDiagramType()->prepareRender($view);
         return sprintf(
             '<h5>%s</h5>
+            <p>%s</p>
             <div class="datavis-diagram %s"
                 data-id="%s"
                 data-diagram-type="%s"
@@ -169,6 +170,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
                 data-diagram-data="%s"
                 data-block-data="%s"></div>',
             $view->escapeHtml($this->title()),
+            $view->escapeHtml($this->description()),
             $view->escapeHtml($this->diagramType()),
             $view->escapeHtml($this->id()),
             $view->escapeHtml($this->diagramType()),
