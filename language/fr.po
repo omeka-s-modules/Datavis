@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 14:59-0400\n"
+"POT-Creation-Date: 2021-11-22 14:12-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Pols12 <poltron54@gmail.com>, 2021\n"
 "Language-Team: French (https://www.transifex.com/omeka/teams/14184/fr/)\n"
@@ -254,10 +254,6 @@ msgstr ""
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
 msgstr "Choisissez les classes…"
-
-#: src/Form/DatavisForm.php:58
-msgid "Search query"
-msgstr ""
 
 #: src/Form/DatavisForm.php:59
 msgid ""

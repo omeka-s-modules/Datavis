@@ -66,7 +66,6 @@ class DatavisForm extends Form
             ],
         ]);
 
-
         // Dataset elements
         $datasetTypeName = $this->getOption('dataset_type');
         $datasetType = $this->datasetTypeManager->get($datasetTypeName);

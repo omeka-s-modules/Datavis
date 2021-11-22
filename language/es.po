@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giorgio Comai <g@giorgiocomai.eu>, 2021
+# Alfonso Montejo <almontejor@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
@@ -13,347 +13,355 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-22 14:12-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2021\n"
-"Language-Team: Italian (https://www.transifex.com/omeka/teams/14184/it/)\n"
+"Last-Translator: Alfonso Montejo <almontejor@gmail.com>, 2021\n"
+"Language-Team: Spanish (https://www.transifex.com/omeka/teams/14184/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 msgid "See this job for progress."
-msgstr "Vedi questo lavoro per l'avanzamento "
+msgstr "Ver este trabajo para consultar el progreso."
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/form.phtml:19
 msgid "Add visualization"
-msgstr "Aggiungi visualizzazione"
+msgstr "Añadir visualización"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
 #: view/datavis/site-admin/index/form.phtml:17
 #: view/datavis/site-admin/index/form.phtml:19
 msgid "Data Visualization"
-msgstr "Visualizzazione di dati"
+msgstr "Visualización de datos"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:13
 msgid "What would you like to visualize?"
-msgstr "Cosa vorresti visualizzare?"
+msgstr "¿Qué se va a visualizar?"
 
 #: view/datavis/site-admin/index/browse.phtml:5
 msgid "Visualizations"
-msgstr "Visualizzazioni"
+msgstr "Visualizaciones"
 
 #: view/datavis/site-admin/index/browse.phtml:10
 msgid "Add new visualization"
-msgstr "Aggiungi una nuova visualizzazione"
+msgstr "Añadir nueva visualización"
 
 #: view/datavis/site-admin/index/browse.phtml:19
 msgid "Date created"
-msgstr "Data di creazione"
+msgstr "Fecha de creación"
 
 #: view/datavis/site-admin/index/browse.phtml:34
 msgid "Visualization"
-msgstr "Visualizzazione"
+msgstr "Visualización"
 
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
-msgstr "Tipo di dataset"
+msgstr "Tipo de conjunto de datos"
 
 #: view/datavis/site-admin/index/browse.phtml:36
 msgid "Diagram type"
-msgstr "Tipo di diagramma"
+msgstr "Tipo de diagrama"
 
 #: view/datavis/site-admin/index/browse.phtml:50
 msgid "View diagram"
-msgstr "Visualizza diagramma"
+msgstr "Ver diagrama"
 
 #: view/datavis/site-admin/index/browse.phtml:53
 msgid "View dataset"
-msgstr "Visualizza il dataset"
+msgstr "Ver conjunto de datos"
 
 #: view/datavis/site-admin/index/browse.phtml:84
 #, php-format
 msgid "No visualizations found. %s"
-msgstr "Nessuna visualizzazione trovata. %s"
+msgstr "No se han encontrado visualizaciones. %s"
 
 #: view/datavis/site-admin/index/browse.phtml:85
 msgid "Add a new visualization."
-msgstr "Aggiungi una nuova visualizzazione."
+msgstr "Añadir una nueva visualización."
 
 #: view/datavis/site-admin/index/browse.phtml:88
 msgid "No visualizations found."
-msgstr "Nessuna visualizzazione trovata."
+msgstr "No se han encontrado visualizaciones."
 
 #: view/datavis/site-admin/index/form.phtml:17
 msgid "Edit visualization"
-msgstr "Modifica visualizzazione"
+msgstr "Editar visualizaciones"
 
 #: view/datavis/site-admin/index/form.phtml:32
 msgid "View&hellip;"
-msgstr ""
+msgstr "Ver y…"
 
 #: view/datavis/site-admin/index/form.phtml:36
 msgid "Diagram"
-msgstr "Diagramma"
+msgstr "Diagrama"
 
 #: view/datavis/site-admin/index/form.phtml:43
 msgid "Save and&hellip;"
-msgstr ""
+msgstr "Guardar y…"
 
 #: view/datavis/site-admin/index/form.phtml:45
 msgid "Generate dataset"
-msgstr "Genera dataset"
+msgstr "Generar conjunto de datos"
 
 #: view/datavis/site-admin/index/form.phtml:46
 msgid "Return to visualizations"
-msgstr "Ritorna alle visualizzazioni"
+msgstr "Volver a las visualizaciones"
 
 #: view/datavis/site-admin/index/form.phtml:47
 msgid "Stay on this visualization"
-msgstr "Rimani su questa visualizzazione"
+msgstr "Permanecer en esta visualización"
 
 #: view/datavis/site-admin/index/form.phtml:56
 msgid "Dataset configuration"
-msgstr "Configurazione del dataset"
+msgstr "Configuración del conjunto de datos"
 
 #: view/datavis/site-admin/index/form.phtml:61
 msgid "Diagram configuration"
-msgstr "Configurazione del diagramma"
+msgstr "Configuración del diagrama"
 
 #: src/BlockLayout/Datavis.php:17
 msgid "Data visualization"
-msgstr "Visualizzazione di dati"
+msgstr "Visualización de datos"
 
 #: src/BlockLayout/Datavis.php:36 src/DatasetType/Unknown.php:20
 #: src/DiagramType/Unknown.php:19
 msgid "[Unknown]"
-msgstr "[sconosciuto]"
+msgstr "[Desconocido]"
 
 #: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
-msgstr "Seleziona visualizzazione..."
+msgstr "Seleccionar visualización..."
 
 #: src/Api/Adapter/DatavisVisAdapter.php:55
 msgid "A site must have an ID"
-msgstr "Un sito deve avere un ID"
+msgstr "Un sitio debe tener una ID"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:58
 msgid "dataset_type must be a string"
-msgstr "dataset_type deve essere una stringa"
+msgstr ""
+"El tipo de conjunto de datos (dataset_type) debe almacenarse en una cadena o"
+" \"string\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:62
 msgid "dataset_data must be an array"
-msgstr "dataset_data deve essere un array"
+msgstr ""
+"Los datos del conjunto de datos (dataset_data) deben almacenarse en un "
+"vector o \"array\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:65
 msgid "diagram_data must be an array"
-msgstr "diagram_data deve essere un array"
+msgstr ""
+"Los datos del diagrama (diagram_data) deben almacenarse en un vector o "
+"\"array\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:106
 msgid "A visualization must have a site"
-msgstr "Una visualizzzione deve avere un sito"
+msgstr "Una visualización debe tener un sitio"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:109
 msgid "A visualization must have a dataset type"
-msgstr "Una visualizzazione deve avere un tipo di dataset"
+msgstr "Una visualización debe tener un tipo de conjunto de datos"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:112
 msgid "A visualization must have a title"
-msgstr "Una visualizzazione deve avere un titolo"
+msgstr "Una visualización debe tener un título"
 
 #: src/DatasetType/CountItemsProperties.php:14
 msgid "Count of items with properties"
-msgstr "Numero di contenuti con proprietà"
+msgstr "Recuento de fichas con propiedades "
 
 #: src/DatasetType/CountItemsProperties.php:19
 msgid "Visualize the count of items that have selected properties."
-msgstr "Visualizza il numero di contenuti che hanno la proprietà selezionata"
+msgstr ""
+"Visualizar el recuento de fichas que responden a las propiedades "
+"seleccionadas."
 
 #: src/DatasetType/CountItemsProperties.php:40
 msgid "Select properties…"
-msgstr "Seleziona proprietà..."
+msgstr "Seleccionar propiedades..."
 
 #: src/DatasetType/CountItemsPropertyValues.php:15
 msgid "Count of items with property values"
-msgstr "Numero di contenuti con valori per la proprietà"
+msgstr "Recuento de fichas con valores de la propiedad"
 
 #: src/DatasetType/CountItemsPropertyValues.php:20
 msgid ""
 "Visualize the count of items that have selected values of a selected "
 "property."
 msgstr ""
-"Visualizza il numero di contenuti che hanno il valore selezionato per la "
-"proprietà selezionata"
+"Visualizar el recuento de fichas que responden a los valores seleccionados "
+"de una propiedad escogida."
 
 #: src/DatasetType/CountItemsPropertyValues.php:34
 #: src/DatasetType/CountPropertyValues.php:34
 msgid "Value property"
-msgstr "Valore della proprietà"
+msgstr "Propiedad de valor"
 
 #: src/DatasetType/CountItemsPropertyValues.php:41
 #: src/DatasetType/CountPropertyValues.php:41
 msgid "Select one…"
-msgstr "Seleziona un'opzione..."
+msgstr "Seleccionar uno…"
 
 #: src/DatasetType/CountItemsPropertyValues.php:50
 msgid "Enter values, separated by new lines."
-msgstr "Inserisci valori, separati da un a capo."
+msgstr "Introducir los valores, separados en líneas independientes."
 
 #: src/DatasetType/CountItemsItemSets.php:14
 msgid "Count of items in item sets"
-msgstr "Numero dei contenuti nelle collezioni"
+msgstr "Recuento de fichas en conjuntos de fichas"
 
 #: src/DatasetType/CountItemsItemSets.php:19
 msgid "Visualize the count of items that are assigned to selected item sets."
 msgstr ""
-"Visualizza il numero di contenuti assegnati alle collezioni selezionate."
+"Visualizar el recuento de fichas asignadas a los conjuntos de fichas "
+"seleccionados."
 
 #: src/DatasetType/CountItemsItemSets.php:41
 msgid "Select item sets…"
-msgstr "Seleziona collezioni..."
+msgstr "Seleccionar conjuntos de fichas…"
 
 #: src/DatasetType/CountPropertyValues.php:15
 msgid "Count of property values"
-msgstr "Numero di valori della proprietà"
+msgstr "Recuento de valores de la propiedad"
 
 #: src/DatasetType/CountPropertyValues.php:20
 msgid "Visualize the count of values of a selected property."
-msgstr "Visualizza il numero di valori di una proprietà selezionata."
+msgstr "Visualizar el recuento de valores de una propiedad seleccionada."
 
 #: src/DatasetType/CountPropertyValues.php:49
 msgid "Minimum count"
-msgstr "Numero minimo"
+msgstr "Recuento mínimo"
 
 #: src/DatasetType/CountPropertyValues.php:53
 msgid "No minimum"
-msgstr "Nessun minimo"
+msgstr "Sin mínimo"
 
 #: src/DatasetType/CountPropertyValues.php:61
 msgid "Maximum count"
-msgstr "Numero massimo"
+msgstr "Recuento máximo"
 
 #: src/DatasetType/CountPropertyValues.php:65
 msgid "No maximum"
-msgstr "Nessun massimo"
+msgstr "Sin máximo"
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
-msgstr "Numero di contenuti con classi"
+msgstr "Recuento de fichas con clases"
 
 #: src/DatasetType/CountItemsClasses.php:19
 msgid ""
 "Visualize the count of items that are instances of selected resource "
 "classes."
 msgstr ""
-"Visualizza il numero di contenuti che sono istanze delle classi di risorse "
-"selezionate"
+"Visualizar el recuento de fichas que son instancias de las clases de "
+"recursos seleccionadas."
 
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
-msgstr "Seleziona classi..."
+msgstr "Seleccionar clases..."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
 "Configure the logical grouping of items that will be used for your dataset. "
 "No query means all items assigned to this site."
 msgstr ""
-"Configura il raggruppamento lofico che verrà utilizzato per il tuo dataset. "
-"Nessuna query corrisponde a tutti i contenuti assegnati a questo sito."
+"Configurar la agrupación lógica de fichas que será usada en el conjunto de "
+"datos. Una consulta vacía devolverá todas las fichas del sitio."
 
 #: src/Form/DatavisForm.php:120
 msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
 msgstr ""
-"Attenzione: perderai l'attuale configurazione del diagramma se cambi il tipo"
-" di diagramma."
+"Atención: se perderá la configuración actual del diagrama si se cambia su "
+"tipo."
 
 #: src/Form/DatavisForm.php:121
 msgid "Select diagram type"
-msgstr "Seleziona tipo di diagramma"
+msgstr "Seleccionar tipo de diagrama"
 
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
-msgstr "Grafico a barre"
+msgstr "Gráfico de columnas"
 
 #: src/DiagramType/ColumnChart.php:32 src/DiagramType/PieChart.php:28
 #: src/DiagramType/BarChart.php:32
 msgid "Width"
-msgstr "Larghezza"
+msgstr "Ancho"
 
 #: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
 #: src/DiagramType/BarChart.php:45
 msgid "Height"
-msgstr "Altezza"
+msgstr "Alto"
 
 #: src/DiagramType/ColumnChart.php:58 src/DiagramType/BarChart.php:58
 msgid "Margin top"
-msgstr "Margine in alto"
+msgstr "Margen superior"
 
 #: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
 msgid "Margin right"
-msgstr "Margine a destra"
+msgstr "Margen derecho"
 
 #: src/DiagramType/ColumnChart.php:84 src/DiagramType/BarChart.php:84
 msgid "Margin bottom"
-msgstr "Margine in basso"
+msgstr "Margen inferior"
 
 #: src/DiagramType/ColumnChart.php:97 src/DiagramType/BarChart.php:97
 msgid "Margin left"
-msgstr "Margine a sinistra"
+msgstr "Margen izquierdo"
 
 #: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
 msgid "Order"
-msgstr "Ordine"
+msgstr "Ordenar"
 
 #: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
 msgid "By value (ascending)"
-msgstr "Per valore (crescente)"
+msgstr "Por valor (ascendente)"
 
 #: src/DiagramType/ColumnChart.php:113 src/DiagramType/BarChart.php:113
 msgid "By value (descending)"
-msgstr "Per valore (decrescente)"
+msgstr "Por valor (descendente)"
 
 #: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
 msgid "By label (ascending)"
-msgstr "Per etichetta (crescente)"
+msgstr "Por etiqueta (ascendente)"
 
 #: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
 msgid "By label (descending)"
-msgstr "Per etichetta (decrescente)"
+msgstr "Por etiqueta (descendente)"
 
 #: src/DiagramType/PieChart.php:13
 msgid "Pie chart"
-msgstr "Grafico a torta"
+msgstr "Gráfico circular"
 
 #: src/DiagramType/PieChart.php:54
 msgid "Margin"
-msgstr "Margine"
+msgstr "Margen"
 
 #: src/DiagramType/BarChart.php:13
 msgid "Bar chart"
-msgstr "Grafico a barre"
+msgstr "Gráfico de barras"
 
 #: src/Controller/SiteAdmin/IndexController.php:39
 msgid "Configure your visualization below."
-msgstr "Configura la tua visualizzazione qui sotto."
+msgstr "Configurar la visualización a continuación."
 
 #: src/Controller/SiteAdmin/IndexController.php:80
 msgid "Successfully added your visualization."
-msgstr "Visualizzazione aggiunta con successo."
+msgstr "Visualización añadida con éxito."
 
 #: src/Controller/SiteAdmin/IndexController.php:125
 msgid "Successfully edited your visualization."
-msgstr "Visualizzazione modificata con successo."
+msgstr "Visualización editada con éxito."
 
 #: src/Controller/SiteAdmin/IndexController.php:159
 msgid "Successfully deleted your visualization."
-msgstr "Visualizzazione eliminata con successo."
+msgstr "Visualización eliminada con éxito."
 
 #: src/Controller/SiteAdmin/IndexController.php:193
 #, php-format
 msgid "Generating dataset. This may take a while. %s"
-msgstr ""
-"Generazione del dataset in corso. Ci potrebbe volere un po' di tempo. %s"
+msgstr "Generando conjunto de datos. Podría requerir cierto tiempo. %s"

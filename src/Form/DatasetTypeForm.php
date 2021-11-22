@@ -2,7 +2,6 @@
 namespace Datavis\Form;
 
 use Datavis\DatasetType\Manager;
-use Laminas\Form\Element;
 use Laminas\Form\Form;
 
 class DatasetTypeForm extends Form
