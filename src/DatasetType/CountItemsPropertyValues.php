@@ -69,7 +69,8 @@ class CountItemsPropertyValues extends AbstractDatasetType
         WHERE v.resource IN (:item_ids)
         AND v.property = :property_id
         AND v.value = :value
-        AND v.type = \'literal\'';
+        AND v.value IS NOT NULL
+        AND v.value != \'\'';
         $query = $em->createQuery($dql);
         $query->setParameter('item_ids', $this->getItemIds($services, $vis));
         $query->setParameter('property_id', $datasetData['property_id']);
