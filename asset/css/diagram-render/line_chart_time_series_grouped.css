@@ -9,6 +9,7 @@
     height: auto;
     text-align: center;
     opacity: 0.8;
+    color: #000;
 }
 
 .datavis-diagram.line_chart_time_series_grouped .tooltip table {
