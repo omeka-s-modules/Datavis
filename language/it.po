@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 14:12-0500\n"
+"POT-Creation-Date: 2022-02-22 12:48-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2021\n"
 "Language-Team: Italian (https://www.transifex.com/omeka/teams/14184/it/)\n"
@@ -92,7 +92,7 @@ msgstr "Modifica visualizzazione"
 
 #: view/datavis/site-admin/index/form.phtml:32
 msgid "View&hellip;"
-msgstr ""
+msgstr "Visualizza..."
 
 #: view/datavis/site-admin/index/form.phtml:36
 msgid "Diagram"
@@ -100,7 +100,7 @@ msgstr "Diagramma"
 
 #: view/datavis/site-admin/index/form.phtml:43
 msgid "Save and&hellip;"
-msgstr ""
+msgstr "Salva e..."
 
 #: view/datavis/site-admin/index/form.phtml:45
 msgid "Generate dataset"
@@ -122,16 +122,16 @@ msgstr "Configurazione del dataset"
 msgid "Diagram configuration"
 msgstr "Configurazione del diagramma"
 
-#: src/BlockLayout/Datavis.php:17
+#: src/BlockLayout/Datavis.php:16
 msgid "Data visualization"
 msgstr "Visualizzazione di dati"
 
-#: src/BlockLayout/Datavis.php:36 src/DatasetType/Unknown.php:20
+#: src/BlockLayout/Datavis.php:35 src/DatasetType/Unknown.php:20
 #: src/DiagramType/Unknown.php:19
 msgid "[Unknown]"
 msgstr "[sconosciuto]"
 
-#: src/BlockLayout/Datavis.php:50
+#: src/BlockLayout/Datavis.php:49
 msgid "Select visualization…"
 msgstr "Seleziona visualizzazione..."
 
@@ -262,7 +262,7 @@ msgstr ""
 "Configura il raggruppamento lofico che verrà utilizzato per il tuo dataset. "
 "Nessuna query corrisponde a tutti i contenuti assegnati a questo sito."
 
-#: src/Form/DatavisForm.php:120
+#: src/Form/DatavisForm.php:119
 msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
@@ -270,7 +270,7 @@ msgstr ""
 "Attenzione: perderai l'attuale configurazione del diagramma se cambi il tipo"
 " di diagramma."
 
-#: src/Form/DatavisForm.php:121
+#: src/Form/DatavisForm.php:120
 msgid "Select diagram type"
 msgstr "Seleziona tipo di diagramma"
 
