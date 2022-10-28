@@ -90,6 +90,7 @@ return [
                 'route' => 'admin/site/slug/datavis',
                 'action' => 'index',
                 'useRouteMatch' => true,
+                'resource' => 'Datavis\Controller\SiteAdmin\Index',
                 'pages' => [
                     [
                         'route' => 'admin/site/slug/datavis',
