@@ -11,6 +11,7 @@ return [
             'count_items_properties' => DatasetType\CountItemsProperties::class,
             'count_items_property_values' => DatasetType\CountItemsPropertyValues::class,
             'count_property_values' => DatasetType\CountPropertyValues::class,
+            'network_items' => DatasetType\NetworkItems::class,
         ],
     ],
     'datavis_diagram_types' => [
@@ -18,6 +19,7 @@ return [
             'column_chart' => DiagramType\ColumnChart::class,
             'bar_chart' => DiagramType\BarChart::class,
             'pie_chart' => DiagramType\PieChart::class,
+            'network_graph' => DiagramType\NetworkGraph::class,
         ],
     ],
     'translator' => [
