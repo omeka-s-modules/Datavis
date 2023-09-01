@@ -20,6 +20,7 @@ class Datavis extends AbstractBlockLayout
         SitePageRepresentation $page = null, SitePageBlockRepresentation $block = null
     ) {
         $vises = $view->api()->search('datavis_visualizations', [
+            'site_id' => $site->id(),
             'has_diagram_type' => true,
             'has_dataset' => true,
         ])->getContent();

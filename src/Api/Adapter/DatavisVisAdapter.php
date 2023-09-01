@@ -30,6 +30,12 @@ class DatavisVisAdapter extends AbstractEntityAdapter
 
     public function buildQuery(QueryBuilder $qb, array $query)
     {
+        if (isset($query['site_id']) && is_numeric($query['site_id'])) {
+            $qb->andWhere($qb->expr()->eq(
+                'omeka_root.site',
+                $this->createNamedParameter($qb, $query['site_id'])
+            ));
+        }
         if (isset($query['has_diagram_type'])) {
             if ($query['has_diagram_type']) {
                 $qb->andWhere($qb->expr()->isNotNull('omeka_root.diagramType'));

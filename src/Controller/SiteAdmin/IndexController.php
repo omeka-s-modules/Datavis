@@ -19,7 +19,11 @@ class IndexController extends AbstractActionController
     public function browseAction()
     {
         $this->setBrowseDefaults('created');
-        $response = $this->api()->search('datavis_visualizations', $this->params()->fromQuery());
+        $query = array_merge(
+            $this->params()->fromQuery(),
+            ['site_id' => $this->currentSite()->id()]
+        );
+        $response = $this->api()->search('datavis_visualizations', $query);
         $this->paginator($response->getTotalResults(), $this->params()->fromQuery('page'));
         $vises = $response->getContent();
 
