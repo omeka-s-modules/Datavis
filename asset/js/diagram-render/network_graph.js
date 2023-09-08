@@ -72,7 +72,7 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .selectAll()
         .data(links)
         .join("line")
-        .attr("stroke-width", 2);
+        .attr("stroke-width", 1.5);
 
     link.append("title")
         .text(d => d.link_label);
@@ -259,8 +259,8 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
             contentDiv.appendChild(closeDiv);
             // Position and display the tooltip.
             tooltip.style('display', 'inline-block')
-                .style('left', `${e.pageX + 2}px`)
-                .style('top', `${e.pageY + 2}px`)
+                .style('left', `${e.pageX + 6}px`)
+                .style('top', `${e.pageY + 6}px`)
                 .html(contentDiv.outerHTML);
     }
 
