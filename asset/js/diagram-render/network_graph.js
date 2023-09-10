@@ -60,11 +60,6 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto;");
 
-    // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
-
     // Add a line for each link.
     const link = svg.append("g")
         .attr("stroke", "#999")
@@ -171,12 +166,17 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     const zoom = d3.zoom().on("zoom", zoomed);
     svg.call(zoom);
 
+    // Add the tooltip div.
+    const tooltipDiv = document.createElement('div');
+    tooltipDiv.classList.add('tooltip');
+    div.appendChild(tooltipDiv);
+
     // Handle closing the tooltip.
-    document.addEventListener('click', (event) => {
+    div.addEventListener('click', (event) => {
         const closeDiv = event.target.closest('.close-tooltip');
         if (!closeDiv) return;
-        tooltip.style('display', 'none');
-    });
+        tooltipDiv.style.display = 'none';
+    }, true);
 
     // Handle a node click.
     function handleNodeClick(e, d) {
@@ -258,10 +258,10 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
             closeDiv.style.cursor = 'default';
             contentDiv.appendChild(closeDiv);
             // Position and display the tooltip.
-            tooltip.style('display', 'inline-block')
-                .style('left', `${e.pageX + 6}px`)
-                .style('top', `${e.pageY + 6}px`)
-                .html(contentDiv.outerHTML);
+            tooltipDiv.style.display = 'inline-block';
+            tooltipDiv.style.left = `${e.pageX + 6}px`;
+            tooltipDiv.style.top = `${e.pageY + 6}px`;
+            tooltipDiv.innerHTML = contentDiv.outerHTML;
     }
 
 });
