@@ -16,7 +16,9 @@ class Datavis extends AbstractHelper
     public function getDatasetTypeNames()
     {
         $datasetTypes = $this->services->get('Datavis\DatasetTypeManager');
-        return $datasetTypes->getRegisteredNames();
+        $datasetTypeNames = $datasetTypes->getRegisteredNames();
+        sort($datasetTypeNames);
+        return $datasetTypeNames;
     }
 
     public function getDatasetType($name)
