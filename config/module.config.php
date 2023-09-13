@@ -11,7 +11,7 @@ return [
             'count_items_properties' => DatasetType\CountItemsProperties::class,
             'count_items_property_values' => DatasetType\CountItemsPropertyValues::class,
             'count_property_values' => DatasetType\CountPropertyValues::class,
-            'network_items' => DatasetType\NetworkItems::class,
+            'relationship_items' => DatasetType\RelationshipItems::class,
         ],
     ],
     'datavis_diagram_types' => [
