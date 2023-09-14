@@ -22,7 +22,7 @@ class RelationshipItems extends AbstractDatasetType
 
     public function getDiagramTypeNames() : array
     {
-        return ['network_graph'];
+        return ['network_graph', 'arc'];
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
