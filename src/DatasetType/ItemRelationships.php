@@ -8,16 +8,16 @@ use Laminas\ServiceManager\ServiceManager;
 use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Form\Element\ResourceClassSelect;
 
-class RelationshipItems extends AbstractDatasetType
+class ItemRelationships extends AbstractDatasetType
 {
     public function getLabel() : string
     {
-        return 'Relationships between items'; // @translate
+        return 'Item relationships'; // @translate
     }
 
     public function getDescription() : ?string
     {
-        return 'Visualize the relationships between items via resource values.'; // @translate
+        return 'Visualize the relationships between items via their resource values.'; // @translate
     }
 
     public function getDiagramTypeNames() : array
