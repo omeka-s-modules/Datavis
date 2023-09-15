@@ -3,6 +3,7 @@ namespace Datavis\DatasetType;
 
 use Datavis\Api\Representation\DatavisVisRepresentation;
 use Doctrine\Common\Collections\Criteria;
+use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
 use Laminas\ServiceManager\ServiceManager;
 use Omeka\Api\Representation\SiteRepresentation;
@@ -27,6 +28,14 @@ class ItemRelationships extends AbstractDatasetType
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
     {
+        $fieldset->add([
+            'type' => Element\Checkbox::class,
+            'name' => 'exclude_unlinked',
+            'options' => [
+                'label' => 'Exclude items without relationships', // @translate
+            ],
+            'attributes' => [],
+        ]);
     }
 
     public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
@@ -36,10 +45,9 @@ class ItemRelationships extends AbstractDatasetType
         $urlHelper = $services->get('ViewHelperManager')->get('url');
         $hyperlinkHelper = $services->get('ViewHelperManager')->get('hyperlink');
 
-        $dataset = [
-            'nodes' => [],
-            'links' => [],
-        ];
+        $nodes = [];
+        $links = [];
+        $linkedIds = [];
 
         $itemIds = $this->getItemIds($services, $vis);
         foreach ($itemIds as $itemId) {
@@ -54,7 +62,7 @@ class ItemRelationships extends AbstractDatasetType
                 ['site-slug' => $vis->site()->slug(), 'controller' => 'item', 'id' => $item->id()],
                 ['force_canonical' => true]
             );
-            $dataset['nodes'][] = [
+            $nodes[$item->id()] = [
                 'id' => $item->id(),
                 'label' => $item->displayTitle(),
                 'comment' => nl2br($item->displayDescription()),
@@ -85,7 +93,7 @@ class ItemRelationships extends AbstractDatasetType
                     ['site-slug' => $vis->site()->slug(), 'controller' => 'item', 'id' => $valueResource->id()],
                     ['force_canonical' => true]
                 );
-                $dataset['links'][] = [
+                $links[] = [
                     'source' => $item->id(),
                     'source_label' => $item->displayTitle(),
                     'source_url' => $sourceUrl,
@@ -95,9 +103,25 @@ class ItemRelationships extends AbstractDatasetType
                     'link_id' => $property->id(),
                     'link_label' => $propertyLabel,
                 ];
+                $linkedIds[] = $item->id();
+                $linkedIds[] = $valueResource->id();
             }
         }
 
-        return $dataset;
+        // Exclude items without relationships if configured to do so.
+        $excludeUnlinked = $vis->datasetData()['exclude_unlinked'] ?? false;
+        if ($excludeUnlinked) {
+            $allIds = array_keys($nodes);
+            $linkedIds = array_unique($linkedIds);
+            $unlinkedIds = array_diff($allIds, $linkedIds);
+            foreach ($unlinkedIds as $unlinkedId) {
+                unset($nodes[$unlinkedId]);
+            }
+        }
+
+        return [
+            'nodes' => array_values($nodes),
+            'links' => $links,
+        ];
     }
 }
