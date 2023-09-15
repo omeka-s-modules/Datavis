@@ -1,0 +1,16 @@
+.datavis-diagram.arc_vertical .tooltip {
+    display: none;
+    position: absolute;
+    padding: 8px;
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid gray;
+    font-size: 14px;
+    line-height: 20px;
+    min-width: 80px;
+    max-width: 700px;
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: left;
+    opacity: 0.9;
+    color: #000;
+}

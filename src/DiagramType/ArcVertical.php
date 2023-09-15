@@ -109,7 +109,7 @@ class ArcVertical implements DiagramTypeInterface
     public function prepareRender(PhpRenderer $view) : void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
-        $view->headScript()->appendFile($view->assetUrl('js/diagram-render/arc.js', 'Datavis'));
-        $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/arc.css', 'Datavis'));
+        $view->headScript()->appendFile($view->assetUrl('js/diagram-render/arc_vertical.js', 'Datavis'));
+        $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/arc_vertical.css', 'Datavis'));
     }
 }
