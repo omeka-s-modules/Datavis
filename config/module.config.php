@@ -20,7 +20,7 @@ return [
             'bar_chart' => DiagramType\BarChart::class,
             'pie_chart' => DiagramType\PieChart::class,
             'network_graph' => DiagramType\NetworkGraph::class,
-            'arc' => DiagramType\Arc::class,
+            'arc_vertical' => DiagramType\ArcVertical::class,
         ],
     ],
     'translator' => [

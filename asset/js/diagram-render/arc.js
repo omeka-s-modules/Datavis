@@ -27,7 +27,7 @@
  *
  * @see https://observablehq.com/@d3/force-directed-graph/2
  */
-Datavis.addDiagramType('arc', (div, dataset, datasetData, diagramData, blockData) => {
+Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, blockData) => {
 
     const links = dataset.links;
     const nodes = dataset.nodes;
@@ -38,13 +38,18 @@ Datavis.addDiagramType('arc', (div, dataset, datasetData, diagramData, blockData
 
     // Specify the chart’s dimensions.
     const width = diagramData.width ? parseInt(diagramData.width) : 800;
-    const step = diagramData.step ? parseInt(diagramData.step) : 14;
     const marginTop = diagramData.margin_top ? parseInt(diagramData.margin_top) : 30;
-    const marginRight = diagramData.margin_right ? parseInt(diagramData.margin_right) : 30;
     const marginBottom = diagramData.margin_bottom ? parseInt(diagramData.margin_bottom) : 30;
     const marginLeft = diagramData.margin_left ? parseInt(diagramData.margin_left) : 200;
+    const order = diagramData.order ? diagramData.order : 'by_group';
+    const step = diagramData.step ? parseInt(diagramData.step) : 14;
     const height = (nodes.length - 1) * step + marginTop + marginBottom;
-    const y = d3.scalePoint(orders.get('by_group'), [marginTop, height - marginBottom]);
+
+    // The function to get the current position.
+    const y = d3.scalePoint(orders.get(order), [marginTop, height - marginBottom]);
+
+    // The current position, indexed by id. Will be interpolated.
+    const Y = new Map(nodes.map(d => [d.id, y(d.id)]));
 
     // A color scale for the nodes and links.
     const color = d3.scaleOrdinal()
@@ -62,9 +67,6 @@ Datavis.addDiagramType('arc', (div, dataset, datasetData, diagramData, blockData
         .attr("viewBox", [0, 0, width, height])
         .attr("style", "max-width: 100%; height: auto;");
 
-    // The current position, indexed by id. Will be interpolated.
-    const Y = new Map(nodes.map(d => [d.id, y(d.id)]));
-
     // Add an arc for each link.
     function arc(d) {
         const y1 = Y.get(d.source);
@@ -79,10 +81,7 @@ Datavis.addDiagramType('arc', (div, dataset, datasetData, diagramData, blockData
         .selectAll("path")
             .data(links)
             .join("path")
-                .attr("stroke", d => {
-                    console.log(d);
-                    return color(groups.get(d.source))
-                })
+                .attr("stroke", d => color(groups.get(d.source)))
                 .attr("d", arc);
 
     // Add a text label and a dot for each node.

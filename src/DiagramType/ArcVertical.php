@@ -6,20 +6,20 @@ use Laminas\Form\Fieldset;
 use Laminas\View\Renderer\PhpRenderer;
 use Omeka\Api\Representation\SiteRepresentation;
 
-class Arc implements DiagramTypeInterface
+class ArcVertical implements DiagramTypeInterface
 {
     public function getLabel() : string
     {
-        return 'Arc'; // @translate
+        return 'Arc (vertical)'; // @translate
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
     {
         $defaults = [
             'width' => 800,
+            'order' => 'by_group',
             'step' => 14,
             'margin_top' => 30,
-            'margin_right' => 30,
             'margin_bottom' => 30,
             'margin_left' => 200,
         ];
@@ -39,19 +39,6 @@ class Arc implements DiagramTypeInterface
         ]);
         $fieldset->add([
             'type' => Element\Number::class,
-            'name' => 'step',
-            'options' => [
-                'label' => 'Step', // @translate
-            ],
-            'attributes' => [
-                'min' => 0,
-                'value' => $defaults['step'],
-                'placeholder' => $defaults['step'],
-                'required' => true,
-            ],
-        ]);
-        $fieldset->add([
-            'type' => Element\Number::class,
             'name' => 'margin_top',
             'options' => [
                 'label' => 'Margin top', // @translate
@@ -60,19 +47,6 @@ class Arc implements DiagramTypeInterface
                 'min' => 0,
                 'value' => $defaults['margin_top'],
                 'placeholder' => $defaults['margin_top'],
-                'required' => true,
-            ],
-        ]);
-        $fieldset->add([
-            'type' => Element\Number::class,
-            'name' => 'margin_right',
-            'options' => [
-                'label' => 'Margin right', // @translate
-            ],
-            'attributes' => [
-                'min' => 0,
-                'value' => $defaults['margin_right'],
-                'placeholder' => $defaults['margin_right'],
                 'required' => true,
             ],
         ]);
@@ -99,6 +73,34 @@ class Arc implements DiagramTypeInterface
                 'min' => 0,
                 'value' => $defaults['margin_left'],
                 'placeholder' => $defaults['margin_left'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Select::class,
+            'name' => 'order',
+            'options' => [
+                'label' => 'Order',
+                'value_options' => [
+                    'by_group' => 'By group', // @translate
+                    'by_label' => 'By label', // @translate
+                ],
+                'attributes' => [
+                    'value' => $defaults['order'],
+                    'required' => true,
+                ],
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Number::class,
+            'name' => 'step',
+            'options' => [
+                'label' => 'Step', // @translate
+            ],
+            'attributes' => [
+                'min' => 0,
+                'value' => $defaults['step'],
+                'placeholder' => $defaults['step'],
                 'required' => true,
             ],
         ]);
