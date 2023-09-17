@@ -85,10 +85,10 @@ class ArcVertical implements DiagramTypeInterface
                     'by_group' => 'By group', // @translate
                     'by_label' => 'By label', // @translate
                 ],
-                'attributes' => [
-                    'value' => $defaults['order'],
-                    'required' => true,
-                ],
+            ],
+            'attributes' => [
+                'value' => $defaults['order'],
+                'required' => true,
             ],
         ]);
         $fieldset->add([
