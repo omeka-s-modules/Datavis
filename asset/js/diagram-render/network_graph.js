@@ -42,12 +42,12 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
 
     // The force simulation mutates nodes and links, so create a copy so that
     // re-evaluating this cell produces the same result.
-    const links = dataset.links.map(d => ({...d}));
-    const nodes = dataset.nodes.map(d => ({...d}));
+    const datasetLinks = dataset.links.map(link => ({...link}));
+    const datasetNodes = dataset.nodes.map(node => ({...node}));
 
     // Create a simulation with several forces.
-    const simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id))
+    const simulation = d3.forceSimulation(datasetNodes)
+        .force("link", d3.forceLink(datasetLinks).id(node => node.id))
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(width / 2, height / 2))
         .on("tick", ticked);
@@ -61,50 +61,50 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .attr("style", "max-width: 100%; height: auto;");
 
     // Add a line for each link.
-    const link = svg.append("g")
+    const links = svg.append("g")
         .attr("stroke", "#999")
         .attr("stroke-opacity", 0.5)
         .selectAll()
-        .data(links)
+        .data(datasetLinks)
         .join("line")
         .attr("stroke-width", 1.5);
 
-    link.append("title")
+    links.append("title")
         .text(d => d.link_label);
 
     // Add a circle for each node.
-    const node = svg.append("g")
+    const nodes = svg.append("g")
         .attr("stroke", "#fff")
         .attr("stroke-width", 1.5)
         .selectAll()
-        .data(nodes)
+        .data(datasetNodes)
         .join("circle")
         .attr("r", 10)
-        .attr("fill", d => color(d.group_id))
-        .on('click', (e, d) => handleNodeClick(e, d));
+        .attr("fill", node => color(node.group_id))
+        .on('click', (event, node) => handleNodeClick(event, node));
 
     // Add a drag behavior.
-    node.call(d3.drag()
+    nodes.call(d3.drag()
         .on("start", dragStarted)
         .on("drag", dragged)
         .on("end", dragEnded));
 
     // Set the position attributes of links and nodes each time the simulation ticks.
     function ticked() {
-        link.attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y);
-        node.attr("cx", d => d.x)
-            .attr("cy", d => d.y);
+        links.attr("x1", link => link.source.x)
+            .attr("y1", link => link.source.y)
+            .attr("x2", link => link.target.x)
+            .attr("y2", link => link.target.y);
+        nodes.attr("cx", node => node.x)
+            .attr("cy", node => node.y);
 
         // Auto-zoom with the expanding graph if there's no user interaction
         // (i.e. zoom and pan). We do this by changing the zoom as the force
         // expands beyond the bounds of the svg while cooling down.
         // @see https://stackoverflow.com/a/49993035
         if (!userInteracted) {
-            const xExtent = d3.extent(node.data(), function(d) {return d.x;});
-            const yExtent = d3.extent(node.data(), function(d) {return d.y;});
+            const xExtent = d3.extent(nodes.data(), node => node.x);
+            const yExtent = d3.extent(nodes.data(), node => node.y);
             const xScale = width / (xExtent[1] - xExtent[0]);
             const yScale = height / (yExtent[1] - yExtent[0]);
             const minScale = Math.min(xScale, yScale);
@@ -140,17 +140,17 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     }
 
     // Get all linked data of the passed node.
-    function getLinked(d) {
-        return dataset.links.reduce((linked, l) => {
-            if (l.target === d.id) {
-                linked.links.push(l);
-                linked.nodes.push(l.source);
-            } else if (l.source === d.id) {
-                linked.links.unshift(l);
-                linked.nodes.push(l.target);
+    function getLinked(node) {
+        return dataset.links.reduce((linked, link) => {
+            if (link.target === node.id) {
+                linked.links.push(link);
+                linked.nodes.push(link.source);
+            } else if (link.source === node.id) {
+                linked.links.unshift(link);
+                linked.nodes.push(link.target);
             }
             return linked;
-        }, {links: [], nodes: [d.id]});
+        }, {links: [], nodes: [node.id]});
     }
 
     // Enable zoom and pan.
@@ -160,8 +160,8 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         if (!userInteracted && event.sourceEvent && ['MouseEvent', 'WheelEvent'].includes(event.sourceEvent.constructor.name)) {
             userInteracted = true;
         }
-        link.attr("transform", event.transform);
-        node.attr("transform", event.transform);
+        links.attr("transform", event.transform);
+        nodes.attr("transform", event.transform);
     }
     const zoom = d3.zoom().on("zoom", zoomed);
     svg.call(zoom);
@@ -179,13 +179,13 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     }, true);
 
     // Handle a node click.
-    function handleNodeClick(e, d) {
+    function handleNodeClick(event, node) {
             // Highlight this node and linked nodes.
-            const linked = getLinked(d);
-            node.attr('stroke', d => {
+            const linked = getLinked(node);
+            nodes.attr('stroke', d => {
                 return linked.nodes.includes(d.id) ? '#000' : '#fff';
             });
-            node.attr('stroke-width', d => {
+            nodes.attr('stroke-width', d => {
                 return linked.nodes.includes(d.id) ? 2.5 : 1.5;
             });
             // Build the tooltip content.
@@ -196,53 +196,53 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
             const linksTable = document.createElement('table');
             const closeDiv = document.createElement('div');
             // Add the label div.
-            if (d.label && d.url) {
+            if (node.label && node.url) {
                 const a = document.createElement('a');
-                a.appendChild(document.createTextNode(d.label));
-                a.title = d.label;
-                a.href = d.url;
+                a.appendChild(document.createTextNode(node.label));
+                a.title = node.label;
+                a.href = node.url;
                 a.target = '_blank';
                 labelDiv.appendChild(a);
                 contentDiv.appendChild(labelDiv);
-            } else if (d.label)  {
-                labelDiv.appendChild(document.createTextNode(d.label));
+            } else if (node.label)  {
+                labelDiv.appendChild(document.createTextNode(node.label));
                 contentDiv.appendChild(labelDiv);
             }
             // Add the group div.
-            if (d.group_id && d.group_label) {
-                groupDiv.appendChild(document.createTextNode(d.group_label));
-                groupDiv.style.color = color(d.group_id);
+            if (node.group_id && node.group_label) {
+                groupDiv.appendChild(document.createTextNode(node.group_label));
+                groupDiv.style.color = color(node.group_id);
                 contentDiv.appendChild(groupDiv);
             }
             // Add the comment div.
-            if (d.comment) {
-                commentDiv.innerHTML = d.comment;
+            if (node.comment) {
+                commentDiv.innerHTML = node.comment;
                 contentDiv.appendChild(commentDiv);
             }
             // Add the links table.
             if (linked.links.length) {
-                linked.links.forEach(l => {
+                linked.links.forEach(link => {
                     const linkTr = document.createElement('tr');
                     // Add source node cell.
                     const sourceTd = document.createElement('td');
                     const sourceLink = document.createElement('a');
-                    sourceLink.title = l.source_label;
-                    sourceLink.href = l.source_url;
+                    sourceLink.title = link.source_label;
+                    sourceLink.href = link.source_url;
                     sourceLink.target = '_blank';
-                    sourceLink.appendChild(document.createTextNode(l.source_label));
+                    sourceLink.appendChild(document.createTextNode(link.source_label));
                     sourceTd.appendChild(sourceLink);
                     linkTr.appendChild(sourceTd);
                     // Add link cell.
                     const linkTd = document.createElement('td');
-                    linkTd.appendChild(document.createTextNode(l.link_label));
+                    linkTd.appendChild(document.createTextNode(link.link_label));
                     linkTr.appendChild(linkTd);
                     // Add target node cell.
                     const targetTd = document.createElement('td');
                     const targetLink = document.createElement('a');
-                    targetLink.title = l.target_label;
-                    targetLink.href = l.target_url;
+                    targetLink.title = link.target_label;
+                    targetLink.href = link.target_url;
                     targetLink.target = '_blank';
-                    targetLink.appendChild(document.createTextNode(l.target_label));
+                    targetLink.appendChild(document.createTextNode(link.target_label));
                     targetTd.appendChild(targetLink);
                     linkTr.appendChild(targetTd);
                     linksTable.appendChild(linkTr);
@@ -259,8 +259,8 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
             contentDiv.appendChild(closeDiv);
             // Position and display the tooltip.
             tooltipDiv.style.display = 'inline-block';
-            tooltipDiv.style.left = `${e.pageX + 6}px`;
-            tooltipDiv.style.top = `${e.pageY + 6}px`;
+            tooltipDiv.style.left = `${event.pageX + 6}px`;
+            tooltipDiv.style.top = `${event.pageY + 6}px`;
             tooltipDiv.innerHTML = contentDiv.outerHTML;
     }
 

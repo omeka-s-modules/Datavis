@@ -29,12 +29,12 @@
  */
 Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, blockData) => {
 
-    const links = dataset.links;
-    const nodes = dataset.nodes;
+    const datasetLinks = dataset.links;
+    const datasetNodes = dataset.nodes;
 
     const orders = new Map([]);
-    orders.set('by_label', nodes.sort((a, b) => a.label.localeCompare(b.label)).map(d => d.id));
-    orders.set('by_group', nodes.sort((a, b) => a.group_id - b.group_id).map(d => d.id));
+    orders.set('by_label', datasetNodes.sort((a, b) => a.label.localeCompare(b.label)).map(d => d.id));
+    orders.set('by_group', datasetNodes.sort((a, b) => a.group_id - b.group_id).map(d => d.id));
 
     // Specify the chart’s dimensions.
     const width = diagramData.width ? parseInt(diagramData.width) : 800;
@@ -43,21 +43,21 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const marginLeft = diagramData.margin_left ? parseInt(diagramData.margin_left) : 200;
     const order = diagramData.order ? diagramData.order : 'by_group';
     const step = diagramData.step ? parseInt(diagramData.step) : 14;
-    const height = (nodes.length - 1) * step + marginTop + marginBottom;
+    const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
 
     // The function to get the current position.
     const y = d3.scalePoint(orders.get(order), [marginTop, height - marginBottom]);
 
     // The current position, indexed by id. Will be interpolated.
-    const Y = new Map(nodes.map(d => [d.id, y(d.id)]));
+    const Y = new Map(datasetNodes.map(node => [node.id, y(node.id)]));
 
     // A color scale for the nodes and links.
     const color = d3.scaleOrdinal()
-        .domain(nodes.map(d => d.group_id).sort(d3.ascending))
+        .domain(datasetNodes.map(node => node.group_id).sort(d3.ascending))
         .range(d3.schemeCategory10)
         .unknown("#aaa");
 
-    const groups = new Map(nodes.map(d => [d.id, d.group_id]));
+    const groups = new Map(datasetNodes.map(node => [node.id, node.group_id]));
 
     // Create the SVG container.
     const svg = d3.select(div)
@@ -68,9 +68,9 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("style", "max-width: 100%; height: auto;");
 
     // Add an arc for each link.
-    function arc(d) {
-        const y1 = Y.get(d.source);
-        const y2 = Y.get(d.target);
+    function arc(link) {
+        const y1 = Y.get(link.source);
+        const y2 = Y.get(link.target);
         const r = Math.abs(y2 - y1) / 2;
         return `M${marginLeft},${y1}A${r},${r} 0,0,${y1 < y2 ? 1 : 0} ${marginLeft},${y2}`;
     }
@@ -79,9 +79,9 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("stroke-opacity", 0.6)
         .attr("stroke-width", 1.5)
         .selectAll("path")
-            .data(links)
+            .data(datasetLinks)
             .join("path")
-                .attr("stroke", d => color(groups.get(d.source)))
+                .attr("stroke", link => color(groups.get(link.source)))
                 .attr("d", arc);
 
     // Add a text label and a dot for each node.
@@ -90,17 +90,17 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("font-size", 10)
         .attr("text-anchor", "end")
         .selectAll("g")
-            .data(nodes)
+            .data(datasetNodes)
             .join("g")
-                .attr("transform", d => `translate(${marginLeft},${Y.get(d.id)})`)
+                .attr("transform", node => `translate(${marginLeft},${Y.get(node.id)})`)
                 .call(g => g.append("text")
                     .attr("x", -10)
                     .attr("dy", "0.35em")
-                    .attr("fill", d => d3.lab(color(d.group_id)).darker(2))
-                    .text(d => d.label))
+                    .attr("fill", node => d3.lab(color(node.group_id)).darker(2))
+                    .text(node => node.label))
                 .call(g => g.append("circle")
                     .attr("r", 4)
-                    .attr("fill", d => color(d.group_id)));
+                    .attr("fill", node => color(node.group_id)));
 
     // Add invisible rects that update the class of the elements on mouseover.
     label.append("rect")
@@ -111,13 +111,15 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("y", -step / 2)
         .attr("fill", "none")
         .attr("pointer-events", "all")
-        .on("pointerenter", (event, d) => {
+        .on("pointerenter", (event, node) => {
             svg.classed("hover", true);
-            label.classed("primary", n => n === d);
-            label.classed("secondary", n => links.some(({source, target}) => (
-                n.id === source && d.id == target || n.id === target && d.id === source
-            )));
-            path.classed("primary", l => l.source === d.id || l.target === d.id).filter(".primary").raise();
+            label.classed("primary", n => n === node);
+            label.classed("secondary", n => {
+                return datasetLinks.some(l => {
+                    return (n.id === l.source && node.id == l.target || node.id === l.target && node.id === l.source)
+                });
+            });
+            path.classed("primary", l => l.source === node.id || l.target === node.id).filter(".primary").raise();
         })
         .on("pointerout", () => {
             svg.classed("hover", false);
