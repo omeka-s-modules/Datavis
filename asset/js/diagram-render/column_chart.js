@@ -67,9 +67,7 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
         .call(d3.axisLeft(y));
 
     // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
+    const tooltip = Datavis.getTooltip(div);
 
     // Add the bars.
     svg.selectAll('bar')

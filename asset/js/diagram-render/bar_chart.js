@@ -66,9 +66,7 @@ Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blo
     const labels = yGroup.selectAll('text').data(dataset);
 
     // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
+    const tooltip = Datavis.getTooltip(div);
 
     // Add the bars.
     svg.selectAll('bar')

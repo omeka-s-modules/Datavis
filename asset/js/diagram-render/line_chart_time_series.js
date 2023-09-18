@@ -141,9 +141,7 @@ Datavis.addDiagramType('line_chart_time_series', (div, dataset, datasetData, dia
             .style('fill', 'none')
             .style('display', 'none');
     // Add the tooltip div.
-    const tooltip = d3.select(div)
-        .append('div')
-        .attr('class', 'tooltip');
+    const tooltip = Datavis.getTooltip(div);
 
     // Add the overlay rectangle that enables mouse position.
     const bisect = d3.bisector(d => d.datetime).left;
