@@ -93,10 +93,10 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
                 return linked.nodes.includes(d.id) ? 2.5 : 1.5;
             });
             // Position and display the tooltip.
-            tooltip.style.display = 'inline-block';
-            tooltip.style.left = `${event.pageX + 6}px`;
-            tooltip.style.top = `${event.pageY + 6}px`;
-            tooltip.innerHTML = contentDiv.outerHTML;
+            tooltip.style('display', 'inline-block');
+            tooltip.style('left', `${event.pageX + 6}px`);
+            tooltip.style('top', `${event.pageY + 6}px`);
+            tooltip.html(contentDiv.outerHTML);
         });
 
     // Add a drag behavior.

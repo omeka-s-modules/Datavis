@@ -54,14 +54,14 @@ const Datavis = {
      */
     getTooltip: div => {
         // Add the tooltip div.
-        const tooltip = document.createElement('div');
-        tooltip.classList.add('tooltip');
-        div.appendChild(tooltip);
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
         // Handle closing the tooltip.
         div.addEventListener('click', (event) => {
             const closeDiv = event.target.closest('.close-tooltip');
             if (!closeDiv) return;
-            tooltip.style.display = 'none';
+            tooltip.style('display', 'none');
         }, true);
         return tooltip;
     },
