@@ -51,6 +51,7 @@ class NetworkGraph implements DiagramTypeInterface
     public function prepareRender(PhpRenderer $view) : void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
+        $view->headScript()->appendFile($view->assetUrl('js/diagram-render/item_relationships.js', 'Datavis'));
         $view->headScript()->appendFile($view->assetUrl('js/diagram-render/network_graph.js', 'Datavis'));
         $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/network_graph.css', 'Datavis'));
     }

@@ -44,6 +44,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const order = diagramData.order ? diagramData.order : 'by_group';
     const step = diagramData.step ? parseInt(diagramData.step) : 14;
     const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
+    const tooltip = Datavis.getTooltip(div);
 
     // The function to get the current position.
     const y = d3.scalePoint(orders.get(order), [marginTop, height - marginBottom]);
@@ -126,6 +127,15 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
             label.classed("primary", false);
             label.classed("secondary", false);
             path.classed("primary", false).order();
+        })
+        .on('click', (event, node) => {
+            const linked = Datavis.ItemRelationships.getLinked(node, dataset.links);
+            const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
+            // Position and display the tooltip.
+            tooltip.style.display = 'inline-block';
+            tooltip.style.left = `${event.pageX + 6}px`;
+            tooltip.style.top = `${event.pageY + 6}px`;
+            tooltip.innerHTML = contentDiv.outerHTML;
         });
 
     // Add styles for the hover interaction.

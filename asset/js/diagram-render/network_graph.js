@@ -30,6 +30,7 @@
 Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData, blockData) => {
 
     let userInteracted = false;
+    const tooltip = Datavis.getTooltip(div);
 
     // Set the dimensions of the diagram.
     const width = diagramData.width ? parseInt(diagramData.width) : 700;
@@ -81,7 +82,22 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .join("circle")
         .attr("r", 10)
         .attr("fill", node => color(node.group_id))
-        .on('click', (event, node) => handleNodeClick(event, node));
+        .on('click', (event, node) => {
+            const linked = Datavis.ItemRelationships.getLinked(node, dataset.links);
+            const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
+            // Highlight this node and linked nodes.
+            nodes.attr('stroke', d => {
+                return linked.nodes.includes(d.id) ? '#000' : '#fff';
+            });
+            nodes.attr('stroke-width', d => {
+                return linked.nodes.includes(d.id) ? 2.5 : 1.5;
+            });
+            // Position and display the tooltip.
+            tooltip.style.display = 'inline-block';
+            tooltip.style.left = `${event.pageX + 6}px`;
+            tooltip.style.top = `${event.pageY + 6}px`;
+            tooltip.innerHTML = contentDiv.outerHTML;
+        });
 
     // Add a drag behavior.
     nodes.call(d3.drag()
@@ -139,20 +155,6 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         event.subject.fy = null;
     }
 
-    // Get all linked data of the passed node.
-    function getLinked(node) {
-        return dataset.links.reduce((linked, link) => {
-            if (link.target === node.id) {
-                linked.links.push(link);
-                linked.nodes.push(link.source);
-            } else if (link.source === node.id) {
-                linked.links.unshift(link);
-                linked.nodes.push(link.target);
-            }
-            return linked;
-        }, {links: [], nodes: [node.id]});
-    }
-
     // Enable zoom and pan.
     function zoomed(event) {
         // Detect user interaction. We need this to determine whether we need to
@@ -165,103 +167,4 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     }
     const zoom = d3.zoom().on("zoom", zoomed);
     svg.call(zoom);
-
-    // Add the tooltip div.
-    const tooltipDiv = document.createElement('div');
-    tooltipDiv.classList.add('tooltip');
-    div.appendChild(tooltipDiv);
-
-    // Handle closing the tooltip.
-    div.addEventListener('click', (event) => {
-        const closeDiv = event.target.closest('.close-tooltip');
-        if (!closeDiv) return;
-        tooltipDiv.style.display = 'none';
-    }, true);
-
-    // Handle a node click.
-    function handleNodeClick(event, node) {
-            // Highlight this node and linked nodes.
-            const linked = getLinked(node);
-            nodes.attr('stroke', d => {
-                return linked.nodes.includes(d.id) ? '#000' : '#fff';
-            });
-            nodes.attr('stroke-width', d => {
-                return linked.nodes.includes(d.id) ? 2.5 : 1.5;
-            });
-            // Build the tooltip content.
-            const contentDiv = document.createElement('div');
-            const labelDiv = document.createElement('div');
-            const groupDiv = document.createElement('div');
-            const commentDiv = document.createElement('div');
-            const linksTable = document.createElement('table');
-            const closeDiv = document.createElement('div');
-            // Add the label div.
-            if (node.label && node.url) {
-                const a = document.createElement('a');
-                a.appendChild(document.createTextNode(node.label));
-                a.title = node.label;
-                a.href = node.url;
-                a.target = '_blank';
-                labelDiv.appendChild(a);
-                contentDiv.appendChild(labelDiv);
-            } else if (node.label)  {
-                labelDiv.appendChild(document.createTextNode(node.label));
-                contentDiv.appendChild(labelDiv);
-            }
-            // Add the group div.
-            if (node.group_id && node.group_label) {
-                groupDiv.appendChild(document.createTextNode(node.group_label));
-                groupDiv.style.color = color(node.group_id);
-                contentDiv.appendChild(groupDiv);
-            }
-            // Add the comment div.
-            if (node.comment) {
-                commentDiv.innerHTML = node.comment;
-                contentDiv.appendChild(commentDiv);
-            }
-            // Add the links table.
-            if (linked.links.length) {
-                linked.links.forEach(link => {
-                    const linkTr = document.createElement('tr');
-                    // Add source node cell.
-                    const sourceTd = document.createElement('td');
-                    const sourceLink = document.createElement('a');
-                    sourceLink.title = link.source_label;
-                    sourceLink.href = link.source_url;
-                    sourceLink.target = '_blank';
-                    sourceLink.appendChild(document.createTextNode(link.source_label));
-                    sourceTd.appendChild(sourceLink);
-                    linkTr.appendChild(sourceTd);
-                    // Add link cell.
-                    const linkTd = document.createElement('td');
-                    linkTd.appendChild(document.createTextNode(link.link_label));
-                    linkTr.appendChild(linkTd);
-                    // Add target node cell.
-                    const targetTd = document.createElement('td');
-                    const targetLink = document.createElement('a');
-                    targetLink.title = link.target_label;
-                    targetLink.href = link.target_url;
-                    targetLink.target = '_blank';
-                    targetLink.appendChild(document.createTextNode(link.target_label));
-                    targetTd.appendChild(targetLink);
-                    linkTr.appendChild(targetTd);
-                    linksTable.appendChild(linkTr);
-                });
-                contentDiv.appendChild(linksTable);
-            }
-            // Add the close div.
-            closeDiv.appendChild(document.createTextNode('✕'));
-            closeDiv.classList.add('close-tooltip');
-            closeDiv.style.position = 'absolute';
-            closeDiv.style.right = 0;
-            closeDiv.style.top = 0;
-            closeDiv.style.cursor = 'default';
-            contentDiv.appendChild(closeDiv);
-            // Position and display the tooltip.
-            tooltipDiv.style.display = 'inline-block';
-            tooltipDiv.style.left = `${event.pageX + 6}px`;
-            tooltipDiv.style.top = `${event.pageY + 6}px`;
-            tooltipDiv.innerHTML = contentDiv.outerHTML;
-    }
-
 });
