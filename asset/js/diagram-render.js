@@ -58,11 +58,11 @@ const Datavis = {
             .append('div')
             .attr('class', 'tooltip');
         // Handle closing the tooltip.
-        div.addEventListener('click', (event) => {
+        tooltip.on('click', event => {
             const closeDiv = event.target.closest('.close-tooltip');
             if (!closeDiv) return;
             tooltip.style('display', 'none');
-        }, true);
+        });
         return tooltip;
     },
 };
