@@ -117,7 +117,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
             label.classed("primary", n => n === node);
             label.classed("secondary", n => {
                 return datasetLinks.some(l => {
-                    return (n.id === l.source && node.id == l.target || node.id === l.target && node.id === l.source)
+                    return (n.id === l.source && node.id == l.target) || (n.id === l.target && node.id === l.source);
                 });
             });
             path.classed("primary", l => l.source === node.id || l.target === node.id).filter(".primary").raise();
