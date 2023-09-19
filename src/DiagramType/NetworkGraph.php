@@ -53,6 +53,7 @@ class NetworkGraph implements DiagramTypeInterface
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
         $view->headScript()->appendFile($view->assetUrl('js/diagram-render/item_relationships.js', 'Datavis'));
         $view->headScript()->appendFile($view->assetUrl('js/diagram-render/network_graph.js', 'Datavis'));
+        $view->headScript()->appendFile('https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js');
         $view->headLink()->appendStylesheet($view->assetUrl('css/diagram-render/network_graph.css', 'Datavis'));
     }
 }

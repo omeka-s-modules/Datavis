@@ -27,7 +27,9 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
     const datasetReady = pie(d3.entries(dataset));
 
     // Add the tooltip div.
-    const tooltip = Datavis.getTooltip(div);
+    const tooltip = d3.select(div)
+        .append('div')
+        .attr('class', 'tooltip');
 
     const color = d3.scaleOrdinal(d3.schemeSet3);
     const arcGenerator = d3.arc().innerRadius(0).outerRadius(radius);

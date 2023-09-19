@@ -44,7 +44,9 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const order = diagramData.order ? diagramData.order : 'by_group';
     const step = diagramData.step ? parseInt(diagramData.step) : 14;
     const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
-    const tooltip = Datavis.getTooltip(div);
+
+    // Get the tooltip.
+    const tooltip = Datavis.ItemRelationships.getTooltip(div);
 
     // The function to get the current position.
     const y = d3.scalePoint(orders.get(order), [marginTop, height - marginBottom]);

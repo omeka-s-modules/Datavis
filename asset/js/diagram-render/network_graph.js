@@ -30,7 +30,6 @@
 Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData, blockData) => {
 
     let userInteracted = false;
-    const tooltip = Datavis.getTooltip(div);
 
     // Set the dimensions of the diagram.
     const width = diagramData.width ? parseInt(diagramData.width) : 700;
@@ -45,6 +44,9 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     // re-evaluating this cell produces the same result.
     const datasetLinks = dataset.links.map(link => ({...link}));
     const datasetNodes = dataset.nodes.map(node => ({...node}));
+
+    // Get the tooltip.
+    const tooltip = Datavis.ItemRelationships.getTooltip(div);
 
     // Create a simulation with several forces.
     const simulation = d3.forceSimulation(datasetNodes)

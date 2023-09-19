@@ -25,6 +25,36 @@ Datavis.ItemRelationships = {
     },
 
     /**
+     * Set and get the tooltip.
+     *
+     * @param DOMObject div
+     * @return D3Object
+     */
+    getTooltip: div => {
+        // Add the tooltip.
+        const tooltip = d3.select(div)
+            .append('div')
+            .attr('class', 'tooltip');
+        const tooltipPosition = {x: 0, y: 0}
+        tooltip.on('click', event => {
+            const closeDiv = event.target.closest('.close-tooltip');
+            if (!closeDiv) return;
+            tooltip.style('display', 'none');
+        });
+        tooltip.classed('draggable', true);
+        interact(tooltip.node()).draggable({
+            listeners: {
+                move (event) {
+                    tooltipPosition.x += event.dx;
+                    tooltipPosition.y += event.dy;
+                    event.target.style.transform = `translate(${tooltipPosition.x}px, ${tooltipPosition.y}px)`;
+                },
+            }
+        });
+        return tooltip;
+    },
+
+    /**
      * Get the content of the tooltip.
      *
      * @param object node

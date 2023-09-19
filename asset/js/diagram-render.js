@@ -45,24 +45,4 @@ const Datavis = {
     addDiagramType: (diagramType, callback) => {
         Datavis.diagramTypes[diagramType] = callback;
     },
-
-    /**
-     * Set a tooltip div to the passed div and return it.
-     *
-     * @param DOMObject div
-     * @return DOMObject
-     */
-    getTooltip: div => {
-        // Add the tooltip div.
-        const tooltip = d3.select(div)
-            .append('div')
-            .attr('class', 'tooltip');
-        // Handle closing the tooltip.
-        tooltip.on('click', event => {
-            const closeDiv = event.target.closest('.close-tooltip');
-            if (!closeDiv) return;
-            tooltip.style('display', 'none');
-        });
-        return tooltip;
-    },
 };
