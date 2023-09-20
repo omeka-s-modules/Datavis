@@ -30,12 +30,11 @@ Datavis.ItemRelationships = {
      * @param DOMObject div
      * @return D3Object
      */
-    getTooltip: div => {
+    getTooltip: (div, tooltipPosition) => {
         // Add the tooltip.
         const tooltip = d3.select(div)
             .append('div')
             .attr('class', 'tooltip');
-        const tooltipPosition = {x: 0, y: 0}
         tooltip.on('click', event => {
             const closeDiv = event.target.closest('.close-tooltip');
             if (!closeDiv) return;

@@ -46,7 +46,8 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     const datasetNodes = dataset.nodes.map(node => ({...node}));
 
     // Get the tooltip.
-    const tooltip = Datavis.ItemRelationships.getTooltip(div);
+    const tooltipPosition = {x: 0, y: 0};
+    const tooltip = Datavis.ItemRelationships.getTooltip(div, tooltipPosition);
 
     // Create a simulation with several forces.
     const simulation = d3.forceSimulation(datasetNodes)
@@ -94,6 +95,10 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
             nodes.attr('stroke-width', d => {
                 return linked.nodes.includes(d.id) ? 2.5 : 1.5;
             });
+            // Reset the tooltip's position.
+            tooltip.style('transform', 'translate(0)');
+            tooltipPosition.x = 0;
+            tooltipPosition.y = 0;
             // Position and display the tooltip.
             tooltip.style('display', 'inline-block');
             tooltip.style('left', `${event.pageX + 6}px`);
