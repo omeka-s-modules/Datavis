@@ -30,7 +30,7 @@ Datavis.ItemRelationships = {
      * @param DOMObject div
      * @return D3Object
      */
-    getTooltip: (div, tooltipPosition) => {
+    getTooltip: div => {
         // Add the tooltip.
         const tooltip = d3.select(div)
             .append('div')
@@ -41,12 +41,13 @@ Datavis.ItemRelationships = {
             tooltip.style('display', 'none');
         });
         tooltip.classed('draggable', true);
+        tooltip.position = {x: 0, y: 0};
         interact(tooltip.node()).draggable({
             listeners: {
                 move (event) {
-                    tooltipPosition.x += event.dx;
-                    tooltipPosition.y += event.dy;
-                    event.target.style.transform = `translate(${tooltipPosition.x}px, ${tooltipPosition.y}px)`;
+                    tooltip.position.x += event.dx;
+                    tooltip.position.y += event.dy;
+                    event.target.style.transform = `translate(${tooltip.position.x}px, ${tooltip.position.y}px)`;
                 },
             }
         });

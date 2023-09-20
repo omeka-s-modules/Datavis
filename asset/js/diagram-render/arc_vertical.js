@@ -46,8 +46,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
 
     // Get the tooltip.
-    const tooltipPosition = {x: 0, y: 0};
-    const tooltip = Datavis.ItemRelationships.getTooltip(div, tooltipPosition);
+    const tooltip = Datavis.ItemRelationships.getTooltip(div);
 
     // The function to get the current position.
     const y = d3.scalePoint(orders.get(order), [marginTop, height - marginBottom]);
@@ -136,8 +135,8 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
             const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
             // Reset the tooltip's position.
             tooltip.style('transform', 'translate(0)');
-            tooltipPosition.x = 0;
-            tooltipPosition.y = 0;
+            tooltip.position.x = 0;
+            tooltip.position.y = 0;
             // Position and display the tooltip.
             tooltip.style('display', 'inline-block');
             tooltip.style('left', `${event.pageX + 6}px`);
