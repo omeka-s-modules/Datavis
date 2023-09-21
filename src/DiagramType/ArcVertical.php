@@ -82,7 +82,7 @@ class ArcVertical implements DiagramTypeInterface
             'options' => [
                 'label' => 'Order',
                 'value_options' => [
-                    'by_group' => 'By group', // @translate
+                    'by_group' => 'By class', // @translate
                     'by_label' => 'By label', // @translate
                 ],
             ],

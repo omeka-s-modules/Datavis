@@ -90,17 +90,19 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     // Add a text label and a dot for each node.
     const label = svg.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 10)
+        .attr("font-size", 12)
         .attr("text-anchor", "end")
         .selectAll("g")
             .data(datasetNodes)
             .join("g")
                 .attr("transform", node => `translate(${marginLeft},${Y.get(node.id)})`)
+                .call(g => g.append('title')
+                    .text(node => node.label))
                 .call(g => g.append("text")
                     .attr("x", -10)
                     .attr("dy", "0.35em")
                     .attr("fill", node => d3.lab(color(node.group_id)).darker(2))
-                    .text(node => node.label))
+                    .text(node => node.label.substring(0, 30)))
                 .call(g => g.append("circle")
                     .attr("r", 4)
                     .attr("fill", node => color(node.group_id)));
@@ -115,6 +117,9 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("y", -step / 2)
         .attr("fill", "none")
         .attr("pointer-events", "all")
+        .on('mouseover', (event, node) => {
+            label.classed("secondary", n => n === node);
+        })
         .on('click', (event, node) => {
             if (clickedNode && clickedNode.id === node.id) {
                 // Turn off label/path highlighting.
