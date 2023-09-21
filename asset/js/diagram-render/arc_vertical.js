@@ -106,6 +106,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
                     .attr("fill", node => color(node.group_id)));
 
     // Add invisible rects that update the class of the elements on mouseover.
+    let clickedNode = null;
     label.append("rect")
         .attr("fill", "none")
         .attr("width", marginLeft + 40)
@@ -114,7 +115,18 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("y", -step / 2)
         .attr("fill", "none")
         .attr("pointer-events", "all")
-        .on("pointerenter", (event, node) => {
+        .on('click', (event, node) => {
+            if (clickedNode && clickedNode.id === node.id) {
+                // Turn off label/path highlighting.
+                svg.classed("hover", false);
+                label.classed("primary", false);
+                label.classed("secondary", false);
+                path.classed("primary", false).order();
+                clickedNode = null;
+                return;
+            }
+            clickedNode = node;
+            // Turn on label/path highlighting.
             svg.classed("hover", true);
             label.classed("primary", n => n === node);
             label.classed("secondary", n => {
@@ -123,14 +135,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
                 });
             });
             path.classed("primary", l => l.source === node.id || l.target === node.id).filter(".primary").raise();
-        })
-        .on("pointerout", () => {
-            svg.classed("hover", false);
-            label.classed("primary", false);
-            label.classed("secondary", false);
-            path.classed("primary", false).order();
-        })
-        .on('click', (event, node) => {
+            // Prepare the tooltip.
             const linked = Datavis.ItemRelationships.getLinked(node, dataset.links);
             const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
             // Reset the tooltip's position.
@@ -147,7 +152,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     // Add styles for the hover interaction.
     svg.append("style").text(`
         .hover text { fill: #aaa; }
-        .hover g.primary text { font-weight: bold; fill: #333; }
+        .hover g.primary text { font-weight: bold; fill: green; }
         .hover g.secondary text { fill: #333; }
         .hover path { stroke: #ccc; }
         .hover path.primary { stroke: #333; }
