@@ -88,12 +88,18 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .on('click', (event, node) => {
             const linked = Datavis.ItemRelationships.getLinked(node, dataset.links);
             const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
-            // Highlight this node and linked nodes.
+            // Highlight this node, linked nodes, and links between them.
             nodes.attr('stroke', d => {
                 return linked.nodes.includes(d.id) ? '#000' : '#fff';
             });
             nodes.attr('stroke-width', d => {
                 return linked.nodes.includes(d.id) ? 2.5 : 1.5;
+            });
+            links.attr("stroke", l => {
+                return (l.source.id === node.id || l.target.id === node.id) ? '#333' : '#999';
+            });
+            links.attr("stroke-opacity", l => {
+                return (l.source.id === node.id || l.target.id === node.id) ? 1 : 0.5;
             });
             // Reset the tooltip's position.
             tooltip.style('transform', 'translate(0)');
