@@ -84,6 +84,7 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .join("circle")
         .attr("r", 10)
         .attr("fill", node => color(node.group_id))
+        .call(g => g.append('title').text(node => node.label))
         .on('click', (event, node) => {
             const linked = Datavis.ItemRelationships.getLinked(node, dataset.links);
             const contentDiv = Datavis.ItemRelationships.getTooltipContent(node, linked, color);
