@@ -36,6 +36,18 @@ class ItemRelationships extends AbstractDatasetType
             ],
             'attributes' => [],
         ]);
+        $fieldset->add([
+            'type' => Element\Select::class,
+            'name' => 'group_by',
+            'options' => [
+                'label' => 'Group by', // @translate
+                'value_options' => [
+                    'resource_class' => 'Resource class',
+                    'resource_template' => 'Resource template',
+                ],
+            ],
+            'attributes' => [],
+        ]);
     }
 
     public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
@@ -56,7 +68,6 @@ class ItemRelationships extends AbstractDatasetType
                 // This item does not exist.
                 continue;
             }
-            $resourceClass = $item->resourceClass();
             $sourceUrl = $urlHelper(
                 'site/resource-id',
                 ['site-slug' => $vis->site()->slug(), 'controller' => 'item', 'id' => $item->id()],
@@ -67,9 +78,21 @@ class ItemRelationships extends AbstractDatasetType
                 'label' => $item->displayTitle(),
                 'comment' => nl2br($item->displayDescription()),
                 'url' => $sourceUrl,
-                'group_id' => $resourceClass ? $resourceClass->id() : null,
-                'group_label' => $resourceClass ? $resourceClass->label() : null,
             ];
+            // Set the group
+            $resourceClass = $item->resourceClass();
+            $resourceTemplate = $item->resourceTemplate();
+            $groupBy = $vis->datasetData()['group_by'] ?? 'resource_class';
+            switch ($groupBy) {
+                case 'resource_template':
+                    $nodes[$item->id()]['group_id'] = $resourceTemplate ? $resourceTemplate->id() : null;
+                    $nodes[$item->id()]['group_label'] = $resourceTemplate ? $resourceTemplate->label() : null;
+                    break;
+                case 'resource_class':
+                default:
+                    $nodes[$item->id()]['group_id'] = $resourceClass ? $resourceClass->id() : null;
+                    $nodes[$item->id()]['group_label'] = $resourceClass ? $resourceClass->label() : null;
+            }
             foreach ($item->objectValues() as $value) {
                 $valueResource = $value->valueResource();
                 if (!in_array($valueResource->id(), $itemIds)) {
