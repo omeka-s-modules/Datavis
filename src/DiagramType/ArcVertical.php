@@ -19,6 +19,7 @@ class ArcVertical implements DiagramTypeInterface
             'width' => 800,
             'order' => 'by_group',
             'step' => 14,
+            'label_font_size' => 12,
             'margin_top' => 30,
             'margin_bottom' => 30,
             'margin_left' => 200,
@@ -93,12 +94,25 @@ class ArcVertical implements DiagramTypeInterface
         ]);
         $fieldset->add([
             'type' => Element\Number::class,
-            'name' => 'step',
+            'name' => 'label_font_size',
             'options' => [
-                'label' => 'Step', // @translate
+                'label' => 'Label font size', // @translate
             ],
             'attributes' => [
-                'min' => 0,
+                'min' => 1,
+                'value' => $defaults['label_font_size'],
+                'placeholder' => $defaults['label_font_size'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Number::class,
+            'name' => 'step',
+            'options' => [
+                'label' => 'Space between labels', // @translate
+            ],
+            'attributes' => [
+                'min' => 1,
                 'value' => $defaults['step'],
                 'placeholder' => $defaults['step'],
                 'required' => true,

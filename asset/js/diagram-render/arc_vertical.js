@@ -43,6 +43,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const marginLeft = diagramData.margin_left ? parseInt(diagramData.margin_left) : 200;
     const order = diagramData.order ? diagramData.order : 'by_group';
     const step = diagramData.step ? parseInt(diagramData.step) : 14;
+    const labelFontSize = diagramData.label_font_size ? parseInt(diagramData.label_font_size) : 12;
     const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
 
     // Get the tooltip.
@@ -90,7 +91,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     // Add a text label and a dot for each node.
     const label = svg.append("g")
         .attr("font-family", "sans-serif")
-        .attr("font-size", 12)
+        .attr("font-size", labelFontSize)
         .attr("text-anchor", "end")
         .selectAll("g")
             .data(datasetNodes)
@@ -102,7 +103,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
                     .attr("x", -10)
                     .attr("dy", "0.35em")
                     .attr("fill", node => d3.lab(color(node.group_id)).darker(2))
-                    .text(node => node.label.substring(0, 30)))
+                    .text(node => node.label))
                 .call(g => g.append("circle")
                     .attr("r", 4)
                     .attr("fill", node => color(node.group_id)));
@@ -118,7 +119,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .attr("fill", "none")
         .attr("pointer-events", "all")
         .on('mouseover', (event, node) => {
-            label.classed("secondary", n => n === node);
+            label.classed("hovered", n => n === node);
         })
         .on('click', (event, node) => {
             if (clickedNode && clickedNode.id === node.id) {
@@ -149,8 +150,8 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
             tooltip.position.y = 0;
             // Position and display the tooltip.
             tooltip.style('display', 'inline-block');
-            tooltip.style('left', `${event.pageX + 6}px`);
-            tooltip.style('top', `${event.pageY + 6}px`);
+            tooltip.style('left', `${event.pageX + 10}px`);
+            tooltip.style('top', `${event.pageY + 10}px`);
             tooltip.html(contentDiv.outerHTML);
         });
 
@@ -159,6 +160,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
         .hover text { fill: #aaa; }
         .hover g.primary text { font-weight: bold; fill: green; }
         .hover g.secondary text { fill: #333; }
+        .hover g.hovered text { fill: #333; }
         .hover path { stroke: #ccc; }
         .hover path.primary { stroke: #333; }
     `);
