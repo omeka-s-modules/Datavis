@@ -10,7 +10,7 @@ class ArcVertical implements DiagramTypeInterface
 {
     public function getLabel() : string
     {
-        return 'Arc (vertical)'; // @translate
+        return 'Arc'; // @translate
     }
 
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
