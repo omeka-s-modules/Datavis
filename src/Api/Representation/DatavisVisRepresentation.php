@@ -115,13 +115,15 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
     public function getDatasetType()
     {
         $datasetTypes = $this->getServiceLocator()->get('Datavis\DatasetTypeManager');
-        return $datasetTypes->get($this->datasetType());
+        $datasetType = is_string($this->datasetType()) ? $this->datasetType() : '';
+        return $datasetTypes->get($datasetType);
     }
 
     public function getDiagramType()
     {
         $diagramTypes = $this->getServiceLocator()->get('Datavis\DiagramTypeManager');
-        return $diagramTypes->get($this->diagramType());
+        $diagramType = is_string($this->diagramType()) ? $this->diagramType() : '';
+        return $diagramTypes->get($diagramType);
     }
 
     public function datasetUrl(array $options = [])

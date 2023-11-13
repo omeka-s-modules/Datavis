@@ -140,6 +140,7 @@ Datavis.addDiagramType('line_chart_time_series', (div, dataset, datasetData, dia
             .attr('r', 8)
             .style('fill', 'none')
             .style('display', 'none');
+
     // Add the tooltip div.
     const tooltip = d3.select(div)
         .append('div')
