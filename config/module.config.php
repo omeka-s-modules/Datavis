@@ -74,6 +74,7 @@ return [
         'factories' => [
             'Datavis\Form\DatasetTypeForm' => Service\Form\DatasetTypeFormFactory::class,
             'Datavis\Form\DatavisForm' => Service\Form\DatavisFormFactory::class,
+            'Datavis\Form\Element\OptionalPropertySelect' => Service\Form\Element\OptionalPropertySelectFactory::class,
         ],
     ],
     'view_helpers' => [

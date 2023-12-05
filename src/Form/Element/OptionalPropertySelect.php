@@ -1,13 +1,13 @@
 <?php
 namespace Datavis\Form\Element;
 
-use Zend\Form\Element\Select;
+use Omeka\Form\Element\PropertySelect;
 use Zend\InputFilter\InputProviderInterface;
 
 /**
  * By default, Laminas sets Select elements as required. This makes it optional.
  */
-class OptionalSelect extends Select implements InputProviderInterface
+class OptionalPropertySelect extends PropertySelect implements InputProviderInterface
 {
     public function getInputSpecification() : array
     {

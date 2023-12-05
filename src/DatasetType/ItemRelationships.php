@@ -2,6 +2,7 @@
 namespace Datavis\DatasetType;
 
 use Datavis\Api\Representation\DatavisVisRepresentation;
+use Datavis\Form\Element\OptionalPropertySelect;
 use Doctrine\Common\Collections\Criteria;
 use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
@@ -29,14 +30,6 @@ class ItemRelationships extends AbstractDatasetType
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
     {
         $fieldset->add([
-            'type' => Element\Checkbox::class,
-            'name' => 'exclude_unlinked',
-            'options' => [
-                'label' => 'Exclude items without relationships', // @translate
-            ],
-            'attributes' => [],
-        ]);
-        $fieldset->add([
             'type' => Element\Select::class,
             'name' => 'group_by',
             'options' => [
@@ -48,6 +41,28 @@ class ItemRelationships extends AbstractDatasetType
             ],
             'attributes' => [],
         ]);
+        $fieldset->add([
+            'type' => OptionalPropertySelect::class,
+            'name' => 'limit_properties',
+            'options' => [
+                'label' => 'Limit relationships to these properties', // @translate
+                'info' => 'Selecting no properties will include all relationships.', // @translate
+                'empty_option' => '',
+            ],
+            'attributes' => [
+                'multiple' => true,
+                'class' => 'chosen-select',
+                'data-placeholder' => 'Select properties…', // @translate
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Checkbox::class,
+            'name' => 'exclude_unlinked',
+            'options' => [
+                'label' => 'Exclude items without relationships', // @translate
+            ],
+            'attributes' => [],
+        ]);
     }
 
     public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
@@ -56,6 +71,10 @@ class ItemRelationships extends AbstractDatasetType
         $conn = $services->get('Omeka\Connection');
         $urlHelper = $services->get('ViewHelperManager')->get('url');
         $hyperlinkHelper = $services->get('ViewHelperManager')->get('hyperlink');
+
+        $groupBy = $vis->datasetData()['group_by'] ?? 'resource_class';
+        $limitProperties = $vis->datasetData()['limit_properties'] ?? false;
+        $excludeUnlinked = $vis->datasetData()['exclude_unlinked'] ?? false;
 
         $nodes = [];
         $links = [];
@@ -82,7 +101,6 @@ class ItemRelationships extends AbstractDatasetType
             // Set the group
             $resourceClass = $item->resourceClass();
             $resourceTemplate = $item->resourceTemplate();
-            $groupBy = $vis->datasetData()['group_by'] ?? 'resource_class';
             switch ($groupBy) {
                 case 'resource_template':
                     $nodes[$item->id()]['group_id'] = $resourceTemplate ? $resourceTemplate->id() : null;
@@ -100,6 +118,10 @@ class ItemRelationships extends AbstractDatasetType
                     continue;
                 }
                 $property = $value->property();
+                if ($limitProperties && !in_array($property->id(), $limitProperties)) {
+                    // Property not in the defined allow-list. Do not make a link.
+                    continue;
+                }
                 $propertyLabel = $property->label();
                 $resourceTemplate = $value->resource()->resourceTemplate();
                 if ($resourceTemplate) {
@@ -132,7 +154,6 @@ class ItemRelationships extends AbstractDatasetType
         }
 
         // Exclude items without relationships if configured to do so.
-        $excludeUnlinked = $vis->datasetData()['exclude_unlinked'] ?? false;
         if ($excludeUnlinked) {
             $allIds = array_keys($nodes);
             $linkedIds = array_unique($linkedIds);

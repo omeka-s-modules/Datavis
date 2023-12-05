@@ -5,7 +5,7 @@ use Laminas\Form\Element\Number;
 use Laminas\InputFilter\InputProviderInterface;
 
 /**
- * By default, ZF3 sets Number elements as required. This makes it optional.
+ * By default, Laminas sets Number elements as required. This makes it optional.
  */
 class OptionalNumber extends Number implements InputProviderInterface
 {
