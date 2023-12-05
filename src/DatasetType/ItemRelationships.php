@@ -3,12 +3,10 @@ namespace Datavis\DatasetType;
 
 use Datavis\Api\Representation\DatavisVisRepresentation;
 use Datavis\Form\Element\OptionalPropertySelect;
-use Doctrine\Common\Collections\Criteria;
 use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
 use Laminas\ServiceManager\ServiceManager;
 use Omeka\Api\Representation\SiteRepresentation;
-use Omeka\Form\Element\ResourceClassSelect;
 
 class ItemRelationships extends AbstractDatasetType
 {
