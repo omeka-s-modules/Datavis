@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giorgio Comai <g@giorgiocomai.eu>, 2021
+# Iametza Interaktiboa, 2022
 # 
 #, fuzzy
 msgid ""
@@ -13,226 +13,226 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-04 19:41-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2021\n"
-"Language-Team: Italian (https://app.transifex.com/omeka/teams/14184/it/)\n"
+"Last-Translator: Iametza Interaktiboa, 2022\n"
+"Language-Team: Basque (https://app.transifex.com/omeka/teams/14184/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Controller/SiteAdmin/IndexController.php:201
 msgid "See this job for progress."
-msgstr "Vedi questo lavoro per l'avanzamento "
+msgstr "Ikusi lan hau progresurako."
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/form.phtml:19
 msgid "Add visualization"
-msgstr "Aggiungi visualizzazione"
+msgstr "Gehitu bistaratzea"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
 #: view/datavis/site-admin/index/form.phtml:17
 #: view/datavis/site-admin/index/form.phtml:19
 msgid "Data Visualization"
-msgstr "Visualizzazione di dati"
+msgstr "Datu Bistaratzea"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:13
 msgid "What would you like to visualize?"
-msgstr "Cosa vorresti visualizzare?"
+msgstr "Zer nahi duzu bistaratu?"
 
 #: view/datavis/site-admin/index/browse.phtml:5
 msgid "Visualizations"
-msgstr "Visualizzazioni"
+msgstr "Bistaratzeak"
 
 #: view/datavis/site-admin/index/browse.phtml:10
 msgid "Add new visualization"
-msgstr "Aggiungi una nuova visualizzazione"
+msgstr "Gehitu bistaratze berria"
 
 #: view/datavis/site-admin/index/browse.phtml:19
 msgid "Date created"
-msgstr "Data di creazione"
+msgstr "Sortze data"
 
 #: view/datavis/site-admin/index/browse.phtml:34
 msgid "Visualization"
-msgstr "Visualizzazione"
+msgstr "Bistaratzea"
 
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
-msgstr "Tipo di dataset"
+msgstr "Datu multzo mota"
 
 #: view/datavis/site-admin/index/browse.phtml:36
 msgid "Diagram type"
-msgstr "Tipo di diagramma"
+msgstr "Diagrama mota"
 
 #: view/datavis/site-admin/index/browse.phtml:50
 msgid "View diagram"
-msgstr "Visualizza diagramma"
+msgstr "Ikusi diagrama"
 
 #: view/datavis/site-admin/index/browse.phtml:53
 msgid "View dataset"
-msgstr "Visualizza il dataset"
+msgstr "Ikusi datu multzoa"
 
 #: view/datavis/site-admin/index/browse.phtml:84
 #, php-format
 msgid "No visualizations found. %s"
-msgstr "Nessuna visualizzazione trovata. %s"
+msgstr "Ez da bistaratzerik aurkitu. %s"
 
 #: view/datavis/site-admin/index/browse.phtml:85
 msgid "Add a new visualization."
-msgstr "Aggiungi una nuova visualizzazione."
+msgstr "Gehitu bistaratze berria."
 
 #: view/datavis/site-admin/index/browse.phtml:88
 msgid "No visualizations found."
-msgstr "Nessuna visualizzazione trovata."
+msgstr "Ez da bistaratzerik aurkitu."
 
 #: view/datavis/site-admin/index/form.phtml:17
 msgid "Edit visualization"
-msgstr "Modifica visualizzazione"
+msgstr "Editatu bistaratzea"
 
 #: view/datavis/site-admin/index/form.phtml:32
 msgid "View&hellip;"
-msgstr "Visualizza..."
+msgstr "Ikusi&hellip;"
 
 #: view/datavis/site-admin/index/form.phtml:36
 msgid "Diagram"
-msgstr "Diagramma"
+msgstr "Diagrama"
 
 #: view/datavis/site-admin/index/form.phtml:43
 msgid "Save and&hellip;"
-msgstr "Salva e..."
+msgstr "Gorde eta&hellip;"
 
 #: view/datavis/site-admin/index/form.phtml:45
 msgid "Generate dataset"
-msgstr "Genera dataset"
+msgstr "Sortu datu multzoa"
 
 #: view/datavis/site-admin/index/form.phtml:46
 msgid "Return to visualizations"
-msgstr "Ritorna alle visualizzazioni"
+msgstr "Itzuli bistaratzeetara"
 
 #: view/datavis/site-admin/index/form.phtml:47
 msgid "Stay on this visualization"
-msgstr "Rimani su questa visualizzazione"
+msgstr "Gelditu bistaratze honetan"
 
 #: view/datavis/site-admin/index/form.phtml:56
 msgid "Dataset configuration"
-msgstr "Configurazione del dataset"
+msgstr "Datu multzo konfigurazioa"
 
 #: view/datavis/site-admin/index/form.phtml:61
 msgid "Diagram configuration"
-msgstr "Configurazione del diagramma"
+msgstr "Diagrama konfigurazioa"
 
 #: src/BlockLayout/Datavis.php:16
 msgid "Data visualization"
-msgstr "Visualizzazione di dati"
+msgstr "Datu bistaratzea"
 
 #: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
-msgstr "Seleziona visualizzazione..."
+msgstr "Hautatu bistaratzea..."
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
-msgstr "Un sito deve avere un ID"
+msgstr "Atariak ID bat izan behar du"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:64
 msgid "dataset_type must be a string"
-msgstr "dataset_type deve essere una stringa"
+msgstr "dataset_type testu motakoa izan behar da"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:68
 msgid "dataset_data must be an array"
-msgstr "dataset_data deve essere un array"
+msgstr "dataset_data matrize motakoa izan behar da"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:71
 msgid "diagram_data must be an array"
-msgstr "diagram_data deve essere un array"
+msgstr "diagram_data matrize motakoa izan behar da"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:112
 msgid "A visualization must have a site"
-msgstr "Una visualizzzione deve avere un sito"
+msgstr "Bistaratzeak atari bat eduki behar du"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:115
 msgid "A visualization must have a dataset type"
-msgstr "Una visualizzazione deve avere un tipo di dataset"
+msgstr "Bistaratzeak datu multzo bat eduki behar du"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:118
 msgid "A visualization must have a title"
-msgstr "Una visualizzazione deve avere un titolo"
+msgstr "Bistaratzeak titulua eduki behar du"
 
 #: src/DatasetType/CountItemsProperties.php:14
 msgid "Count of items with properties"
-msgstr "Numero di contenuti con proprietà"
+msgstr "Propietatedun elementuen kopurua"
 
 #: src/DatasetType/CountItemsProperties.php:19
 msgid "Visualize the count of items that have selected properties."
-msgstr "Visualizza il numero di contenuti che hanno la proprietà selezionata"
+msgstr "Bistaratu hautatutako propietateak dituzten elementuen kopurua."
 
 #: src/DatasetType/CountItemsProperties.php:40
 #: src/DatasetType/ItemRelationships.php:55
 msgid "Select properties…"
-msgstr "Seleziona proprietà..."
+msgstr "Hautatu propietateak..."
 
 #: src/DatasetType/CountItemsPropertyValues.php:15
 msgid "Count of items with property values"
-msgstr "Numero di contenuti con valori per la proprietà"
+msgstr "Propietate balioak dituzten elementuen kopurua"
 
 #: src/DatasetType/CountItemsPropertyValues.php:20
 msgid ""
 "Visualize the count of items that have selected values of a selected "
 "property."
 msgstr ""
-"Visualizza il numero di contenuti che hanno il valore selezionato per la "
-"proprietà selezionata"
+"Hautatutako propietate bateko balioak dituzten elementuen kopurua bistaratu."
 
 #: src/DatasetType/CountItemsPropertyValues.php:34
 #: src/DatasetType/CountPropertyValues.php:34
 msgid "Value property"
-msgstr "Valore della proprietà"
+msgstr "Balio propietatea"
 
 #: src/DatasetType/CountItemsPropertyValues.php:41
 #: src/DatasetType/CountPropertyValues.php:41
 msgid "Select one…"
-msgstr "Seleziona un'opzione..."
+msgstr "Hautatu bat..."
 
 #: src/DatasetType/CountItemsPropertyValues.php:50
 msgid "Enter values, separated by new lines."
-msgstr "Inserisci valori, separati da un a capo."
+msgstr "Sartu balioak, lerro saltoz bereizita"
 
 #: src/DatasetType/CountItemsItemSets.php:14
 msgid "Count of items in item sets"
-msgstr "Numero dei contenuti nelle collezioni"
+msgstr "Elementu multzoetan dauden elementuen kopurua"
 
 #: src/DatasetType/CountItemsItemSets.php:19
 msgid "Visualize the count of items that are assigned to selected item sets."
 msgstr ""
-"Visualizza il numero di contenuti assegnati alle collezioni selezionate."
+"Hautatutako elementu multzoetara esleituta dauden elementuen kopurua "
+"bistaratu."
 
 #: src/DatasetType/CountItemsItemSets.php:41
 msgid "Select item sets…"
-msgstr "Seleziona collezioni..."
+msgstr "Hautatu elementu multzoak..."
 
 #: src/DatasetType/CountPropertyValues.php:15
 msgid "Count of property values"
-msgstr "Numero di valori della proprietà"
+msgstr "Propietate balioen kopurua"
 
 #: src/DatasetType/CountPropertyValues.php:20
 msgid "Visualize the count of values of a selected property."
-msgstr "Visualizza il numero di valori di una proprietà selezionata."
+msgstr "Hautatutako propietateko balioen kopurua bistaratu."
 
 #: src/DatasetType/CountPropertyValues.php:49
 msgid "Minimum count"
-msgstr "Numero minimo"
+msgstr "Gutxieneko kopurua"
 
 #: src/DatasetType/CountPropertyValues.php:53
 msgid "No minimum"
-msgstr "Nessun minimo"
+msgstr "Gutxienekorik ez"
 
 #: src/DatasetType/CountPropertyValues.php:61
 msgid "Maximum count"
-msgstr "Numero massimo"
+msgstr "Gehienezko kopurua"
 
 #: src/DatasetType/CountPropertyValues.php:65
 msgid "No maximum"
-msgstr "Nessun massimo"
+msgstr "Gehienezkorik ez"
 
 #: src/DatasetType/ItemRelationships.php:17
 msgid "Item relationships"
@@ -260,39 +260,35 @@ msgstr ""
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
-msgstr "Numero di contenuti con classi"
+msgstr "Klaseak dituzten elementuen kopurua"
 
 #: src/DatasetType/CountItemsClasses.php:19
 msgid ""
 "Visualize the count of items that are instances of selected resource "
 "classes."
 msgstr ""
-"Visualizza il numero di contenuti che sono istanze delle classi di risorse "
-"selezionate"
 
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
-msgstr "Seleziona classi..."
+msgstr "Hautatu klaseak..."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
 "Configure the logical grouping of items that will be used for your dataset. "
 "No query means all items assigned to this site."
 msgstr ""
-"Configura il raggruppamento lofico che verrà utilizzato per il tuo dataset. "
-"Nessuna query corrisponde a tutti i contenuti assegnati a questo sito."
 
 #: src/Form/DatavisForm.php:119
 msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
 msgstr ""
-"Attenzione: perderai l'attuale configurazione del diagramma se cambi il tipo"
-" di diagramma."
+"Kontuz: huneko diagrama konfigurazioa galduko duzu diagrama mota aldatzen "
+"baduzu."
 
 #: src/Form/DatavisForm.php:120
 msgid "Select diagram type"
-msgstr "Seleziona tipo di diagramma"
+msgstr "Hautatu diagrama mota"
 
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
@@ -302,22 +298,22 @@ msgstr ""
 #: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
 #: src/DiagramType/NetworkGraph.php:27
 msgid "Width"
-msgstr "Larghezza"
+msgstr "Zabalera"
 
 #: src/DiagramType/ArcVertical.php:45 src/DiagramType/ColumnChart.php:58
 #: src/DiagramType/BarChart.php:58
 msgid "Margin top"
-msgstr "Margine in alto"
+msgstr "Goiko marjina"
 
 #: src/DiagramType/ArcVertical.php:58 src/DiagramType/ColumnChart.php:84
 #: src/DiagramType/BarChart.php:84
 msgid "Margin bottom"
-msgstr "Margine in basso"
+msgstr "Beheko marjina"
 
 #: src/DiagramType/ArcVertical.php:71 src/DiagramType/ColumnChart.php:97
 #: src/DiagramType/BarChart.php:97
 msgid "Margin left"
-msgstr "Margine a sinistra"
+msgstr "Ezkerreko marjina"
 
 #: src/DiagramType/ArcVertical.php:86
 msgid "By group"
@@ -337,48 +333,48 @@ msgstr ""
 
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
-msgstr "Grafico a barre"
+msgstr "Zutabe diagrama"
 
 #: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
 #: src/DiagramType/BarChart.php:45 src/DiagramType/NetworkGraph.php:40
 msgid "Height"
-msgstr "Altezza"
+msgstr "Altuera"
 
 #: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
 msgid "Margin right"
-msgstr "Margine a destra"
+msgstr "Eskuineko marjina"
 
 #: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
 msgid "Order"
-msgstr "Ordine"
+msgstr "Ordena"
 
 #: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
 msgid "By value (ascending)"
-msgstr "Per valore (crescente)"
+msgstr "Balioaren arabera (goranzkoa)"
 
 #: src/DiagramType/ColumnChart.php:113 src/DiagramType/BarChart.php:113
 msgid "By value (descending)"
-msgstr "Per valore (decrescente)"
+msgstr "Balioaren arabera (beheranzkoa)"
 
 #: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
 msgid "By label (ascending)"
-msgstr "Per etichetta (crescente)"
+msgstr "Etiketaren arabera (goranzkoa)"
 
 #: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
 msgid "By label (descending)"
-msgstr "Per etichetta (decrescente)"
+msgstr "Etiketaren arabera (beheranzkoa)"
 
 #: src/DiagramType/PieChart.php:13
 msgid "Pie chart"
-msgstr "Grafico a torta"
+msgstr "Grafiko biribila"
 
 #: src/DiagramType/PieChart.php:54
 msgid "Margin"
-msgstr "Margine"
+msgstr "Marjina"
 
 #: src/DiagramType/BarChart.php:13
 msgid "Bar chart"
-msgstr "Grafico a barre"
+msgstr "Barra diagrama"
 
 #: src/DiagramType/NetworkGraph.php:13
 msgid "Network graph"
@@ -386,22 +382,21 @@ msgstr ""
 
 #: src/Controller/SiteAdmin/IndexController.php:43
 msgid "Configure your visualization below."
-msgstr "Configura la tua visualizzazione qui sotto."
+msgstr "Konfiguratu zure bistaratzea hemen."
 
 #: src/Controller/SiteAdmin/IndexController.php:84
 msgid "Successfully added your visualization."
-msgstr "Visualizzazione aggiunta con successo."
+msgstr "Zure bistaratzea ongi gehitu da."
 
 #: src/Controller/SiteAdmin/IndexController.php:129
 msgid "Successfully edited your visualization."
-msgstr "Visualizzazione modificata con successo."
+msgstr "Zure bistaratzea ongi aldatu da."
 
 #: src/Controller/SiteAdmin/IndexController.php:163
 msgid "Successfully deleted your visualization."
-msgstr "Visualizzazione eliminata con successo."
+msgstr "Zure bistaratzea ongi ezabatu da."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 #, php-format
 msgid "Generating dataset. This may take a while. %s"
-msgstr ""
-"Generazione del dataset in corso. Ci potrebbe volere un po' di tempo. %s"
+msgstr "Datu multzoa sortzen. Honek denbora iraun dezake. %s"

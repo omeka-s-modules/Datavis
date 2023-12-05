@@ -11,17 +11,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 12:31-0500\n"
+"POT-Creation-Date: 2023-12-04 19:41-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Alfonso Montejo <almontejor@gmail.com>, 2021\n"
-"Language-Team: Spanish (https://www.transifex.com/omeka/teams/14184/es/)\n"
+"Language-Team: Spanish (https://app.transifex.com/omeka/teams/14184/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:197
+#: src/Controller/SiteAdmin/IndexController.php:201
 msgid "See this job for progress."
 msgstr "Ver este trabajo para consultar el progreso."
 
@@ -126,46 +126,41 @@ msgstr "Configuración del diagrama"
 msgid "Data visualization"
 msgstr "Visualización de datos"
 
-#: src/BlockLayout/Datavis.php:35 src/DatasetType/Unknown.php:20
-#: src/DiagramType/Unknown.php:19
-msgid "[Unknown]"
-msgstr "[Desconocido]"
-
-#: src/BlockLayout/Datavis.php:49
+#: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr "Seleccionar visualización..."
 
-#: src/Api/Adapter/DatavisVisAdapter.php:55
+#: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
 msgstr "Un sitio debe tener una ID"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:58
+#: src/Api/Adapter/DatavisVisAdapter.php:64
 msgid "dataset_type must be a string"
 msgstr ""
 "El tipo de conjunto de datos (dataset_type) debe almacenarse en una cadena o"
 " \"string\""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:62
+#: src/Api/Adapter/DatavisVisAdapter.php:68
 msgid "dataset_data must be an array"
 msgstr ""
 "Los datos del conjunto de datos (dataset_data) deben almacenarse en un "
 "vector o \"array\""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:65
+#: src/Api/Adapter/DatavisVisAdapter.php:71
 msgid "diagram_data must be an array"
 msgstr ""
 "Los datos del diagrama (diagram_data) deben almacenarse en un vector o "
 "\"array\""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:106
+#: src/Api/Adapter/DatavisVisAdapter.php:112
 msgid "A visualization must have a site"
 msgstr "Una visualización debe tener un sitio"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:109
+#: src/Api/Adapter/DatavisVisAdapter.php:115
 msgid "A visualization must have a dataset type"
 msgstr "Una visualización debe tener un tipo de conjunto de datos"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:118
 msgid "A visualization must have a title"
 msgstr "Una visualización debe tener un título"
 
@@ -180,6 +175,7 @@ msgstr ""
 "seleccionadas."
 
 #: src/DatasetType/CountItemsProperties.php:40
+#: src/DatasetType/ItemRelationships.php:55
 msgid "Select properties…"
 msgstr "Seleccionar propiedades..."
 
@@ -247,6 +243,30 @@ msgstr "Recuento máximo"
 msgid "No maximum"
 msgstr "Sin máximo"
 
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:48
+msgid "Limit relationships to these properties"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:49
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:62
+msgid "Exclude items without relationships"
+msgstr ""
+
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
 msgstr "Recuento de fichas con clases"
@@ -283,35 +303,59 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Seleccionar tipo de diagrama"
 
+#: src/DiagramType/ArcVertical.php:13
+msgid "Arc"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:32 src/DiagramType/ColumnChart.php:32
+#: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
+#: src/DiagramType/NetworkGraph.php:27
+msgid "Width"
+msgstr "Ancho"
+
+#: src/DiagramType/ArcVertical.php:45 src/DiagramType/ColumnChart.php:58
+#: src/DiagramType/BarChart.php:58
+msgid "Margin top"
+msgstr "Margen superior"
+
+#: src/DiagramType/ArcVertical.php:58 src/DiagramType/ColumnChart.php:84
+#: src/DiagramType/BarChart.php:84
+msgid "Margin bottom"
+msgstr "Margen inferior"
+
+#: src/DiagramType/ArcVertical.php:71 src/DiagramType/ColumnChart.php:97
+#: src/DiagramType/BarChart.php:97
+msgid "Margin left"
+msgstr "Margen izquierdo"
+
+#: src/DiagramType/ArcVertical.php:86
+msgid "By group"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:87
+msgid "By label"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:99
+msgid "Label font size"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:112
+msgid "Space between labels"
+msgstr ""
+
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
 msgstr "Gráfico de columnas"
 
-#: src/DiagramType/ColumnChart.php:32 src/DiagramType/PieChart.php:28
-#: src/DiagramType/BarChart.php:32
-msgid "Width"
-msgstr "Ancho"
-
 #: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
-#: src/DiagramType/BarChart.php:45
+#: src/DiagramType/BarChart.php:45 src/DiagramType/NetworkGraph.php:40
 msgid "Height"
 msgstr "Alto"
-
-#: src/DiagramType/ColumnChart.php:58 src/DiagramType/BarChart.php:58
-msgid "Margin top"
-msgstr "Margen superior"
 
 #: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
 msgid "Margin right"
 msgstr "Margen derecho"
-
-#: src/DiagramType/ColumnChart.php:84 src/DiagramType/BarChart.php:84
-msgid "Margin bottom"
-msgstr "Margen inferior"
-
-#: src/DiagramType/ColumnChart.php:97 src/DiagramType/BarChart.php:97
-msgid "Margin left"
-msgstr "Margen izquierdo"
 
 #: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
 msgid "Order"
@@ -345,23 +389,27 @@ msgstr "Margen"
 msgid "Bar chart"
 msgstr "Gráfico de barras"
 
-#: src/Controller/SiteAdmin/IndexController.php:39
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:43
 msgid "Configure your visualization below."
 msgstr "Configurar la visualización a continuación."
 
-#: src/Controller/SiteAdmin/IndexController.php:80
+#: src/Controller/SiteAdmin/IndexController.php:84
 msgid "Successfully added your visualization."
 msgstr "Visualización añadida con éxito."
 
-#: src/Controller/SiteAdmin/IndexController.php:125
+#: src/Controller/SiteAdmin/IndexController.php:129
 msgid "Successfully edited your visualization."
 msgstr "Visualización editada con éxito."
 
-#: src/Controller/SiteAdmin/IndexController.php:159
+#: src/Controller/SiteAdmin/IndexController.php:163
 msgid "Successfully deleted your visualization."
 msgstr "Visualización eliminada con éxito."
 
-#: src/Controller/SiteAdmin/IndexController.php:193
+#: src/Controller/SiteAdmin/IndexController.php:197
 #, php-format
 msgid "Generating dataset. This may take a while. %s"
 msgstr "Generando conjunto de datos. Podría requerir cierto tiempo. %s"

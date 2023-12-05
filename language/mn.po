@@ -11,17 +11,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-12 12:31-0500\n"
+"POT-Creation-Date: 2023-12-04 19:41-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Khaidav T. <khaidaw@yahoo.com>, 2021\n"
-"Language-Team: Mongolian (https://www.transifex.com/omeka/teams/14184/mn/)\n"
+"Language-Team: Mongolian (https://app.transifex.com/omeka/teams/14184/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: mn\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:197
+#: src/Controller/SiteAdmin/IndexController.php:201
 msgid "See this job for progress."
 msgstr ""
 
@@ -126,40 +126,35 @@ msgstr ""
 msgid "Data visualization"
 msgstr ""
 
-#: src/BlockLayout/Datavis.php:35 src/DatasetType/Unknown.php:20
-#: src/DiagramType/Unknown.php:19
-msgid "[Unknown]"
-msgstr "[Тодорхойгүй]"
-
-#: src/BlockLayout/Datavis.php:49
+#: src/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:55
+#: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:58
+#: src/Api/Adapter/DatavisVisAdapter.php:64
 msgid "dataset_type must be a string"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:62
+#: src/Api/Adapter/DatavisVisAdapter.php:68
 msgid "dataset_data must be an array"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:65
+#: src/Api/Adapter/DatavisVisAdapter.php:71
 msgid "diagram_data must be an array"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:106
+#: src/Api/Adapter/DatavisVisAdapter.php:112
 msgid "A visualization must have a site"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:109
+#: src/Api/Adapter/DatavisVisAdapter.php:115
 msgid "A visualization must have a dataset type"
 msgstr ""
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:118
 msgid "A visualization must have a title"
 msgstr ""
 
@@ -172,6 +167,7 @@ msgid "Visualize the count of items that have selected properties."
 msgstr ""
 
 #: src/DatasetType/CountItemsProperties.php:40
+#: src/DatasetType/ItemRelationships.php:55
 msgid "Select properties…"
 msgstr "Тохиргоо сонгох…"
 
@@ -235,6 +231,30 @@ msgstr ""
 msgid "No maximum"
 msgstr "Дээд хязгааргүй"
 
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:48
+msgid "Limit relationships to these properties"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:49
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:62
+msgid "Exclude items without relationships"
+msgstr ""
+
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
 msgstr ""
@@ -265,34 +285,58 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Диаграмын төрөл сонгох"
 
+#: src/DiagramType/ArcVertical.php:13
+msgid "Arc"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:32 src/DiagramType/ColumnChart.php:32
+#: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
+#: src/DiagramType/NetworkGraph.php:27
+msgid "Width"
+msgstr "Өргөн"
+
+#: src/DiagramType/ArcVertical.php:45 src/DiagramType/ColumnChart.php:58
+#: src/DiagramType/BarChart.php:58
+msgid "Margin top"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:58 src/DiagramType/ColumnChart.php:84
+#: src/DiagramType/BarChart.php:84
+msgid "Margin bottom"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:71 src/DiagramType/ColumnChart.php:97
+#: src/DiagramType/BarChart.php:97
+msgid "Margin left"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:86
+msgid "By group"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:87
+msgid "By label"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:99
+msgid "Label font size"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:112
+msgid "Space between labels"
+msgstr ""
+
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
 msgstr ""
 
-#: src/DiagramType/ColumnChart.php:32 src/DiagramType/PieChart.php:28
-#: src/DiagramType/BarChart.php:32
-msgid "Width"
-msgstr "Өргөн"
-
 #: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
-#: src/DiagramType/BarChart.php:45
+#: src/DiagramType/BarChart.php:45 src/DiagramType/NetworkGraph.php:40
 msgid "Height"
 msgstr "Өндөр"
 
-#: src/DiagramType/ColumnChart.php:58 src/DiagramType/BarChart.php:58
-msgid "Margin top"
-msgstr ""
-
 #: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
 msgid "Margin right"
-msgstr ""
-
-#: src/DiagramType/ColumnChart.php:84 src/DiagramType/BarChart.php:84
-msgid "Margin bottom"
-msgstr ""
-
-#: src/DiagramType/ColumnChart.php:97 src/DiagramType/BarChart.php:97
-msgid "Margin left"
 msgstr ""
 
 #: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
@@ -327,23 +371,27 @@ msgstr ""
 msgid "Bar chart"
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:39
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr ""
+
+#: src/Controller/SiteAdmin/IndexController.php:43
 msgid "Configure your visualization below."
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:80
+#: src/Controller/SiteAdmin/IndexController.php:84
 msgid "Successfully added your visualization."
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:125
+#: src/Controller/SiteAdmin/IndexController.php:129
 msgid "Successfully edited your visualization."
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:159
+#: src/Controller/SiteAdmin/IndexController.php:163
 msgid "Successfully deleted your visualization."
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:193
+#: src/Controller/SiteAdmin/IndexController.php:197
 #, php-format
 msgid "Generating dataset. This may take a while. %s"
 msgstr ""
