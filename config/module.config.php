@@ -75,11 +75,20 @@ return [
             'Datavis\Form\DatasetTypeForm' => Service\Form\DatasetTypeFormFactory::class,
             'Datavis\Form\DatavisForm' => Service\Form\DatavisFormFactory::class,
             'Datavis\Form\Element\OptionalPropertySelect' => Service\Form\Element\OptionalPropertySelectFactory::class,
+            'Datavis\Form\Element\GroupByControl' => Service\Form\Element\GroupByControlFactory::class,
         ],
     ],
     'view_helpers' => [
+        'invokables' => [
+            'formDatavisGroupByControl' => ViewHelper\GroupByControl::class,
+        ],
         'factories' => [
             'datavis' => Service\ViewHelper\DatavisFactory::class,
+        ],
+        'delegators' => [
+            'Laminas\Form\View\Helper\FormElement' => [
+                Service\Delegator\FormElementDelegatorFactory::class,
+            ],
         ],
     ],
     'block_layouts' => [

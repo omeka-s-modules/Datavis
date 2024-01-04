@@ -2,10 +2,12 @@
 namespace Datavis\DatasetType;
 
 use Datavis\Api\Representation\DatavisVisRepresentation;
+use Datavis\Form\Element\GroupByControl;
 use Datavis\Form\Element\OptionalPropertySelect;
 use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
 use Laminas\ServiceManager\ServiceManager;
+use Omeka\Api\Exception\NotFoundException;
 use Omeka\Api\Representation\SiteRepresentation;
 
 class ItemRelationships extends AbstractDatasetType
@@ -28,14 +30,10 @@ class ItemRelationships extends AbstractDatasetType
     public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
     {
         $fieldset->add([
-            'type' => Element\Select::class,
-            'name' => 'group_by',
+            'type' => GroupByControl::class,
+            'name' => 'group_by_control',
             'options' => [
                 'label' => 'Group by', // @translate
-                'value_options' => [
-                    'resource_class' => 'Resource class',
-                    'resource_template' => 'Resource template',
-                ],
             ],
             'attributes' => [],
         ]);
@@ -70,9 +68,25 @@ class ItemRelationships extends AbstractDatasetType
         $urlHelper = $services->get('ViewHelperManager')->get('url');
         $hyperlinkHelper = $services->get('ViewHelperManager')->get('hyperlink');
 
-        $groupBy = $vis->datasetData()['group_by'] ?? 'resource_class';
+        $groupByControl = $vis->datasetData()['group_by_control'] ?? [];
+        $groupBy = $groupByControl['group_by'] ?? 'resource_class';
+        $groupByPropertyId = $groupByControl['group_by_property'] ?? null;
         $limitProperties = $vis->datasetData()['limit_properties'] ?? false;
         $excludeUnlinked = $vis->datasetData()['exclude_unlinked'] ?? false;
+
+        // Get the property for group by "property_value". Fall back on
+        // "resource_class" if the property is invalid.
+        if ('property_value' === $groupBy) {
+            if (is_numeric($groupByPropertyId)) {
+                try {
+                    $groupByProperty = $api->read('properties', $groupByPropertyId)->getContent();
+                } catch (NotFoundException $e) {
+                    $groupBy = 'resource_class';
+                }
+            } else {
+                $groupBy = 'resource_class';
+            }
+        }
 
         $nodes = [];
         $links = [];
@@ -100,6 +114,11 @@ class ItemRelationships extends AbstractDatasetType
             $resourceClass = $item->resourceClass();
             $resourceTemplate = $item->resourceTemplate();
             switch ($groupBy) {
+                case 'property_value':
+                    $propertyValue = $item->value($groupByProperty->term(), ['type' => 'literal']);
+                    $nodes[$item->id()]['group_id'] = $propertyValue ? $propertyValue->value() : null;
+                    $nodes[$item->id()]['group_label'] = $propertyValue ? $propertyValue->value() : null;
+                    break;
                 case 'resource_template':
                     $nodes[$item->id()]['group_id'] = $resourceTemplate ? $resourceTemplate->id() : null;
                     $nodes[$item->id()]['group_label'] = $resourceTemplate ? $resourceTemplate->label() : null;

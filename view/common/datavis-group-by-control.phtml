@@ -1,0 +1,30 @@
+<?php echo $this->formElement($element->getGroupByElement()); ?>
+<?php echo $this->formElement($element->getGroupByPropertyElement()); ?>
+<script>
+$( document ).ready(function() {
+    const groupBySelect = $('#group-by-select');
+    const groupByPropertySelect = $('#group-by-property-select');
+    const createChosen = function() {
+        groupByPropertySelect.chosen({
+            include_group_label_in_selected: true
+        });
+    }
+
+    // Prepare the control.
+    if ('property_value' === groupBySelect.val()) {
+        groupByPropertySelect.show();
+        createChosen();
+    }
+
+    // Handle a "Group by" change.
+    groupBySelect.on('change', function(e) {
+        if ('property_value' === groupBySelect.val()) {
+            groupByPropertySelect.show();
+            createChosen();
+        } else {
+            groupByPropertySelect.chosen('destroy');
+            groupByPropertySelect.hide();
+        }
+    });
+});
+</script>
