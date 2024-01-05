@@ -91,6 +91,7 @@ class ItemRelationships extends AbstractDatasetType
         $nodes = [];
         $links = [];
         $linkedIds = [];
+        $groupCache = []; // Use to assign IDs to groups that don't have natural IDs.
 
         $itemIds = $this->getItemIds($services, $vis);
         foreach ($itemIds as $itemId) {
@@ -115,9 +116,15 @@ class ItemRelationships extends AbstractDatasetType
             $resourceTemplate = $item->resourceTemplate();
             switch ($groupBy) {
                 case 'property_value':
+                    // Get the first literal property value and give every unique
+                    // value a unique ID.
                     $propertyValue = $item->value($groupByProperty->term(), ['type' => 'literal']);
-                    $nodes[$item->id()]['group_id'] = $propertyValue ? $propertyValue->value() : null;
-                    $nodes[$item->id()]['group_label'] = $propertyValue ? $propertyValue->value() : null;
+                    $groupLabel = $propertyValue ? $propertyValue->value() : null;
+                    if (!in_array($groupLabel, $groupCache)) {
+                        $groupCache[] = $groupLabel;
+                    }
+                    $nodes[$item->id()]['group_id'] = array_search($groupLabel, $groupCache);
+                    $nodes[$item->id()]['group_label'] = $groupLabel;
                     break;
                 case 'resource_template':
                     $nodes[$item->id()]['group_id'] = $resourceTemplate ? $resourceTemplate->id() : null;
