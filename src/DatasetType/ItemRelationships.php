@@ -116,10 +116,11 @@ class ItemRelationships extends AbstractDatasetType
             $resourceTemplate = $item->resourceTemplate();
             switch ($groupBy) {
                 case 'property_value':
-                    // Get the first literal property value and give every unique
-                    // value a unique ID.
-                    $propertyValue = $item->value($groupByProperty->term(), ['type' => 'literal']);
-                    $groupLabel = $propertyValue ? $propertyValue->value() : null;
+                    // Get the first property value and give every unique value
+                    // a unique ID. Note that we cast the value object to a string
+                    // so individual data types can return a literal-like value.
+                    $propertyValue = $item->value($groupByProperty->term());
+                    $groupLabel = $propertyValue ? (string) $propertyValue : null;
                     if (!in_array($groupLabel, $groupCache)) {
                         $groupCache[] = $groupLabel;
                     }
