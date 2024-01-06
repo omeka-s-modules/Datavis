@@ -43,7 +43,7 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const marginLeft = diagramData.margin_left ? parseInt(diagramData.margin_left) : 200;
     const order = diagramData.order ? diagramData.order : 'by_group';
     const step = diagramData.step ? parseInt(diagramData.step) : 14;
-    const labelFontSize = diagramData.label_font_size ? parseInt(diagramData.label_font_size) : 12;
+    const labelFontSize = diagramData.label_font_size ? diagramData.label_font_size : 'medium';
     const height = (datasetNodes.length - 1) * step + marginTop + marginBottom;
 
     // Get the tooltip.

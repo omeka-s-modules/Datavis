@@ -19,7 +19,7 @@ class ArcVertical implements DiagramTypeInterface
             'width' => 800,
             'order' => 'by_group',
             'step' => 14,
-            'label_font_size' => 12,
+            'label_font_size' => 'medium',
             'margin_top' => 30,
             'margin_bottom' => 30,
             'margin_left' => 200,
@@ -93,15 +93,23 @@ class ArcVertical implements DiagramTypeInterface
             ],
         ]);
         $fieldset->add([
-            'type' => Element\Number::class,
+            'type' => Element\Select::class,
             'name' => 'label_font_size',
             'options' => [
                 'label' => 'Label font size', // @translate
+                'value_options' => [
+                    'xx-small' => 'xx-small',
+                    'x-small' => 'x-small',
+                    'small' => 'small',
+                    'medium' => 'medium',
+                    'large' => 'large',
+                    'x-large' => 'x-large',
+                    'xx-large' => 'xx-large',
+                    'xxx-large' => 'xxx-large',
+                ],
             ],
             'attributes' => [
-                'min' => 1,
                 'value' => $defaults['label_font_size'],
-                'placeholder' => $defaults['label_font_size'],
                 'required' => true,
             ],
         ]);
