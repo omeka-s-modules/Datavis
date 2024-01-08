@@ -13,6 +13,6 @@ class GroupByControl extends AbstractHelper
 
     public function render(ElementInterface $element)
     {
-        return $this->getView()->partial('common/datavis-group-by-control', ['element' => $element]);
+        return $this->getView()->partial('common/datavis/view-helper/group-by-control', ['element' => $element]);
     }
 }

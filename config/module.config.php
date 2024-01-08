@@ -93,7 +93,12 @@ return [
     ],
     'block_layouts' => [
         'invokables' => [
-            'datavis' => BlockLayout\Datavis::class,
+            'datavis' => Site\BlockLayout\Datavis::class,
+        ],
+    ],
+    'navigation_links' => [
+        'invokables' => [
+            'datavis' => Site\NavigationLink\Datavis::class,
         ],
     ],
     'navigation' => [

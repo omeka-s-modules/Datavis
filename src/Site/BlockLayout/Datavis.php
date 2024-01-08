@@ -1,5 +1,5 @@
 <?php
-namespace Datavis\BlockLayout;
+namespace Datavis\Site\BlockLayout;
 
 use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Api\Representation\SitePageRepresentation;

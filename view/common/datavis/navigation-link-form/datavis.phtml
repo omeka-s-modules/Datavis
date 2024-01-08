@@ -1,0 +1,18 @@
+<?php
+$valueOptions = [];
+$visualizations = $this->api()->search('datavis_visualizations', ['site_id' => $site->id()])->getContent();
+foreach ($visualizations as $visualization) {
+    $valueOptions[$visualization->id()] = $visualization->title();
+}
+$element = new \Laminas\Form\Element\Select('id');
+$element->setValueOptions($valueOptions)
+    ->setEmptyOption($this->translate('Select a visualization'))
+    ->setValue($data['id'] ?? null)
+    ->setAttributes([
+        'data-name' => 'id',
+        'required' => true,
+    ]);
+?>
+<label><?php echo $this->translate('Type'); ?> <input type="text" value="<?php echo $this->escapeHtml($this->translate($link->getName())); ?>" disabled></label>
+<label><?php echo $this->translate('Label'); ?> <input type="text" data-name="label" value="<?php echo $this->escapeHtml($data['label'] ?? null); ?>"></label>
+<label class="required"><?php echo $this->translate('Visualization'); ?> <?php echo $this->formElement($element); ?></label>
