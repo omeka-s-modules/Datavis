@@ -91,7 +91,10 @@ class ItemRelationships extends AbstractDatasetType
         $nodes = [];
         $links = [];
         $linkedIds = [];
-        $groupCache = []; // Use to assign IDs to groups that don't have natural IDs.
+        // Set the group cache array. Use this to assign IDs to groups that
+        // don't have natural IDs. Note that we assign null to 0 index so
+        // ordering works in the diagram.
+        $groupCache = [0 => null];
 
         $itemIds = $this->getItemIds($services, $vis);
         foreach ($itemIds as $itemId) {
@@ -116,11 +119,28 @@ class ItemRelationships extends AbstractDatasetType
             $resourceTemplate = $item->resourceTemplate();
             switch ($groupBy) {
                 case 'property_value':
-                    // Get the first property value and give every unique value
-                    // a unique ID. Note that we cast the value object to a string
-                    // so individual data types can return a literal-like value.
+                    // Get the first property value, set the group label, and give
+                    // every unique label a unique ID. Note that we get the group
+                    // label according to the data type.
                     $propertyValue = $item->value($groupByProperty->term());
-                    $groupLabel = $propertyValue ? (string) $propertyValue : null;
+                    $groupLabel = null;
+                    if ($propertyValue) {
+                        switch ($propertyValue->type()) {
+                            case 'resource':
+                            case 'resource:item':
+                            case 'resource:itemset':
+                            case 'resource:media':
+                                // Get the title of the value resource.
+                                $groupLabel = $propertyValue->valueResource()->title();
+                                break;
+                            case 'literal':
+                            case 'uri':
+                            default:
+                                // Cast all other value objects to a string so individual
+                                // data types can return a literal-like value.
+                                $groupLabel = (string) $propertyValue;
+                        }
+                    }
                     if (!in_array($groupLabel, $groupCache)) {
                         $groupCache[] = $groupLabel;
                     }
