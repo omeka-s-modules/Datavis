@@ -1,6 +1,7 @@
 <?php
 $this->headLink()->appendStylesheet($this->assetUrl('css/admin/vis-form.css', 'Datavis'));
 $this->headScript()->appendFile($this->assetUrl('js/admin/vis-form.js', 'Datavis'));
+$this->ckEditor();
 
 if (isset($vis)) {
     $this->htmlElement('body')->appendAttribute('class', 'datavis vis edit');

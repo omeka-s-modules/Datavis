@@ -172,7 +172,7 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
                 data-diagram-data="%s"
                 data-block-data="%s"></div>',
             $view->escapeHtml($this->title()),
-            $view->escapeHtml($this->description()),
+            $this->description(),
             $view->escapeHtml($this->diagramType()),
             $view->escapeHtml($this->id()),
             $view->escapeHtml($this->diagramType()),

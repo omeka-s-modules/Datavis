@@ -41,7 +41,7 @@ class DatavisForm extends Form
         ]);
 
         $this->add([
-            'type' => LaminasElement\Textarea::class,
+            'type' => OmekaElement\CkeditorInline::class,
             'name' => 'o:description',
             'options' => [
                 'label' => 'Description', // @translate
