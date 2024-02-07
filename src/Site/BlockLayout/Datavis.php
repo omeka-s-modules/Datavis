@@ -74,6 +74,11 @@ class Datavis extends AbstractBlockLayout
         if (!$vis) {
             return; // The visualization is invalid. Do nothing.
         }
-        return $vis->diagram($view, $blockData);
+        return sprintf(
+            '<h5>%s</h5><p>%s</p>%s',
+            $vis->title(),
+            $vis->description(),
+            $vis->diagram($view, $blockData)
+        );
     }
 }

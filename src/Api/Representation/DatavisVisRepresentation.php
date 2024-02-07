@@ -162,15 +162,13 @@ class DatavisVisRepresentation extends AbstractEntityRepresentation
         $view->headScript()->appendFile($view->assetUrl('js/diagram-render.js', 'Datavis'));
         $this->getDiagramType()->prepareRender($view);
         return sprintf(
-            '<p>%s</p>
-            <div class="datavis-diagram %s"
+            '<div class="datavis-diagram %s"
                 data-id="%s"
                 data-diagram-type="%s"
                 data-dataset-url="%s"
                 data-dataset-data="%s"
                 data-diagram-data="%s"
                 data-block-data="%s"></div>',
-            $this->description(),
             $view->escapeHtml($this->diagramType()),
             $view->escapeHtml($this->id()),
             $view->escapeHtml($this->diagramType()),
