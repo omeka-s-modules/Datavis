@@ -1,4 +1,4 @@
-<?php 
+<?php
 $this->headLink()->appendStylesheet($this->assetUrl('css/admin/vis-form.css', 'Datavis'));
 echo $this->pageTitle($this->translate('Add visualization'), 1, $this->translate('Data Visualization'));
 ?>
@@ -16,7 +16,7 @@ echo $this->pageTitle($this->translate('Add visualization'), 1, $this->translate
 <?php $datasetType = $this->datavis()->getDatasetType($datasetTypeName); ?>
 <div class="dataset-type">
     <label>
-        <input type="radio" name="<?php echo $this->escapeHtml('o-module-datavis:dataset_type'); ?>" value="<?php echo $this->escapeHtml($datasetTypeName); ?>">
+        <input type="radio" name="<?php echo $this->escapeHtml('o-module-datavis:dataset_type'); ?>" value="<?php echo $this->escapeHtml($datasetTypeName); ?>" required>
         <?php echo $this->escapeHtml($this->translate($datasetType->getLabel())); ?>
     </label>
     <?php if ($datasetType->getDescription()): ?>

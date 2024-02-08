@@ -77,6 +77,7 @@ class DatavisVisAdapter extends AbstractEntityAdapter
         if (Request::CREATE === $request->getOperation()) {
             $siteData = $request->getValue('o:site');
             $site = $this->getAdapter('sites')->findEntity($siteData['o:id']);
+            $this->authorize($site, 'add-visualization');
             $entity->setSite($site);
 
             $datasetType = $request->getValue('o-module-datavis:dataset_type');

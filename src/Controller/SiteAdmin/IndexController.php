@@ -29,6 +29,7 @@ class IndexController extends AbstractActionController
 
         $view = new ViewModel;
         $view->setVariable('vises', $vises);
+        $view->setVariable('site', $this->currentSite());
         return $view;
     }
 
@@ -193,14 +194,18 @@ class IndexController extends AbstractActionController
             GenerateDataset::class,
             ['datavis_vis_id' => $vis->id()]
         );
-        $message = new Message(
-            'Generating dataset. This may take a while. %s', // @translate
-            sprintf(
-                '<a href="%s">%s</a>',
+        $message = 'Generating dataset. This may take a while.'; // @translate
+        if ($this->userIsAllowed('Omeka\Controller\Admin\Job', 'show')) {
+            $message = new Message(
+                '%s <a href="%s">%s</a>',
+                $message,
                 htmlspecialchars($this->url()->fromRoute('admin/id', ['controller' => 'job', 'id' => $job->getId()])),
                 $this->translate('See this job for progress.')
-            ));
-        $message->setEscapeHtml(false);
+            );
+            $message->setEscapeHtml(false);
+        } else {
+
+        }
         $this->messenger()->addSuccess($message);
     }
 }
