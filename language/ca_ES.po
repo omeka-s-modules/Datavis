@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 19:41-0500\n"
+"POT-Creation-Date: 2024-02-14 13:35-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2021\n"
 "Language-Team: Catalan (Spain) (https://app.transifex.com/omeka/teams/14184/ca_ES/)\n"
@@ -21,19 +21,28 @@ msgstr ""
 "Language: ca_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:201
+#: src/Controller/SiteAdmin/IndexController.php:203
 msgid "See this job for progress."
 msgstr ""
 
+#: view/common/datavis/navigation-link-form/datavis.phtml:9
+msgid "Select a visualization"
+msgstr ""
+
+#: view/common/datavis/navigation-link-form/datavis.phtml:18
+#: view/datavis/site-admin/index/browse.phtml:34
+msgid "Visualization"
+msgstr "Visualització"
+
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Add visualization"
 msgstr "Afegeix una visualització"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
-#: view/datavis/site-admin/index/form.phtml:17
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:18
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Data Visualization"
 msgstr "Visualització de dades"
 
@@ -53,10 +62,6 @@ msgstr "Afegeix una nova visualització"
 msgid "Date created"
 msgstr "Data de creació"
 
-#: view/datavis/site-admin/index/browse.phtml:34
-msgid "Visualization"
-msgstr "Visualització"
-
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
 msgstr "Tipus de conjunt de dades"
@@ -65,11 +70,11 @@ msgstr "Tipus de conjunt de dades"
 msgid "Diagram type"
 msgstr "Tipus de diagrama"
 
-#: view/datavis/site-admin/index/browse.phtml:50
+#: view/datavis/site-admin/index/browse.phtml:49
 msgid "View diagram"
 msgstr "Veure el diagrama"
 
-#: view/datavis/site-admin/index/browse.phtml:53
+#: view/datavis/site-admin/index/browse.phtml:52
 msgid "View dataset"
 msgstr "Veure el conjunt de dades"
 
@@ -86,47 +91,47 @@ msgstr "Afegeix una nova visualització."
 msgid "No visualizations found."
 msgstr "No s'ha trobat cap visualització."
 
-#: view/datavis/site-admin/index/form.phtml:17
+#: view/datavis/site-admin/index/form.phtml:18
 msgid "Edit visualization"
 msgstr "Edita la visualització"
 
-#: view/datavis/site-admin/index/form.phtml:32
+#: view/datavis/site-admin/index/form.phtml:33
 msgid "View&hellip;"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:36
+#: view/datavis/site-admin/index/form.phtml:37
 msgid "Diagram"
 msgstr "Diagrama"
 
-#: view/datavis/site-admin/index/form.phtml:43
+#: view/datavis/site-admin/index/form.phtml:44
 msgid "Save and&hellip;"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:45
+#: view/datavis/site-admin/index/form.phtml:46
 msgid "Generate dataset"
 msgstr "Genera el conjunt de dades"
 
-#: view/datavis/site-admin/index/form.phtml:46
+#: view/datavis/site-admin/index/form.phtml:47
 msgid "Return to visualizations"
 msgstr "Torna a les visualitzacions"
 
-#: view/datavis/site-admin/index/form.phtml:47
+#: view/datavis/site-admin/index/form.phtml:48
 msgid "Stay on this visualization"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:56
+#: view/datavis/site-admin/index/form.phtml:57
 msgid "Dataset configuration"
 msgstr "Configuració del conjunt de dades"
 
-#: view/datavis/site-admin/index/form.phtml:61
+#: view/datavis/site-admin/index/form.phtml:62
 msgid "Diagram configuration"
 msgstr "Configuració del diagrama"
 
-#: src/BlockLayout/Datavis.php:16
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
 msgid "Data visualization"
 msgstr "Visualització de dades"
 
-#: src/BlockLayout/Datavis.php:50
+#: src/Site/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr "Tria la visualització..."
 
@@ -146,15 +151,15 @@ msgstr "dataset_data ha de ser una matriu o vector"
 msgid "diagram_data must be an array"
 msgstr "diagram_data ha de ser una matriu o vector"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:113
 msgid "A visualization must have a site"
 msgstr "Les visualitzacions han de pertànyer a un lloc"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:115
+#: src/Api/Adapter/DatavisVisAdapter.php:116
 msgid "A visualization must have a dataset type"
 msgstr "Totes les visualitzacions han de tenir un tipus de conjunt de dades"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:118
+#: src/Api/Adapter/DatavisVisAdapter.php:119
 msgid "A visualization must have a title"
 msgstr "La visualització ha de tenir un títol"
 
@@ -167,7 +172,7 @@ msgid "Visualize the count of items that have selected properties."
 msgstr ""
 
 #: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:55
+#: src/DatasetType/ItemRelationships.php:51
 msgid "Select properties…"
 msgstr "Seleccioneu propietats..."
 
@@ -243,15 +248,15 @@ msgstr ""
 msgid "Group by"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:48
+#: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:49
+#: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:62
+#: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
 msgstr ""
 
@@ -268,6 +273,14 @@ msgstr ""
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
 msgstr "Selecciona classes..."
+
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -323,7 +336,7 @@ msgstr ""
 msgid "Label font size"
 msgstr ""
 
-#: src/DiagramType/ArcVertical.php:112
+#: src/DiagramType/ArcVertical.php:120
 msgid "Space between labels"
 msgstr ""
 
@@ -376,24 +389,22 @@ msgstr "Gràfic de barres"
 msgid "Network graph"
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:43
+#: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
 msgstr "Configura la visualització."
 
-#: src/Controller/SiteAdmin/IndexController.php:84
+#: src/Controller/SiteAdmin/IndexController.php:85
 msgid "Successfully added your visualization."
 msgstr "S'ha afegit la visualització."
 
-#: src/Controller/SiteAdmin/IndexController.php:129
+#: src/Controller/SiteAdmin/IndexController.php:130
 msgid "Successfully edited your visualization."
 msgstr "S'ha editat la visualització."
 
-#: src/Controller/SiteAdmin/IndexController.php:163
+#: src/Controller/SiteAdmin/IndexController.php:164
 msgid "Successfully deleted your visualization."
 msgstr "S'ha suprimit la visualització."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
-#, php-format
-msgid "Generating dataset. This may take a while. %s"
+msgid "Generating dataset. This may take a while."
 msgstr ""
-"S'està generant el conjunt de dades. Aquesta acció pot trigar una estona. %s"

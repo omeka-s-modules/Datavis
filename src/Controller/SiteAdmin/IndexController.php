@@ -203,8 +203,6 @@ class IndexController extends AbstractActionController
                 $this->translate('See this job for progress.')
             );
             $message->setEscapeHtml(false);
-        } else {
-
         }
         $this->messenger()->addSuccess($message);
     }

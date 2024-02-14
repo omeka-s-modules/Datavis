@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giorgio Comai <g@giorgiocomai.eu>, 2021
+# Giorgio Comai <g@giorgiocomai.eu>, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 19:41-0500\n"
+"POT-Creation-Date: 2024-02-14 13:35-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2021\n"
+"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/omeka/teams/14184/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,19 +21,28 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:201
+#: src/Controller/SiteAdmin/IndexController.php:203
 msgid "See this job for progress."
 msgstr "Vedi questo lavoro per l'avanzamento "
 
+#: view/common/datavis/navigation-link-form/datavis.phtml:9
+msgid "Select a visualization"
+msgstr ""
+
+#: view/common/datavis/navigation-link-form/datavis.phtml:18
+#: view/datavis/site-admin/index/browse.phtml:34
+msgid "Visualization"
+msgstr "Visualizzazione"
+
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Add visualization"
 msgstr "Aggiungi visualizzazione"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
-#: view/datavis/site-admin/index/form.phtml:17
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:18
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Data Visualization"
 msgstr "Visualizzazione di dati"
 
@@ -53,10 +62,6 @@ msgstr "Aggiungi una nuova visualizzazione"
 msgid "Date created"
 msgstr "Data di creazione"
 
-#: view/datavis/site-admin/index/browse.phtml:34
-msgid "Visualization"
-msgstr "Visualizzazione"
-
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
 msgstr "Tipo di dataset"
@@ -65,11 +70,11 @@ msgstr "Tipo di dataset"
 msgid "Diagram type"
 msgstr "Tipo di diagramma"
 
-#: view/datavis/site-admin/index/browse.phtml:50
+#: view/datavis/site-admin/index/browse.phtml:49
 msgid "View diagram"
 msgstr "Visualizza diagramma"
 
-#: view/datavis/site-admin/index/browse.phtml:53
+#: view/datavis/site-admin/index/browse.phtml:52
 msgid "View dataset"
 msgstr "Visualizza il dataset"
 
@@ -86,47 +91,47 @@ msgstr "Aggiungi una nuova visualizzazione."
 msgid "No visualizations found."
 msgstr "Nessuna visualizzazione trovata."
 
-#: view/datavis/site-admin/index/form.phtml:17
+#: view/datavis/site-admin/index/form.phtml:18
 msgid "Edit visualization"
 msgstr "Modifica visualizzazione"
 
-#: view/datavis/site-admin/index/form.phtml:32
+#: view/datavis/site-admin/index/form.phtml:33
 msgid "View&hellip;"
 msgstr "Visualizza..."
 
-#: view/datavis/site-admin/index/form.phtml:36
+#: view/datavis/site-admin/index/form.phtml:37
 msgid "Diagram"
 msgstr "Diagramma"
 
-#: view/datavis/site-admin/index/form.phtml:43
+#: view/datavis/site-admin/index/form.phtml:44
 msgid "Save and&hellip;"
 msgstr "Salva e..."
 
-#: view/datavis/site-admin/index/form.phtml:45
+#: view/datavis/site-admin/index/form.phtml:46
 msgid "Generate dataset"
 msgstr "Genera dataset"
 
-#: view/datavis/site-admin/index/form.phtml:46
+#: view/datavis/site-admin/index/form.phtml:47
 msgid "Return to visualizations"
 msgstr "Ritorna alle visualizzazioni"
 
-#: view/datavis/site-admin/index/form.phtml:47
+#: view/datavis/site-admin/index/form.phtml:48
 msgid "Stay on this visualization"
 msgstr "Rimani su questa visualizzazione"
 
-#: view/datavis/site-admin/index/form.phtml:56
+#: view/datavis/site-admin/index/form.phtml:57
 msgid "Dataset configuration"
 msgstr "Configurazione del dataset"
 
-#: view/datavis/site-admin/index/form.phtml:61
+#: view/datavis/site-admin/index/form.phtml:62
 msgid "Diagram configuration"
 msgstr "Configurazione del diagramma"
 
-#: src/BlockLayout/Datavis.php:16
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
 msgid "Data visualization"
 msgstr "Visualizzazione di dati"
 
-#: src/BlockLayout/Datavis.php:50
+#: src/Site/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr "Seleziona visualizzazione..."
 
@@ -146,15 +151,15 @@ msgstr "dataset_data deve essere un array"
 msgid "diagram_data must be an array"
 msgstr "diagram_data deve essere un array"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:113
 msgid "A visualization must have a site"
 msgstr "Una visualizzzione deve avere un sito"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:115
+#: src/Api/Adapter/DatavisVisAdapter.php:116
 msgid "A visualization must have a dataset type"
 msgstr "Una visualizzazione deve avere un tipo di dataset"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:118
+#: src/Api/Adapter/DatavisVisAdapter.php:119
 msgid "A visualization must have a title"
 msgstr "Una visualizzazione deve avere un titolo"
 
@@ -167,7 +172,7 @@ msgid "Visualize the count of items that have selected properties."
 msgstr "Visualizza il numero di contenuti che hanno la proprietà selezionata"
 
 #: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:55
+#: src/DatasetType/ItemRelationships.php:51
 msgid "Select properties…"
 msgstr "Seleziona proprietà..."
 
@@ -236,27 +241,29 @@ msgstr "Nessun massimo"
 
 #: src/DatasetType/ItemRelationships.php:17
 msgid "Item relationships"
-msgstr ""
+msgstr "Relazioni del contenuto"
 
 #: src/DatasetType/ItemRelationships.php:22
 msgid "Visualize the relationships between items via their resource values."
 msgstr ""
+"Visualizza le relazioni tra contenuti attraverso i loro valori di risorsa"
 
 #: src/DatasetType/ItemRelationships.php:36
 msgid "Group by"
-msgstr ""
+msgstr "Raggruppa per"
 
-#: src/DatasetType/ItemRelationships.php:48
+#: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
-msgstr ""
+msgstr "Limita le relazioni a queste proprietà"
 
-#: src/DatasetType/ItemRelationships.php:49
+#: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
 msgstr ""
+"Quando nessuna proprietà è selezionata tutte le relazioni verranno incluse."
 
-#: src/DatasetType/ItemRelationships.php:62
+#: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
-msgstr ""
+msgstr "Escludi contenuti senza relazioni"
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
@@ -273,6 +280,14 @@ msgstr ""
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
 msgstr "Seleziona classi..."
+
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -296,7 +311,7 @@ msgstr "Seleziona tipo di diagramma"
 
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
-msgstr ""
+msgstr "Arco"
 
 #: src/DiagramType/ArcVertical.php:32 src/DiagramType/ColumnChart.php:32
 #: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
@@ -321,19 +336,19 @@ msgstr "Margine a sinistra"
 
 #: src/DiagramType/ArcVertical.php:86
 msgid "By group"
-msgstr ""
+msgstr "Per gruppo"
 
 #: src/DiagramType/ArcVertical.php:87
 msgid "By label"
-msgstr ""
+msgstr "Per etichetta"
 
 #: src/DiagramType/ArcVertical.php:99
 msgid "Label font size"
-msgstr ""
+msgstr "Dimensione del carattere dell'etichetta"
 
-#: src/DiagramType/ArcVertical.php:112
+#: src/DiagramType/ArcVertical.php:120
 msgid "Space between labels"
-msgstr ""
+msgstr "Spazio tra le etichette"
 
 #: src/DiagramType/ColumnChart.php:13
 msgid "Column chart"
@@ -382,26 +397,24 @@ msgstr "Grafico a barre"
 
 #: src/DiagramType/NetworkGraph.php:13
 msgid "Network graph"
-msgstr ""
+msgstr "Grafo (network graph)"
 
-#: src/Controller/SiteAdmin/IndexController.php:43
+#: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
 msgstr "Configura la tua visualizzazione qui sotto."
 
-#: src/Controller/SiteAdmin/IndexController.php:84
+#: src/Controller/SiteAdmin/IndexController.php:85
 msgid "Successfully added your visualization."
 msgstr "Visualizzazione aggiunta con successo."
 
-#: src/Controller/SiteAdmin/IndexController.php:129
+#: src/Controller/SiteAdmin/IndexController.php:130
 msgid "Successfully edited your visualization."
 msgstr "Visualizzazione modificata con successo."
 
-#: src/Controller/SiteAdmin/IndexController.php:163
+#: src/Controller/SiteAdmin/IndexController.php:164
 msgid "Successfully deleted your visualization."
 msgstr "Visualizzazione eliminata con successo."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
-#, php-format
-msgid "Generating dataset. This may take a while. %s"
+msgid "Generating dataset. This may take a while."
 msgstr ""
-"Generazione del dataset in corso. Ci potrebbe volere un po' di tempo. %s"

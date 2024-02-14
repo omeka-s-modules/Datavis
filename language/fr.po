@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 19:41-0500\n"
+"POT-Creation-Date: 2024-02-14 13:35-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Pols12 <poltron54@gmail.com>, 2021\n"
 "Language-Team: French (https://app.transifex.com/omeka/teams/14184/fr/)\n"
@@ -21,19 +21,28 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:201
+#: src/Controller/SiteAdmin/IndexController.php:203
 msgid "See this job for progress."
 msgstr "Voir la tâche pour la progression."
 
+#: view/common/datavis/navigation-link-form/datavis.phtml:9
+msgid "Select a visualization"
+msgstr ""
+
+#: view/common/datavis/navigation-link-form/datavis.phtml:18
+#: view/datavis/site-admin/index/browse.phtml:34
+msgid "Visualization"
+msgstr "Visualisation"
+
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Add visualization"
 msgstr ""
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
-#: view/datavis/site-admin/index/form.phtml:17
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:18
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Data Visualization"
 msgstr "Visualisation des données"
 
@@ -53,10 +62,6 @@ msgstr "Ajouter une nouvelle visualisation"
 msgid "Date created"
 msgstr "Date de création"
 
-#: view/datavis/site-admin/index/browse.phtml:34
-msgid "Visualization"
-msgstr "Visualisation"
-
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
 msgstr "Type de jeu de données"
@@ -65,11 +70,11 @@ msgstr "Type de jeu de données"
 msgid "Diagram type"
 msgstr "Type de diagramme"
 
-#: view/datavis/site-admin/index/browse.phtml:50
+#: view/datavis/site-admin/index/browse.phtml:49
 msgid "View diagram"
 msgstr "Voir le diagramme"
 
-#: view/datavis/site-admin/index/browse.phtml:53
+#: view/datavis/site-admin/index/browse.phtml:52
 msgid "View dataset"
 msgstr "Voir le jeu données"
 
@@ -86,47 +91,47 @@ msgstr "Ajouter une nouvelle visualisation."
 msgid "No visualizations found."
 msgstr "Aucune visualisation trouvée."
 
-#: view/datavis/site-admin/index/form.phtml:17
+#: view/datavis/site-admin/index/form.phtml:18
 msgid "Edit visualization"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:32
+#: view/datavis/site-admin/index/form.phtml:33
 msgid "View&hellip;"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:36
+#: view/datavis/site-admin/index/form.phtml:37
 msgid "Diagram"
 msgstr ""
 
-#: view/datavis/site-admin/index/form.phtml:43
+#: view/datavis/site-admin/index/form.phtml:44
 msgid "Save and&hellip;"
 msgstr "Sauvegarder et&hellip;"
 
-#: view/datavis/site-admin/index/form.phtml:45
+#: view/datavis/site-admin/index/form.phtml:46
 msgid "Generate dataset"
 msgstr "Générer un jeu de données"
 
-#: view/datavis/site-admin/index/form.phtml:46
+#: view/datavis/site-admin/index/form.phtml:47
 msgid "Return to visualizations"
 msgstr "Retourner aux visualisations"
 
-#: view/datavis/site-admin/index/form.phtml:47
+#: view/datavis/site-admin/index/form.phtml:48
 msgid "Stay on this visualization"
 msgstr "Rester sur cette visualisation"
 
-#: view/datavis/site-admin/index/form.phtml:56
+#: view/datavis/site-admin/index/form.phtml:57
 msgid "Dataset configuration"
 msgstr "Configuration du jeu de données"
 
-#: view/datavis/site-admin/index/form.phtml:61
+#: view/datavis/site-admin/index/form.phtml:62
 msgid "Diagram configuration"
 msgstr "Configuration du diagramme"
 
-#: src/BlockLayout/Datavis.php:16
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
 msgid "Data visualization"
 msgstr "Visualisation des données"
 
-#: src/BlockLayout/Datavis.php:50
+#: src/Site/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr "Choisissez une visualisation…"
 
@@ -146,15 +151,15 @@ msgstr "dataset_data doit être un tableau"
 msgid "diagram_data must be an array"
 msgstr "diagram_data doit être un tableau"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:113
 msgid "A visualization must have a site"
 msgstr "Une visualisation doit avoir un site"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:115
+#: src/Api/Adapter/DatavisVisAdapter.php:116
 msgid "A visualization must have a dataset type"
 msgstr "Une visualisation doit avoir un type de jeu de données"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:118
+#: src/Api/Adapter/DatavisVisAdapter.php:119
 msgid "A visualization must have a title"
 msgstr "Une visualisation doit avoir un titre"
 
@@ -167,7 +172,7 @@ msgid "Visualize the count of items that have selected properties."
 msgstr "Visualiser le nombre de contenus qui ont les propriétés sélectionnées"
 
 #: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:55
+#: src/DatasetType/ItemRelationships.php:51
 msgid "Select properties…"
 msgstr "Choisissez des propriétés…"
 
@@ -247,15 +252,15 @@ msgstr ""
 msgid "Group by"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:48
+#: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:49
+#: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:62
+#: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
 msgstr ""
 
@@ -274,6 +279,14 @@ msgstr ""
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
 msgstr "Choisissez les classes…"
+
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -330,7 +343,7 @@ msgstr ""
 msgid "Label font size"
 msgstr ""
 
-#: src/DiagramType/ArcVertical.php:112
+#: src/DiagramType/ArcVertical.php:120
 msgid "Space between labels"
 msgstr ""
 
@@ -383,25 +396,22 @@ msgstr "Diagramme en barres horizontales"
 msgid "Network graph"
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:43
+#: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
 msgstr "Configurer votre visualisation ci-dessous."
 
-#: src/Controller/SiteAdmin/IndexController.php:84
+#: src/Controller/SiteAdmin/IndexController.php:85
 msgid "Successfully added your visualization."
 msgstr "Votre visualisation a bien été ajoutée."
 
-#: src/Controller/SiteAdmin/IndexController.php:129
+#: src/Controller/SiteAdmin/IndexController.php:130
 msgid "Successfully edited your visualization."
 msgstr "Votre visualisation a bien été modifiée."
 
-#: src/Controller/SiteAdmin/IndexController.php:163
+#: src/Controller/SiteAdmin/IndexController.php:164
 msgid "Successfully deleted your visualization."
 msgstr "Votre visualisation a bien été supprimée."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
-#, php-format
-msgid "Generating dataset. This may take a while. %s"
+msgid "Generating dataset. This may take a while."
 msgstr ""
-"Génération du jeu de données en cours. Cela peut prendre quelques instants. "
-"%s"

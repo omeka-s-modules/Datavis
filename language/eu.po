@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 19:41-0500\n"
+"POT-Creation-Date: 2024-02-14 13:35-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Iametza Interaktiboa, 2022\n"
 "Language-Team: Basque (https://app.transifex.com/omeka/teams/14184/eu/)\n"
@@ -21,19 +21,28 @@ msgstr ""
 "Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Controller/SiteAdmin/IndexController.php:201
+#: src/Controller/SiteAdmin/IndexController.php:203
 msgid "See this job for progress."
 msgstr "Ikusi lan hau progresurako."
 
+#: view/common/datavis/navigation-link-form/datavis.phtml:9
+msgid "Select a visualization"
+msgstr ""
+
+#: view/common/datavis/navigation-link-form/datavis.phtml:18
+#: view/datavis/site-admin/index/browse.phtml:34
+msgid "Visualization"
+msgstr "Bistaratzea"
+
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Add visualization"
 msgstr "Gehitu bistaratzea"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
-#: view/datavis/site-admin/index/form.phtml:17
-#: view/datavis/site-admin/index/form.phtml:19
+#: view/datavis/site-admin/index/form.phtml:18
+#: view/datavis/site-admin/index/form.phtml:20
 msgid "Data Visualization"
 msgstr "Datu Bistaratzea"
 
@@ -53,10 +62,6 @@ msgstr "Gehitu bistaratze berria"
 msgid "Date created"
 msgstr "Sortze data"
 
-#: view/datavis/site-admin/index/browse.phtml:34
-msgid "Visualization"
-msgstr "Bistaratzea"
-
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
 msgstr "Datu multzo mota"
@@ -65,11 +70,11 @@ msgstr "Datu multzo mota"
 msgid "Diagram type"
 msgstr "Diagrama mota"
 
-#: view/datavis/site-admin/index/browse.phtml:50
+#: view/datavis/site-admin/index/browse.phtml:49
 msgid "View diagram"
 msgstr "Ikusi diagrama"
 
-#: view/datavis/site-admin/index/browse.phtml:53
+#: view/datavis/site-admin/index/browse.phtml:52
 msgid "View dataset"
 msgstr "Ikusi datu multzoa"
 
@@ -86,47 +91,47 @@ msgstr "Gehitu bistaratze berria."
 msgid "No visualizations found."
 msgstr "Ez da bistaratzerik aurkitu."
 
-#: view/datavis/site-admin/index/form.phtml:17
+#: view/datavis/site-admin/index/form.phtml:18
 msgid "Edit visualization"
 msgstr "Editatu bistaratzea"
 
-#: view/datavis/site-admin/index/form.phtml:32
+#: view/datavis/site-admin/index/form.phtml:33
 msgid "View&hellip;"
 msgstr "Ikusi&hellip;"
 
-#: view/datavis/site-admin/index/form.phtml:36
+#: view/datavis/site-admin/index/form.phtml:37
 msgid "Diagram"
 msgstr "Diagrama"
 
-#: view/datavis/site-admin/index/form.phtml:43
+#: view/datavis/site-admin/index/form.phtml:44
 msgid "Save and&hellip;"
 msgstr "Gorde eta&hellip;"
 
-#: view/datavis/site-admin/index/form.phtml:45
+#: view/datavis/site-admin/index/form.phtml:46
 msgid "Generate dataset"
 msgstr "Sortu datu multzoa"
 
-#: view/datavis/site-admin/index/form.phtml:46
+#: view/datavis/site-admin/index/form.phtml:47
 msgid "Return to visualizations"
 msgstr "Itzuli bistaratzeetara"
 
-#: view/datavis/site-admin/index/form.phtml:47
+#: view/datavis/site-admin/index/form.phtml:48
 msgid "Stay on this visualization"
 msgstr "Gelditu bistaratze honetan"
 
-#: view/datavis/site-admin/index/form.phtml:56
+#: view/datavis/site-admin/index/form.phtml:57
 msgid "Dataset configuration"
 msgstr "Datu multzo konfigurazioa"
 
-#: view/datavis/site-admin/index/form.phtml:61
+#: view/datavis/site-admin/index/form.phtml:62
 msgid "Diagram configuration"
 msgstr "Diagrama konfigurazioa"
 
-#: src/BlockLayout/Datavis.php:16
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
 msgid "Data visualization"
 msgstr "Datu bistaratzea"
 
-#: src/BlockLayout/Datavis.php:50
+#: src/Site/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
 msgstr "Hautatu bistaratzea..."
 
@@ -146,15 +151,15 @@ msgstr "dataset_data matrize motakoa izan behar da"
 msgid "diagram_data must be an array"
 msgstr "diagram_data matrize motakoa izan behar da"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:112
+#: src/Api/Adapter/DatavisVisAdapter.php:113
 msgid "A visualization must have a site"
 msgstr "Bistaratzeak atari bat eduki behar du"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:115
+#: src/Api/Adapter/DatavisVisAdapter.php:116
 msgid "A visualization must have a dataset type"
 msgstr "Bistaratzeak datu multzo bat eduki behar du"
 
-#: src/Api/Adapter/DatavisVisAdapter.php:118
+#: src/Api/Adapter/DatavisVisAdapter.php:119
 msgid "A visualization must have a title"
 msgstr "Bistaratzeak titulua eduki behar du"
 
@@ -167,7 +172,7 @@ msgid "Visualize the count of items that have selected properties."
 msgstr "Bistaratu hautatutako propietateak dituzten elementuen kopurua."
 
 #: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:55
+#: src/DatasetType/ItemRelationships.php:51
 msgid "Select properties…"
 msgstr "Hautatu propietateak..."
 
@@ -246,15 +251,15 @@ msgstr ""
 msgid "Group by"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:48
+#: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:49
+#: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
 msgstr ""
 
-#: src/DatasetType/ItemRelationships.php:62
+#: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
 msgstr ""
 
@@ -271,6 +276,14 @@ msgstr ""
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
 msgstr "Hautatu klaseak..."
+
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -327,7 +340,7 @@ msgstr ""
 msgid "Label font size"
 msgstr ""
 
-#: src/DiagramType/ArcVertical.php:112
+#: src/DiagramType/ArcVertical.php:120
 msgid "Space between labels"
 msgstr ""
 
@@ -380,23 +393,22 @@ msgstr "Barra diagrama"
 msgid "Network graph"
 msgstr ""
 
-#: src/Controller/SiteAdmin/IndexController.php:43
+#: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
 msgstr "Konfiguratu zure bistaratzea hemen."
 
-#: src/Controller/SiteAdmin/IndexController.php:84
+#: src/Controller/SiteAdmin/IndexController.php:85
 msgid "Successfully added your visualization."
 msgstr "Zure bistaratzea ongi gehitu da."
 
-#: src/Controller/SiteAdmin/IndexController.php:129
+#: src/Controller/SiteAdmin/IndexController.php:130
 msgid "Successfully edited your visualization."
 msgstr "Zure bistaratzea ongi aldatu da."
 
-#: src/Controller/SiteAdmin/IndexController.php:163
+#: src/Controller/SiteAdmin/IndexController.php:164
 msgid "Successfully deleted your visualization."
 msgstr "Zure bistaratzea ongi ezabatu da."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
-#, php-format
-msgid "Generating dataset. This may take a while. %s"
-msgstr "Datu multzoa sortzen. Honek denbora iraun dezake. %s"
+msgid "Generating dataset. This may take a while."
+msgstr ""
