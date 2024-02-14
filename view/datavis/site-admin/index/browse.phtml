@@ -79,7 +79,7 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
 
 <?php else: ?>
 <div class="no-resources">
-    <?php if ($this->userIsAllowed('Datavis\Api\Adapter\DatavisVisAdapter', 'create')): ?>
+    <?php if ($site->userIsAllowed('add-visualization')): ?>
     <p><?php echo sprintf(
         $this->translate('No visualizations found. %s'),
         $this->hyperlink($this->translate('Add a new visualization.'), $this->url(null, ['action' => 'add-dataset-type'], true))
