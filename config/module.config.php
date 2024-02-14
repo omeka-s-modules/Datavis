@@ -109,6 +109,7 @@ return [
                 'action' => 'index',
                 'useRouteMatch' => true,
                 'resource' => 'Datavis\Controller\SiteAdmin\Index',
+                'privilege' => 'index',
                 'pages' => [
                     [
                         'route' => 'admin/site/slug/datavis',

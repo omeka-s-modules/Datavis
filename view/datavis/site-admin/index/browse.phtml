@@ -4,7 +4,7 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
 
 <?php echo $this->pageTitle($this->translate('Visualizations'), 1, $this->translate('Data Visualization')); ?>
 
-<?php if ($this->userIsAllowed('Datavis\Api\Adapter\DatavisVisAdapter', 'create')): ?>
+<?php if ($site->userIsAllowed('add-visualization')): ?>
 <div id="page-actions">
     <div id="page-action-menu">
         <?php echo $this->hyperlink($this->translate('Add new visualization'), $this->url(null, ['action' => 'add-dataset-type'], true), ['class' => 'button']); ?>
@@ -45,13 +45,13 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
             <td>
                 <?php echo $vis->title(); ?>
                 <ul class="actions">
-                    <?php if ($vis->userIsAllowed('update')): ?>
                     <?php if ($vis->datasetModified() && $vis->diagramType()): ?>
                     <li><?php echo $this->hyperlink('', $vis->diagramUrl(), ['class' => 'fa fa-chart-pie', 'title' => $this->translate('View diagram'), 'target' => '_blank']); ?></li>
                     <?php endif; ?>
                     <?php if ($vis->datasetModified()): ?>
                     <li><?php echo $this->hyperlink('', $vis->datasetUrl(['pretty_print' => true]), ['class' => 'fa fa-table', 'title' => $this->translate('View dataset'), 'target' => '_blank']); ?></li>
                     <?php endif; ?>
+                    <?php if ($vis->userIsAllowed('update')): ?>
                     <li><?php echo $vis->link('', 'edit', ['class' => 'fa fa-pencil-alt', 'title' => $this->translate('Edit')]) ?></li>
                     <?php endif; ?>
                 </ul>
@@ -79,7 +79,7 @@ $this->htmlElement('body')->appendAttribute('class', 'datavis vis browse');
 
 <?php else: ?>
 <div class="no-resources">
-    <?php if ($this->userIsAllowed('Datavis\Api\Adapter\DatavisVisAdapter', 'create')): ?>
+    <?php if ($site->userIsAllowed('add-visualization')): ?>
     <p><?php echo sprintf(
         $this->translate('No visualizations found. %s'),
         $this->hyperlink($this->translate('Add a new visualization.'), $this->url(null, ['action' => 'add-dataset-type'], true))
