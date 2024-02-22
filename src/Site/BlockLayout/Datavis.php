@@ -50,6 +50,9 @@ class Datavis extends AbstractBlockLayout
                 'empty_option' => 'Select visualization…', // @translate
                 'value_options' => $valueOptions,
             ],
+            'attributes' => [
+                'required' => true,
+            ],
         ]);
 
         $defaults = [
@@ -66,6 +69,9 @@ class Datavis extends AbstractBlockLayout
     public function render(PhpRenderer $view, SitePageBlockRepresentation $block)
     {
         $blockData = $block->data();
+        if (!(isset($blockData['id']) && is_numeric($blockData['id']))) {
+            return; // No visualization ID set. Do nothing.
+        }
         $vis = $view->api()->searchOne('datavis_visualizations', [
             'id' => $blockData['id'],
             'has_diagram_type' => true,
