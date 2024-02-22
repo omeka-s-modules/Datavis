@@ -50,9 +50,6 @@ class Datavis extends AbstractBlockLayout
                 'empty_option' => 'Select visualization…', // @translate
                 'value_options' => $valueOptions,
             ],
-            'attributes' => [
-                'required' => true,
-            ],
         ]);
 
         $defaults = [
