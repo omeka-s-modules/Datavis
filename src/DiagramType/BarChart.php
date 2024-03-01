@@ -5,6 +5,7 @@ use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
 use Laminas\View\Renderer\PhpRenderer;
 use Omeka\Api\Representation\SiteRepresentation;
+use Omeka\Form\Element as OmekaElement;
 
 class BarChart implements DiagramTypeInterface
 {
@@ -23,6 +24,7 @@ class BarChart implements DiagramTypeInterface
             'margin_bottom' => 60,
             'margin_left' => 100,
             'order' => 'value_asc',
+            'color_fill' => '#69b3a2',
         ];
 
         $fieldset->add([
@@ -117,6 +119,17 @@ class BarChart implements DiagramTypeInterface
             ],
             'attributes' => [
                 'value' => $defaults['order'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => OmekaElement\ColorPicker::class,
+            'name' => 'color_fill',
+            'options' => [
+                'label' => 'Color fill',
+            ],
+            'attributes' => [
+                'value' => $defaults['color_fill'],
                 'required' => true,
             ],
         ]);

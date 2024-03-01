@@ -31,7 +31,8 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
         .append('div')
         .attr('class', 'tooltip');
 
-    const color = d3.scaleOrdinal(d3.schemeSet3);
+    const colorScheme = diagramData.color_scheme ?? 'schemeSet3';
+    const color = d3.scaleOrdinal(d3[colorScheme]);
     const arcGenerator = d3.arc().innerRadius(0).outerRadius(radius);
 
     // Add the slices.
