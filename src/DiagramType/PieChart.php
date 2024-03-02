@@ -66,7 +66,7 @@ class PieChart implements DiagramTypeInterface
             'name' => 'color_scheme',
             'options' => [
                 'label' => 'Color scheme', // @translate
-                'info' => 'Click <a href="https://d3js.org/d3-scale-chromatic/categorical" target="_blank">here</a> to view the color schemes.',
+                'info' => 'Click <a href="https://d3js.org/d3-scale-chromatic/categorical" target="_blank">here</a> to view the available color schemes.', // @translate
                 'escape_info' => false,
                 'value_options' => [
                     'schemeCategory10' => 'schemeCategory10',

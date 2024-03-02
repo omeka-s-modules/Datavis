@@ -126,7 +126,9 @@ class BarChart implements DiagramTypeInterface
             'type' => OmekaElement\ColorPicker::class,
             'name' => 'color_fill',
             'options' => [
-                'label' => 'Color fill',
+                'label' => 'Color fill', // @translate
+                'info' => 'Enter a three- or six-digit hexadecimal color. You can use any online hex color picker to select the color. The default is <code>#69b3a2</code>', // @translate
+                'escape_info' => false,
             ],
             'attributes' => [
                 'value' => $defaults['color_fill'],
