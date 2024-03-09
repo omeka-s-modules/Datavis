@@ -3,6 +3,7 @@ namespace Datavis;
 
 use Omeka\Module\AbstractModule;
 use Omeka\Permissions\Assertion as OmekaAssertion;
+use Laminas\EventManager\Event;
 use Laminas\EventManager\SharedEventManagerInterface;
 use Laminas\Mvc\MvcEvent;
 use Laminas\Permissions\Acl\Assertion as LaminasAssertion;
@@ -70,5 +71,64 @@ SQL;
 
     public function attachListeners(SharedEventManagerInterface $sharedEventManager)
     {
+        // Copy datavis-related data for the CopyResources module.
+        $sharedEventManager->attach(
+            '*',
+            'copy_resources.copy_site',
+            function (Event $event) {
+                $services = $this->getServiceLocator();
+                $api = $services->get('Omeka\ApiManager');
+                $connection = $services->get('Omeka\Connection');
+
+                $site = $event->getParam('resource');
+                $siteCopy = $event->getParam('resource_copy');
+                $copyResources = $event->getParam('copy_resources');
+
+                $copyResources->revertSiteBlockLayouts($siteCopy->id(), 'datavis');
+                $copyResources->revertSiteNavigationLinkTypes($siteCopy->id(), 'datavis');
+
+                // Copy visualizations.
+                $visualizations = $api->search('datavis_visualizations', ['site_id' => $site->id()])->getContent();
+                $visualizationmMap = [];
+                foreach ($visualizations as $visualization) {
+                    $callback = function (&$jsonLd) use ($siteCopy){
+                        $jsonLd['o:site']['o:id'] = $siteCopy->id();
+                    };
+                    $visualizationCopy = $copyResources->createResourceCopy('datavis_visualizations', $visualization, $callback);
+                    $visualizationmMap[$visualization->id()] = $visualizationCopy->id();
+                }
+
+                // Copy the datasets, which are not copied in the above process.
+                $sql = 'UPDATE datavis_vis v1
+                    INNER JOIN datavis_vis v2
+                    SET v1.dataset = v2.dataset
+                    WHERE v1.id = :vis_copy_id
+                    AND v2.id = :vis_id';
+                $stmt = $connection->prepare($sql);
+                foreach ($visualizationmMap as $visId => $visCopyId) {
+                    $stmt->bindValue('vis_copy_id', $visCopyId);
+                    $stmt->bindValue('vis_id', $visId);
+                    $stmt->executeStatement();
+                }
+
+                // Modify block data.
+                $callback = function (&$data) use ($visualizationmMap) {
+                    if (isset($data['id']) && is_numeric($data['id'])) {
+                        $id = $data['id'];
+                        $data['id'] = array_key_exists($id, $visualizationmMap) ? $visualizationmMap[$id] : $id;
+                    }
+                };
+                $copyResources->modifySiteBlockData($siteCopy->id(), 'datavis', $callback);
+
+                // Modify site navigation.
+                $callback = function (&$link) use ($visualizationmMap) {
+                    if (isset($link['data']['id']) && is_numeric($link['data']['id'])) {
+                        $id = $link['data']['id'];
+                        $link['data']['id'] = array_key_exists($id, $visualizationmMap) ? $visualizationmMap[$id] : $id;
+                    }
+                };
+                $copyResources->modifySiteNavigation($siteCopy->id(), 'datavis', $callback);
+            }
+        );
     }
 }
