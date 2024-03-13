@@ -92,6 +92,7 @@ SQL;
                 $visualizationmMap = [];
                 foreach ($visualizations as $visualization) {
                     $callback = function (&$jsonLd) use ($siteCopy){
+                        unset($jsonLd['o:owner']);
                         $jsonLd['o:site']['o:id'] = $siteCopy->id();
                     };
                     $visualizationCopy = $copyResources->createResourceCopy('datavis_visualizations', $visualization, $callback);
