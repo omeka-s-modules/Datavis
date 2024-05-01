@@ -5,6 +5,7 @@ use Laminas\Form\Element;
 use Laminas\Form\Fieldset;
 use Laminas\View\Renderer\PhpRenderer;
 use Omeka\Api\Representation\SiteRepresentation;
+use Omeka\Form\Element as OmekaElement;
 
 class ColumnChart implements DiagramTypeInterface
 {
@@ -23,6 +24,7 @@ class ColumnChart implements DiagramTypeInterface
             'margin_bottom' => 100,
             'margin_left' => 60,
             'order' => 'value_asc',
+            'color_fill' => '#69b3a2',
         ];
 
         $fieldset->add([
@@ -117,6 +119,19 @@ class ColumnChart implements DiagramTypeInterface
             ],
             'attributes' => [
                 'value' => $defaults['order'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => OmekaElement\ColorPicker::class,
+            'name' => 'color_fill',
+            'options' => [
+                'label' => 'Color fill', // @translate
+                'info' => 'Enter a three- or six-digit hexadecimal color. You can use any online hex color picker to select the color. The default is <code>#69b3a2</code>', // @translate
+                'escape_info' => false,
+            ],
+            'attributes' => [
+                'value' => $defaults['color_fill'],
                 'required' => true,
             ],
         ]);

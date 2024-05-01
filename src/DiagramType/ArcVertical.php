@@ -23,6 +23,7 @@ class ArcVertical implements DiagramTypeInterface
             'margin_top' => 30,
             'margin_bottom' => 30,
             'margin_left' => 200,
+            'color_scheme' => 'schemeCategory10',
         ];
 
         $fieldset->add([
@@ -123,6 +124,31 @@ class ArcVertical implements DiagramTypeInterface
                 'min' => 1,
                 'value' => $defaults['step'],
                 'placeholder' => $defaults['step'],
+                'required' => true,
+            ],
+        ]);
+        $fieldset->add([
+            'type' => Element\Select::class,
+            'name' => 'color_scheme',
+            'options' => [
+                'label' => 'Color scheme', // @translate
+                'info' => 'Click <a href="https://d3js.org/d3-scale-chromatic/categorical" target="_blank">here</a> to view the available color schemes.', // @translate
+                'escape_info' => false,
+                'value_options' => [
+                    'schemeCategory10' => 'schemeCategory10',
+                    'schemeAccent' => 'schemeAccent',
+                    'schemeDark2' => 'schemeDark2',
+                    'schemePaired' => 'schemePaired',
+                    'schemePastel1' => 'schemePastel1',
+                    'schemePastel2' => 'schemePastel2',
+                    'schemeSet1' => 'schemeSet1',
+                    'schemeSet2' => 'schemeSet2',
+                    'schemeSet3' => 'schemeSet3',
+                    'schemeTableau10' => 'schemeTableau10',
+                ],
+            ],
+            'attributes' => [
+                'value' => $defaults['color_scheme'],
                 'required' => true,
             ],
         ]);

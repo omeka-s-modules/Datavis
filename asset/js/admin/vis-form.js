@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
             })
             .then(data => {
                 diagramElements.innerHTML = data;
+                // Update all color pickers.
+                const colorPickers = diagramElements.querySelectorAll('.color-picker');
+                colorPickers.forEach(colorPicker => {
+                    const color = colorPicker.querySelector('input').value;
+                    colorPicker.querySelector('.color-picker-sample').style['background-color'] = color;
+                });
             })
             .catch(error => {
                 diagramElements.innerHTML = error;

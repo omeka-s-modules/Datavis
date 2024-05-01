@@ -38,7 +38,8 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
     div.style.maxWidth = `${width}px`
 
     // Specify the color scale.
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const colorScheme = diagramData.color_scheme ?? 'schemeCategory10';
+    const color = d3.scaleOrdinal(d3[colorScheme]);
 
     // The force simulation mutates nodes and links, so create a copy so that
     // re-evaluating this cell produces the same result.

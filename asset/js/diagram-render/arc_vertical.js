@@ -56,9 +56,10 @@ Datavis.addDiagramType('arc_vertical', (div, dataset, datasetData, diagramData, 
     const Y = new Map(datasetNodes.map(node => [node.id, y(node.id)]));
 
     // A color scale for the nodes and links.
+    const colorScheme = diagramData.color_scheme ?? 'schemeCategory10';
     const color = d3.scaleOrdinal()
         .domain(datasetNodes.map(node => node.group_id).sort(d3.ascending))
-        .range(d3.schemeCategory10)
+        .range(d3[colorScheme])
         .unknown("#aaa");
 
     const groups = new Map(datasetNodes.map(node => [node.id, node.group_id]));

@@ -72,6 +72,7 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
         .attr('class', 'tooltip');
 
     // Add the bars.
+    const colorFill = diagramData.color_fill ?? '#69b3a2';
     svg.selectAll('bar')
         .data(dataset)
         .enter()
@@ -80,7 +81,7 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
             .attr('y', d => y(d.value))
             .attr('width', x.bandwidth())
             .attr('height', d => height - y(d.value))
-            .attr('fill', '#69b3a2')
+            .attr('fill', colorFill)
             .style('cursor', 'crosshair')
             .on('mousemove', (e, d) => {
                 tooltip.style('display', 'inline-block')
