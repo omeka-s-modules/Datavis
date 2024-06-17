@@ -71,10 +71,10 @@ SQL;
 
     public function attachListeners(SharedEventManagerInterface $sharedEventManager)
     {
-        // Copy datavis-related data for the CopyResources module.
+        // Copy Datavis-related data for the CopyResources module.
         $sharedEventManager->attach(
             '*',
-            'copy_resources.copy_site',
+            'copy_resources.sites.post',
             function (Event $event) {
                 $services = $this->getServiceLocator();
                 $api = $services->get('Omeka\ApiManager');
