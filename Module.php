@@ -102,7 +102,7 @@ SQL;
                 // Copy the datasets, which are not copied in the above process.
                 $sql = 'UPDATE datavis_vis v1
                     INNER JOIN datavis_vis v2
-                    SET v1.dataset = v2.dataset
+                    SET v1.dataset = v2.dataset, v1.dataset_modified = NOW()
                     WHERE v1.id = :vis_copy_id
                     AND v2.id = :vis_id';
                 $stmt = $connection->prepare($sql);
