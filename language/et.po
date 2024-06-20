@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Rivo Zängov <eraser@eraser.ee>, 2021
+# Rivo Zängov <eraser@eraser.ee>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 13:35-0500\n"
+"POT-Creation-Date: 2024-06-20 14:21-0400\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Rivo Zängov <eraser@eraser.ee>, 2021\n"
+"Last-Translator: Rivo Zängov <eraser@eraser.ee>, 2024\n"
 "Language-Team: Estonian (https://app.transifex.com/omeka/teams/14184/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "Vaata selle töö edenemist."
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:9
 msgid "Select a visualization"
-msgstr ""
+msgstr "Vali visualiseerimine"
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:18
 #: view/datavis/site-admin/index/browse.phtml:34
@@ -184,7 +184,7 @@ msgstr "Loe kokku ühikud, millel on omadus"
 msgid ""
 "Visualize the count of items that have selected values of a selected "
 "property."
-msgstr ""
+msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
 
 #: src/DatasetType/CountItemsPropertyValues.php:34
 #: src/DatasetType/CountPropertyValues.php:34
@@ -220,7 +220,7 @@ msgstr "Loe kokku omaduste väärtused"
 
 #: src/DatasetType/CountPropertyValues.php:20
 msgid "Visualize the count of values of a selected property."
-msgstr ""
+msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
 
 #: src/DatasetType/CountPropertyValues.php:49
 msgid "Minimum count"
@@ -240,27 +240,27 @@ msgstr "Maksimumi pole"
 
 #: src/DatasetType/ItemRelationships.php:17
 msgid "Item relationships"
-msgstr ""
+msgstr "Ühiku seosed"
 
 #: src/DatasetType/ItemRelationships.php:22
 msgid "Visualize the relationships between items via their resource values."
-msgstr ""
+msgstr "Visualiseeri seoseid ühikute vahel läbi nende ressursside väärtuste."
 
 #: src/DatasetType/ItemRelationships.php:36
 msgid "Group by"
-msgstr ""
+msgstr "Grupeeri"
 
 #: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
-msgstr ""
+msgstr "Piira seoseid nende omadustega"
 
 #: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
-msgstr ""
+msgstr "Kui ühtegi omadust pole valitud, siis kaasatakse kõik seosed."
 
 #: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
-msgstr ""
+msgstr "Jäta välja ilma seoseta ühikud"
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
@@ -271,6 +271,8 @@ msgid ""
 "Visualize the count of items that are instances of selected resource "
 "classes."
 msgstr ""
+"Visualiseeri nende ühikute arvu, mis on määratud valitud ressursi "
+"klassidesse."
 
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
@@ -278,23 +280,27 @@ msgstr "Vali klassid..."
 
 #: src/Form/Element/GroupByControl.php:29
 msgid "Property value"
-msgstr ""
+msgstr "Omaduse väärtus"
 
 #: src/Form/Element/GroupByControl.php:43
 msgid "Select a property…"
-msgstr ""
+msgstr "Vali omadus..."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
 "Configure the logical grouping of items that will be used for your dataset. "
 "No query means all items assigned to this site."
 msgstr ""
+"Seadista loogiline kirjete grupeerimine, mida kasutatakse sinu andmekogu "
+"puhul. Kui päringuid pole määratud, siis on see määratud kogu saidile."
 
 #: src/Form/DatavisForm.php:119
 msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
 msgstr ""
+"Hoiatus: kui muudad diagrammi tüüpi, siis kaotad praeguse diagrammi "
+"seadistused."
 
 #: src/Form/DatavisForm.php:120
 msgid "Select diagram type"
@@ -302,93 +308,115 @@ msgstr "Vali diagrammi liik"
 
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
-msgstr ""
+msgstr "Kaar"
 
-#: src/DiagramType/ArcVertical.php:32 src/DiagramType/ColumnChart.php:32
-#: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
-#: src/DiagramType/NetworkGraph.php:27
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
+#: src/DiagramType/NetworkGraph.php:28
 msgid "Width"
 msgstr "Laius"
 
-#: src/DiagramType/ArcVertical.php:45 src/DiagramType/ColumnChart.php:58
-#: src/DiagramType/BarChart.php:58
+#: src/DiagramType/ArcVertical.php:46 src/DiagramType/ColumnChart.php:60
+#: src/DiagramType/BarChart.php:60
 msgid "Margin top"
 msgstr "Veeris üleval"
 
-#: src/DiagramType/ArcVertical.php:58 src/DiagramType/ColumnChart.php:84
-#: src/DiagramType/BarChart.php:84
+#: src/DiagramType/ArcVertical.php:59 src/DiagramType/ColumnChart.php:86
+#: src/DiagramType/BarChart.php:86
 msgid "Margin bottom"
 msgstr "Veeris all"
 
-#: src/DiagramType/ArcVertical.php:71 src/DiagramType/ColumnChart.php:97
-#: src/DiagramType/BarChart.php:97
+#: src/DiagramType/ArcVertical.php:72 src/DiagramType/ColumnChart.php:99
+#: src/DiagramType/BarChart.php:99
 msgid "Margin left"
 msgstr "Veeris vasakul"
 
-#: src/DiagramType/ArcVertical.php:86
-msgid "By group"
-msgstr ""
-
 #: src/DiagramType/ArcVertical.php:87
+msgid "By group"
+msgstr "Grupi järgi"
+
+#: src/DiagramType/ArcVertical.php:88
 msgid "By label"
-msgstr ""
+msgstr "Sildi järgi"
 
-#: src/DiagramType/ArcVertical.php:99
+#: src/DiagramType/ArcVertical.php:100
 msgid "Label font size"
-msgstr ""
+msgstr "Sildi fondi suurus"
 
-#: src/DiagramType/ArcVertical.php:120
+#: src/DiagramType/ArcVertical.php:121
 msgid "Space between labels"
+msgstr "Vahe siltide vahel"
+
+#: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
+#: src/DiagramType/NetworkGraph.php:54
+msgid "Color scheme"
 msgstr ""
 
-#: src/DiagramType/ColumnChart.php:13
+#: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
+#: src/DiagramType/NetworkGraph.php:55
+msgid ""
+"Click <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
+"target=\"_blank\">here</a> to view the available color schemes."
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Tulpdiagramm"
 
-#: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
-#: src/DiagramType/BarChart.php:45 src/DiagramType/NetworkGraph.php:40
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
+#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
 msgid "Height"
 msgstr "Kõrgus"
 
-#: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
+#: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
 msgstr "Veeris paremal"
 
-#: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
+#: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
 msgid "Order"
 msgstr "Järjekord"
 
-#: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
+#: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
 msgid "By value (ascending)"
 msgstr "Väärtuse järgi (kasvavalt)"
 
-#: src/DiagramType/ColumnChart.php:113 src/DiagramType/BarChart.php:113
+#: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
 msgid "By value (descending)"
 msgstr "Väärtuse järgi (kahanevalt)"
 
-#: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
+#: src/DiagramType/ColumnChart.php:116 src/DiagramType/BarChart.php:116
 msgid "By label (ascending)"
 msgstr "Sildi järgi (kasvavalt)"
 
-#: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
+#: src/DiagramType/ColumnChart.php:117 src/DiagramType/BarChart.php:117
 msgid "By label (descending)"
 msgstr "Sildi järgi (kahanevalt)"
+
+#: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
+msgid "Color fill"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
+msgid ""
+"Enter a three- or six-digit hexadecimal color. You can use any online hex "
+"color picker to select the color. The default is <code>#69b3a2</code>"
+msgstr ""
 
 #: src/DiagramType/PieChart.php:13
 msgid "Pie chart"
 msgstr "Sektordiagramm"
 
-#: src/DiagramType/PieChart.php:54
+#: src/DiagramType/PieChart.php:55
 msgid "Margin"
 msgstr "Veeris"
 
-#: src/DiagramType/BarChart.php:13
+#: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Tulpdiagramm"
 
 #: src/DiagramType/NetworkGraph.php:13
 msgid "Network graph"
-msgstr ""
+msgstr "Võrgustiku graafik"
 
 #: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
@@ -408,4 +436,4 @@ msgstr "Sinu visualiseeirmine on kustutud."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 msgid "Generating dataset. This may take a while."
-msgstr ""
+msgstr "Andmekogu loomine. See võib veidi aega võtta."

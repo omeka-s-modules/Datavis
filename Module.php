@@ -91,7 +91,7 @@ SQL;
                 $visualizations = $api->search('datavis_visualizations', ['site_id' => $site->id()])->getContent();
                 $visualizationmMap = [];
                 foreach ($visualizations as $visualization) {
-                    $callback = function (&$jsonLd) use ($siteCopy){
+                    $callback = function (&$jsonLd) use ($siteCopy) {
                         unset($jsonLd['o:owner']);
                         $jsonLd['o:site']['o:id'] = $siteCopy->id();
                     };

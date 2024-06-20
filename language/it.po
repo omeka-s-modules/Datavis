@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 13:35-0500\n"
+"POT-Creation-Date: 2024-06-20 14:21-0400\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2023\n"
 "Language-Team: Italian (https://app.transifex.com/omeka/teams/14184/it/)\n"
@@ -313,85 +313,107 @@ msgstr "Seleziona tipo di diagramma"
 msgid "Arc"
 msgstr "Arco"
 
-#: src/DiagramType/ArcVertical.php:32 src/DiagramType/ColumnChart.php:32
-#: src/DiagramType/PieChart.php:28 src/DiagramType/BarChart.php:32
-#: src/DiagramType/NetworkGraph.php:27
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
+#: src/DiagramType/NetworkGraph.php:28
 msgid "Width"
 msgstr "Larghezza"
 
-#: src/DiagramType/ArcVertical.php:45 src/DiagramType/ColumnChart.php:58
-#: src/DiagramType/BarChart.php:58
+#: src/DiagramType/ArcVertical.php:46 src/DiagramType/ColumnChart.php:60
+#: src/DiagramType/BarChart.php:60
 msgid "Margin top"
 msgstr "Margine in alto"
 
-#: src/DiagramType/ArcVertical.php:58 src/DiagramType/ColumnChart.php:84
-#: src/DiagramType/BarChart.php:84
+#: src/DiagramType/ArcVertical.php:59 src/DiagramType/ColumnChart.php:86
+#: src/DiagramType/BarChart.php:86
 msgid "Margin bottom"
 msgstr "Margine in basso"
 
-#: src/DiagramType/ArcVertical.php:71 src/DiagramType/ColumnChart.php:97
-#: src/DiagramType/BarChart.php:97
+#: src/DiagramType/ArcVertical.php:72 src/DiagramType/ColumnChart.php:99
+#: src/DiagramType/BarChart.php:99
 msgid "Margin left"
 msgstr "Margine a sinistra"
 
-#: src/DiagramType/ArcVertical.php:86
+#: src/DiagramType/ArcVertical.php:87
 msgid "By group"
 msgstr "Per gruppo"
 
-#: src/DiagramType/ArcVertical.php:87
+#: src/DiagramType/ArcVertical.php:88
 msgid "By label"
 msgstr "Per etichetta"
 
-#: src/DiagramType/ArcVertical.php:99
+#: src/DiagramType/ArcVertical.php:100
 msgid "Label font size"
 msgstr "Dimensione del carattere dell'etichetta"
 
-#: src/DiagramType/ArcVertical.php:120
+#: src/DiagramType/ArcVertical.php:121
 msgid "Space between labels"
 msgstr "Spazio tra le etichette"
 
-#: src/DiagramType/ColumnChart.php:13
+#: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
+#: src/DiagramType/NetworkGraph.php:54
+msgid "Color scheme"
+msgstr ""
+
+#: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
+#: src/DiagramType/NetworkGraph.php:55
+msgid ""
+"Click <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
+"target=\"_blank\">here</a> to view the available color schemes."
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Grafico a barre"
 
-#: src/DiagramType/ColumnChart.php:45 src/DiagramType/PieChart.php:41
-#: src/DiagramType/BarChart.php:45 src/DiagramType/NetworkGraph.php:40
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
+#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
 msgid "Height"
 msgstr "Altezza"
 
-#: src/DiagramType/ColumnChart.php:71 src/DiagramType/BarChart.php:71
+#: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
 msgstr "Margine a destra"
 
-#: src/DiagramType/ColumnChart.php:110 src/DiagramType/BarChart.php:110
+#: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
 msgid "Order"
 msgstr "Ordine"
 
-#: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
+#: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
 msgid "By value (ascending)"
 msgstr "Per valore (crescente)"
 
-#: src/DiagramType/ColumnChart.php:113 src/DiagramType/BarChart.php:113
+#: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
 msgid "By value (descending)"
 msgstr "Per valore (decrescente)"
 
-#: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
+#: src/DiagramType/ColumnChart.php:116 src/DiagramType/BarChart.php:116
 msgid "By label (ascending)"
 msgstr "Per etichetta (crescente)"
 
-#: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
+#: src/DiagramType/ColumnChart.php:117 src/DiagramType/BarChart.php:117
 msgid "By label (descending)"
 msgstr "Per etichetta (decrescente)"
+
+#: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
+msgid "Color fill"
+msgstr ""
+
+#: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
+msgid ""
+"Enter a three- or six-digit hexadecimal color. You can use any online hex "
+"color picker to select the color. The default is <code>#69b3a2</code>"
+msgstr ""
 
 #: src/DiagramType/PieChart.php:13
 msgid "Pie chart"
 msgstr "Grafico a torta"
 
-#: src/DiagramType/PieChart.php:54
+#: src/DiagramType/PieChart.php:55
 msgid "Margin"
 msgstr "Margine"
 
-#: src/DiagramType/BarChart.php:13
+#: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Grafico a barre"
 
