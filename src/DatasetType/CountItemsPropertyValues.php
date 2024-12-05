@@ -76,7 +76,7 @@ class CountItemsPropertyValues extends AbstractDatasetType
         $query->setParameter('property_id', $datasetData['property_id']);
 
         $dataset = [];
-        $values = array_filter(array_map('trim', explode("\n", $datasetData['values'] ?? '')));
+        $values = array_filter(array_unique(array_map('trim', explode("\n", $datasetData['values'] ?? ''))));
         foreach ($values as $value) {
             $query->setParameter('value', $value);
             $dataset[] = [

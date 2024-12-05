@@ -59,7 +59,14 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
     const labels = xGroup.selectAll('text')
         .data(dataset)
         .attr('transform', 'translate(-10,0)rotate(-45)')
-        .style('text-anchor', 'end');
+        .style('text-anchor', 'end')
+        .style('cursor', 'pointer')
+        .on('click', (e, d) => {
+            // Enable label links. Note that the dataset must include a "url" key.
+            if (d.url) {
+                window.location.href = d.url;
+            }
+        });
 
     // Add the Y axis.
     svg.append('g')
@@ -92,11 +99,4 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
             .on('mouseout', (e, d) => {
                 tooltip.style('display', 'none');
             });
-
-    // Enable label links. Note that the dataset must include a "url" key.
-    labels.on('click', (e, d) => {
-        if (d.url) {
-            window.location.href = d.url;
-        }
-    });
 });

@@ -63,5 +63,12 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
             .text(d => d.data.value.label)
             .attr('transform', d => `translate(${arcGenerator.centroid(d)})`)
             .style('text-anchor', 'middle')
-            .style('font-size', 14);
+            .style('font-size', 14)
+            .style('cursor', 'pointer')
+            .on('click', (e, d) => {
+                // Enable label links. Note that the dataset must include a "url" key.
+                if (d.url) {
+                    window.location.href = d.url;
+                }
+            });
 });

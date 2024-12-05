@@ -63,7 +63,15 @@ Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blo
     const yGroup = svg.append('g')
         .style('font-size', '14px')
         .call(d3.axisLeft(y));
-    const labels = yGroup.selectAll('text').data(dataset);
+    const labels = yGroup.selectAll('text')
+        .data(dataset)
+        .style('cursor', 'pointer')
+        .on('click', (e, d) => {
+            // Enable label links. Note that the dataset must include a "url" key.
+            if (d.url) {
+                window.location.href = d.url;
+            }
+        });
 
     // Add the tooltip div.
     const tooltip = d3.select(div)
@@ -91,11 +99,4 @@ Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blo
             .on('mouseout', (e, d) => {
                 tooltip.style('display', 'none');
             });
-
-    // Enable label links. Note that the dataset must include a "url" key.
-    labels.on('click', (e, d) => {
-        if (d.url) {
-            window.location.href = d.url;
-        }
-    });
 });
