@@ -67,8 +67,8 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
             .style('cursor', 'pointer')
             .on('click', (e, d) => {
                 // Enable label links. Note that the dataset must include a "url" key.
-                if (d.url) {
-                    window.location.href = d.url;
+                if (d.data.value.url) {
+                    window.location.href = d.data.value.url;
                 }
             });
 });
