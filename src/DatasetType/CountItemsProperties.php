@@ -65,11 +65,22 @@ class CountItemsProperties extends AbstractDatasetType
             }
             $vocab = $property->getVocabulary();
             $query->setParameter('property_id', $property->getId());
+            $urlQuery = [
+                'datavis_id' => $vis->id(),
+                'property' => [
+                    [
+                        'joiner' => 'and',
+                        'type' => 'ex',
+                        'property' => $propertyId,
+                    ]
+                ]
+            ];
             $dataset[] = [
                 'id' => $property->getId(),
                 'label' => $property->getLabel(),
                 'label_long' => sprintf('%s (%s)', $property->getLabel(), $vocab->getLabel()),
                 'value' => (int) $query->getSingleScalarResult(),
+                'url' => $this->getUrl($services, $vis, 'item', $urlQuery),
             ];
         }
         return $dataset;

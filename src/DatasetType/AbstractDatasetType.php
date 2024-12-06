@@ -28,4 +28,23 @@ abstract class AbstractDatasetType implements DatasetTypeInterface
         $query['site_id'] = $vis->site()->id();
         return $api->search('items', $query, ['returnScalar' => 'id'])->getContent();
     }
+
+    /**
+     * Get the URL to a browse page that represents a visualization result.
+     *
+     * @param ServiceManager $services
+     * @param DatavisVisRepresentation $vis
+     * @param string $controller
+     * @param array $query
+     * @return string
+     */
+    public function getUrl(ServiceManager $services, DatavisVisRepresentation $vis, string $controller, array $query)
+    {
+        $urlHelper = $services->get('ViewHelperManager')->get('url');
+        return $urlHelper(
+            'site/resource',
+            ['site-slug' => $vis->site()->slug(), 'controller' => $controller],
+            ['force_canonical' => true, 'query' => $query]
+        );
+    }
 }

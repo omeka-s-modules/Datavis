@@ -71,6 +71,25 @@ SQL;
 
     public function attachListeners(SharedEventManagerInterface $sharedEventManager)
     {
+        // Add the "datavis_id" filter to item search.
+        $sharedEventManager->attach(
+            'Omeka\Api\Adapter\ItemAdapter',
+            'api.search.query',
+            function (Event $event) {
+                $query = $event->getParam('request')->getContent();
+                if (!(isset($query['datavis_id']) && is_numeric($query['datavis_id']))) {
+                    return;
+                }
+                $qb = $event->getParam('queryBuilder');
+                $itemAdapter = $event->getTarget();
+                $api = $this->getServiceLocator()->get('Omeka\ApiManager');
+                $vis = $api->read('datavis_visualizations', $query['datavis_id'])->getContent();
+                parse_str($vis->query(), $visQuery);
+                $visQuery['site_id'] = $vis->site()->id();
+                $visItemIds = $api->search('items', $visQuery, ['returnScalar' => 'id'])->getContent();
+                $qb->andWhere($qb->expr()->in('omeka_root.id', $itemAdapter->createNamedParameter($qb, $visItemIds)));
+            }
+        );
         // Copy Datavis-related data for the CopyResources module.
         $sharedEventManager->attach(
             '*',

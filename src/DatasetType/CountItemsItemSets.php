@@ -66,10 +66,15 @@ class CountItemsItemSets extends AbstractDatasetType
                 continue;
             }
             $query->setParameter('item_set_id', $itemSet->getId());
+            $urlQuery = [
+                'datavis_id' => $vis->id(),
+                'item_set_id' => $itemSet->getId(),
+            ];
             $dataset[] = [
                 'id' => $itemSet->getId(),
                 'label' => $itemSet->getTitle(),
                 'value' => (int) $query->getSingleScalarResult(),
+                'url' => $this->getUrl($services, $vis, 'item', $urlQuery),
             ];
         }
         return $dataset;
