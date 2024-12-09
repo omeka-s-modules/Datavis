@@ -1,6 +1,12 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * [{label: {string}, value: {int}}]
+ * [
+ *   {
+ *     label: {string},
+ *     value: {int},
+ *     url: {string},
+ *   }
+ * ]
  */
 Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, blockData) => {
 
@@ -60,9 +66,11 @@ Datavis.addDiagramType('column_chart', (div, dataset, datasetData, diagramData, 
         .data(dataset)
         .attr('transform', 'translate(-10,0)rotate(-45)')
         .style('text-anchor', 'end')
-        .style('cursor', 'pointer')
+        // Enable label links. Note that the dataset must include a "url" key.
+        .style('cursor', (d) => {
+            return d.url ? 'pointer' : 'default';
+        })
         .on('click', (e, d) => {
-            // Enable label links. Note that the dataset must include a "url" key.
             if (d.url) {
                 window.location.href = d.url;
             }

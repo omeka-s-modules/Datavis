@@ -1,6 +1,12 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * [{label: {string}, value: {int}}]
+ * [
+ *   {
+ *     label: {string},
+ *     value: {int},
+ *     url: {string},
+ *   }
+ * ]
  */
 Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blockData) => {
 
@@ -65,9 +71,11 @@ Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blo
         .call(d3.axisLeft(y));
     const labels = yGroup.selectAll('text')
         .data(dataset)
-        .style('cursor', 'pointer')
+        // Enable label links. Note that the dataset must include a "url" key.
+        .style('cursor', (d) => {
+            return d.url ? 'pointer' : 'default';
+        })
         .on('click', (e, d) => {
-            // Enable label links. Note that the dataset must include a "url" key.
             if (d.url) {
                 window.location.href = d.url;
             }

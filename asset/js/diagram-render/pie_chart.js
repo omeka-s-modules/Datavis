@@ -1,6 +1,12 @@
 /**
  * This diagram type will consume a dataset in the following format:
- * [{label: {string}, value: {int}}]
+ * [
+ *   {
+ *     label: {string},
+ *     value: {int},
+ *     url: {string},
+ *   }
+ * ]
  */
 Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blockData) => {
 
@@ -64,9 +70,11 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
             .attr('transform', d => `translate(${arcGenerator.centroid(d)})`)
             .style('text-anchor', 'middle')
             .style('font-size', 14)
-            .style('cursor', 'pointer')
+            // Enable label links. Note that the dataset must include a "url" key.
+            .style('cursor', (d) => {
+                return d.data.value.url ? 'pointer' : 'default';
+            })
             .on('click', (e, d) => {
-                // Enable label links. Note that the dataset must include a "url" key.
                 if (d.data.value.url) {
                     window.location.href = d.data.value.url;
                 }
