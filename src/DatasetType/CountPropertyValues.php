@@ -102,8 +102,8 @@ class CountPropertyValues extends AbstractDatasetType
                         'type' => 'eq',
                         'property' => $datasetData['property_id'],
                         'text' => $result['value'],
-                    ]
-                ]
+                    ],
+                ],
             ];
             $dataset[] = [
                 'label' => $result['value'],

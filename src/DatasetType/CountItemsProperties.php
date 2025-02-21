@@ -72,8 +72,8 @@ class CountItemsProperties extends AbstractDatasetType
                         'joiner' => 'and',
                         'type' => 'ex',
                         'property' => $propertyId,
-                    ]
-                ]
+                    ],
+                ],
             ];
             $dataset[] = [
                 'id' => $property->getId(),

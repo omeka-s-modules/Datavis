@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:21-0400\n"
+"POT-Creation-Date: 2025-02-21 18:39-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Kai Metsävainio <kai.metsavainio@gmail.com>, 2021\n"
 "Language-Team: Finnish (Finland) (https://app.transifex.com/omeka/teams/14184/fi_FI/)\n"
@@ -127,13 +127,116 @@ msgstr ""
 msgid "Diagram configuration"
 msgstr ""
 
-#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
-msgid "Data visualization"
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
 msgstr ""
 
-#: src/Site/BlockLayout/Datavis.php:50
-msgid "Select visualization…"
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
 msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:44
+msgid "Limit relationships to these properties"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:45
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:51
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:58
+msgid "Exclude items without relationships"
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr "Laske aineistojen määrä kokoelmissa"
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr "Valitse kokoelmat..."
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr ""
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource "
+"classes."
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr "Valitse luokat..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr "Valitse yksi..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr "Ei minimiä"
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr "Ei maksimia"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
@@ -163,123 +266,32 @@ msgstr ""
 msgid "A visualization must have a title"
 msgstr ""
 
-#: src/DatasetType/CountItemsProperties.php:14
-msgid "Count of items with properties"
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
+msgid "Data visualization"
 msgstr ""
 
-#: src/DatasetType/CountItemsProperties.php:19
-msgid "Visualize the count of items that have selected properties."
+#: src/Site/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
 msgstr ""
 
-#: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:51
-msgid "Select properties…"
+#: src/Controller/SiteAdmin/IndexController.php:44
+msgid "Configure your visualization below."
 msgstr ""
 
-#: src/DatasetType/CountItemsPropertyValues.php:15
-msgid "Count of items with property values"
+#: src/Controller/SiteAdmin/IndexController.php:85
+msgid "Successfully added your visualization."
 msgstr ""
 
-#: src/DatasetType/CountItemsPropertyValues.php:20
-msgid ""
-"Visualize the count of items that have selected values of a selected "
-"property."
+#: src/Controller/SiteAdmin/IndexController.php:130
+msgid "Successfully edited your visualization."
 msgstr ""
 
-#: src/DatasetType/CountItemsPropertyValues.php:34
-#: src/DatasetType/CountPropertyValues.php:34
-msgid "Value property"
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
 msgstr ""
 
-#: src/DatasetType/CountItemsPropertyValues.php:41
-#: src/DatasetType/CountPropertyValues.php:41
-msgid "Select one…"
-msgstr "Valitse yksi..."
-
-#: src/DatasetType/CountItemsPropertyValues.php:50
-msgid "Enter values, separated by new lines."
-msgstr ""
-
-#: src/DatasetType/CountItemsItemSets.php:14
-msgid "Count of items in item sets"
-msgstr "Laske aineistojen määrä kokoelmissa"
-
-#: src/DatasetType/CountItemsItemSets.php:19
-msgid "Visualize the count of items that are assigned to selected item sets."
-msgstr ""
-
-#: src/DatasetType/CountItemsItemSets.php:41
-msgid "Select item sets…"
-msgstr "Valitse kokoelmat..."
-
-#: src/DatasetType/CountPropertyValues.php:15
-msgid "Count of property values"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:20
-msgid "Visualize the count of values of a selected property."
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:49
-msgid "Minimum count"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:53
-msgid "No minimum"
-msgstr "Ei minimiä"
-
-#: src/DatasetType/CountPropertyValues.php:61
-msgid "Maximum count"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:65
-msgid "No maximum"
-msgstr "Ei maksimia"
-
-#: src/DatasetType/ItemRelationships.php:17
-msgid "Item relationships"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:22
-msgid "Visualize the relationships between items via their resource values."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:36
-msgid "Group by"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:44
-msgid "Limit relationships to these properties"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:45
-msgid "Selecting no properties will include all relationships."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:58
-msgid "Exclude items without relationships"
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:14
-msgid "Count of items with classes"
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:19
-msgid ""
-"Visualize the count of items that are instances of selected resource "
-"classes."
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:40
-msgid "Select classes…"
-msgstr "Valitse luokat..."
-
-#: src/Form/Element/GroupByControl.php:29
-msgid "Property value"
-msgstr ""
-
-#: src/Form/Element/GroupByControl.php:43
-msgid "Select a property…"
+#: src/Controller/SiteAdmin/IndexController.php:197
+msgid "Generating dataset. This may take a while."
 msgstr ""
 
 #: src/Form/DatavisForm.php:59
@@ -298,13 +310,21 @@ msgstr ""
 msgid "Select diagram type"
 msgstr ""
 
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
+
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
 msgstr ""
 
-#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
-#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
-#: src/DiagramType/NetworkGraph.php:28
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/PieChart.php:29
+#: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/BarChart.php:34
 msgid "Width"
 msgstr "Leveys"
 
@@ -351,14 +371,26 @@ msgid ""
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
 
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr ""
+
+#: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
+msgid "Height"
+msgstr "Korkeus"
+
+#: src/DiagramType/PieChart.php:55
+msgid "Margin"
+msgstr "Marginaali"
+
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr ""
+
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr ""
-
-#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
-#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
-msgid "Height"
-msgstr "Korkeus"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
@@ -394,38 +426,6 @@ msgid ""
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
 
-#: src/DiagramType/PieChart.php:13
-msgid "Pie chart"
-msgstr ""
-
-#: src/DiagramType/PieChart.php:55
-msgid "Margin"
-msgstr "Marginaali"
-
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
-msgstr ""
-
-#: src/DiagramType/NetworkGraph.php:13
-msgid "Network graph"
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:44
-msgid "Configure your visualization below."
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:85
-msgid "Successfully added your visualization."
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:130
-msgid "Successfully edited your visualization."
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:164
-msgid "Successfully deleted your visualization."
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:197
-msgid "Generating dataset. This may take a while."
 msgstr ""

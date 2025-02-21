@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giorgio Comai <g@giorgiocomai.eu>, 2023
+# Giorgio Comai <g@giorgiocomai.eu>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:21-0400\n"
+"POT-Creation-Date: 2025-02-21 18:39-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2023\n"
+"Last-Translator: Giorgio Comai <g@giorgiocomai.eu>, 2024\n"
 "Language-Team: Italian (https://app.transifex.com/omeka/teams/14184/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "Vedi questo lavoro per l'avanzamento "
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:9
 msgid "Select a visualization"
-msgstr ""
+msgstr "Seleziona una visualizzazione"
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:18
 #: view/datavis/site-admin/index/browse.phtml:34
@@ -127,13 +127,123 @@ msgstr "Configurazione del dataset"
 msgid "Diagram configuration"
 msgstr "Configurazione del diagramma"
 
-#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
-msgid "Data visualization"
-msgstr "Visualizzazione di dati"
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr "Relazioni del contenuto"
 
-#: src/Site/BlockLayout/Datavis.php:50
-msgid "Select visualization…"
-msgstr "Seleziona visualizzazione..."
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr ""
+"Visualizza le relazioni tra contenuti attraverso i loro valori di risorsa"
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr "Raggruppa per"
+
+#: src/DatasetType/ItemRelationships.php:44
+msgid "Limit relationships to these properties"
+msgstr "Limita le relazioni a queste proprietà"
+
+#: src/DatasetType/ItemRelationships.php:45
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+"Quando nessuna proprietà è selezionata tutte le relazioni verranno incluse."
+
+#: src/DatasetType/ItemRelationships.php:51
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr "Seleziona proprietà..."
+
+#: src/DatasetType/ItemRelationships.php:58
+msgid "Exclude items without relationships"
+msgstr "Escludi contenuti senza relazioni"
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr "Numero dei contenuti nelle collezioni"
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+"Visualizza il numero di contenuti assegnati alle collezioni selezionate."
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr "Seleziona collezioni..."
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr "Numero di contenuti con proprietà"
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr "Visualizza il numero di contenuti che hanno la proprietà selezionata"
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr "Numero di contenuti con classi"
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource "
+"classes."
+msgstr ""
+"Visualizza il numero di contenuti che sono istanze delle classi di risorse "
+"selezionate"
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr "Seleziona classi..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr "Numero di contenuti con valori per la proprietà"
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr ""
+"Visualizza il numero di contenuti che hanno il valore selezionato per la "
+"proprietà selezionata"
+
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr "Valore della proprietà"
+
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr "Seleziona un'opzione..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr "Inserisci valori, separati da un a capo."
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr "Numero di valori della proprietà"
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr "Visualizza il numero di valori di una proprietà selezionata."
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr "Numero minimo"
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr "Nessun minimo"
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr "Numero massimo"
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr "Nessun massimo"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
@@ -163,131 +273,33 @@ msgstr "Una visualizzazione deve avere un tipo di dataset"
 msgid "A visualization must have a title"
 msgstr "Una visualizzazione deve avere un titolo"
 
-#: src/DatasetType/CountItemsProperties.php:14
-msgid "Count of items with properties"
-msgstr "Numero di contenuti con proprietà"
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
+msgid "Data visualization"
+msgstr "Visualizzazione di dati"
 
-#: src/DatasetType/CountItemsProperties.php:19
-msgid "Visualize the count of items that have selected properties."
-msgstr "Visualizza il numero di contenuti che hanno la proprietà selezionata"
+#: src/Site/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
+msgstr "Seleziona visualizzazione..."
 
-#: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:51
-msgid "Select properties…"
-msgstr "Seleziona proprietà..."
+#: src/Controller/SiteAdmin/IndexController.php:44
+msgid "Configure your visualization below."
+msgstr "Configura la tua visualizzazione qui sotto."
 
-#: src/DatasetType/CountItemsPropertyValues.php:15
-msgid "Count of items with property values"
-msgstr "Numero di contenuti con valori per la proprietà"
+#: src/Controller/SiteAdmin/IndexController.php:85
+msgid "Successfully added your visualization."
+msgstr "Visualizzazione aggiunta con successo."
 
-#: src/DatasetType/CountItemsPropertyValues.php:20
-msgid ""
-"Visualize the count of items that have selected values of a selected "
-"property."
-msgstr ""
-"Visualizza il numero di contenuti che hanno il valore selezionato per la "
-"proprietà selezionata"
+#: src/Controller/SiteAdmin/IndexController.php:130
+msgid "Successfully edited your visualization."
+msgstr "Visualizzazione modificata con successo."
 
-#: src/DatasetType/CountItemsPropertyValues.php:34
-#: src/DatasetType/CountPropertyValues.php:34
-msgid "Value property"
-msgstr "Valore della proprietà"
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
+msgstr "Visualizzazione eliminata con successo."
 
-#: src/DatasetType/CountItemsPropertyValues.php:41
-#: src/DatasetType/CountPropertyValues.php:41
-msgid "Select one…"
-msgstr "Seleziona un'opzione..."
-
-#: src/DatasetType/CountItemsPropertyValues.php:50
-msgid "Enter values, separated by new lines."
-msgstr "Inserisci valori, separati da un a capo."
-
-#: src/DatasetType/CountItemsItemSets.php:14
-msgid "Count of items in item sets"
-msgstr "Numero dei contenuti nelle collezioni"
-
-#: src/DatasetType/CountItemsItemSets.php:19
-msgid "Visualize the count of items that are assigned to selected item sets."
-msgstr ""
-"Visualizza il numero di contenuti assegnati alle collezioni selezionate."
-
-#: src/DatasetType/CountItemsItemSets.php:41
-msgid "Select item sets…"
-msgstr "Seleziona collezioni..."
-
-#: src/DatasetType/CountPropertyValues.php:15
-msgid "Count of property values"
-msgstr "Numero di valori della proprietà"
-
-#: src/DatasetType/CountPropertyValues.php:20
-msgid "Visualize the count of values of a selected property."
-msgstr "Visualizza il numero di valori di una proprietà selezionata."
-
-#: src/DatasetType/CountPropertyValues.php:49
-msgid "Minimum count"
-msgstr "Numero minimo"
-
-#: src/DatasetType/CountPropertyValues.php:53
-msgid "No minimum"
-msgstr "Nessun minimo"
-
-#: src/DatasetType/CountPropertyValues.php:61
-msgid "Maximum count"
-msgstr "Numero massimo"
-
-#: src/DatasetType/CountPropertyValues.php:65
-msgid "No maximum"
-msgstr "Nessun massimo"
-
-#: src/DatasetType/ItemRelationships.php:17
-msgid "Item relationships"
-msgstr "Relazioni del contenuto"
-
-#: src/DatasetType/ItemRelationships.php:22
-msgid "Visualize the relationships between items via their resource values."
-msgstr ""
-"Visualizza le relazioni tra contenuti attraverso i loro valori di risorsa"
-
-#: src/DatasetType/ItemRelationships.php:36
-msgid "Group by"
-msgstr "Raggruppa per"
-
-#: src/DatasetType/ItemRelationships.php:44
-msgid "Limit relationships to these properties"
-msgstr "Limita le relazioni a queste proprietà"
-
-#: src/DatasetType/ItemRelationships.php:45
-msgid "Selecting no properties will include all relationships."
-msgstr ""
-"Quando nessuna proprietà è selezionata tutte le relazioni verranno incluse."
-
-#: src/DatasetType/ItemRelationships.php:58
-msgid "Exclude items without relationships"
-msgstr "Escludi contenuti senza relazioni"
-
-#: src/DatasetType/CountItemsClasses.php:14
-msgid "Count of items with classes"
-msgstr "Numero di contenuti con classi"
-
-#: src/DatasetType/CountItemsClasses.php:19
-msgid ""
-"Visualize the count of items that are instances of selected resource "
-"classes."
-msgstr ""
-"Visualizza il numero di contenuti che sono istanze delle classi di risorse "
-"selezionate"
-
-#: src/DatasetType/CountItemsClasses.php:40
-msgid "Select classes…"
-msgstr "Seleziona classi..."
-
-#: src/Form/Element/GroupByControl.php:29
-msgid "Property value"
-msgstr ""
-
-#: src/Form/Element/GroupByControl.php:43
-msgid "Select a property…"
-msgstr ""
+#: src/Controller/SiteAdmin/IndexController.php:197
+msgid "Generating dataset. This may take a while."
+msgstr "Generazione del dataset in corso. Ci potrebbe volere un po' di tempo."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -309,13 +321,21 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Seleziona tipo di diagramma"
 
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr "Valore della proprietà"
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr "Seleziona una proprietà..."
+
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
 msgstr "Arco"
 
-#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
-#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
-#: src/DiagramType/NetworkGraph.php:28
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/PieChart.php:29
+#: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/BarChart.php:34
 msgid "Width"
 msgstr "Larghezza"
 
@@ -353,7 +373,7 @@ msgstr "Spazio tra le etichette"
 #: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
 #: src/DiagramType/NetworkGraph.php:54
 msgid "Color scheme"
-msgstr ""
+msgstr "Schema dei colori"
 
 #: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
 #: src/DiagramType/NetworkGraph.php:55
@@ -361,15 +381,29 @@ msgid ""
 "Click <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
+"Clicca <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
+"target=\"_blank\">qui</a> per visualizzare gli schemi di colori disponibili."
+
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr "Grafico a torta"
+
+#: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
+msgid "Height"
+msgstr "Altezza"
+
+#: src/DiagramType/PieChart.php:55
+msgid "Margin"
+msgstr "Margine"
+
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr "Grafo (network graph)"
 
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Grafico a barre"
-
-#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
-#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
-msgid "Height"
-msgstr "Altezza"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
@@ -397,46 +431,17 @@ msgstr "Per etichetta (decrescente)"
 
 #: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
 msgid "Color fill"
-msgstr ""
+msgstr "Colore di riempimento"
 
 #: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
 msgid ""
 "Enter a three- or six-digit hexadecimal color. You can use any online hex "
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
-
-#: src/DiagramType/PieChart.php:13
-msgid "Pie chart"
-msgstr "Grafico a torta"
-
-#: src/DiagramType/PieChart.php:55
-msgid "Margin"
-msgstr "Margine"
+"Inserisci un colore in codice esadecimale di tre o sei cifre. Puoi "
+"utilizzare qualsiasi selettore di colori hex che trovi online per scegliere "
+"il colore. Il valore predefinito è <code>#69b3a2</code>"
 
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Grafico a barre"
-
-#: src/DiagramType/NetworkGraph.php:13
-msgid "Network graph"
-msgstr "Grafo (network graph)"
-
-#: src/Controller/SiteAdmin/IndexController.php:44
-msgid "Configure your visualization below."
-msgstr "Configura la tua visualizzazione qui sotto."
-
-#: src/Controller/SiteAdmin/IndexController.php:85
-msgid "Successfully added your visualization."
-msgstr "Visualizzazione aggiunta con successo."
-
-#: src/Controller/SiteAdmin/IndexController.php:130
-msgid "Successfully edited your visualization."
-msgstr "Visualizzazione modificata con successo."
-
-#: src/Controller/SiteAdmin/IndexController.php:164
-msgid "Successfully deleted your visualization."
-msgstr "Visualizzazione eliminata con successo."
-
-#: src/Controller/SiteAdmin/IndexController.php:197
-msgid "Generating dataset. This may take a while."
-msgstr ""

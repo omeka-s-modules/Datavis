@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2021
+# Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:21-0400\n"
+"POT-Creation-Date: 2025-02-21 18:39-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2021\n"
+"Last-Translator: Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2024\n"
 "Language-Team: Catalan (Spain) (https://app.transifex.com/omeka/teams/14184/ca_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:9
 msgid "Select a visualization"
-msgstr ""
+msgstr "Seleccioneu una visualització"
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:18
 #: view/datavis/site-admin/index/browse.phtml:34
@@ -127,13 +127,121 @@ msgstr "Configuració del conjunt de dades"
 msgid "Diagram configuration"
 msgstr "Configuració del diagrama"
 
-#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
-msgid "Data visualization"
-msgstr "Visualització de dades"
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr "Relacions entre recursos"
 
-#: src/Site/BlockLayout/Datavis.php:50
-msgid "Select visualization…"
-msgstr "Tria la visualització..."
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr ""
+"Visualitza les relacions entre elements a través dels valors dels recursos."
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr "Agrupa per"
+
+#: src/DatasetType/ItemRelationships.php:44
+msgid "Limit relationships to these properties"
+msgstr "Limita les relacions a aquestes propietats"
+
+#: src/DatasetType/ItemRelationships.php:45
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:51
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr "Seleccioneu propietats..."
+
+#: src/DatasetType/ItemRelationships.php:58
+msgid "Exclude items without relationships"
+msgstr "Exclou els elements sense relacions"
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr "Recursos totals en el conjunt de recursos"
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+"Visualitza els recursos totals assignats als conjunts de recursos "
+"seleccionats."
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr "Selecciona conjunts de recursos..."
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr "Recursos amb propietats"
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr ""
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr "Nombre d'elements amb classes"
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource "
+"classes."
+msgstr ""
+"Visualitza el recompte de recursos que són instàncies de les classes de "
+"recursos seleccionades."
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr "Selecciona classes..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr ""
+
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr "Valor de la propietat"
+
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr "Seleccioneu una..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr "Afegiu els valors separats per línies."
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr ""
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr "Mínims"
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr "Sense mínim"
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr "Màxims"
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr "Sense màxim"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
@@ -163,130 +271,42 @@ msgstr "Totes les visualitzacions han de tenir un tipus de conjunt de dades"
 msgid "A visualization must have a title"
 msgstr "La visualització ha de tenir un títol"
 
-#: src/DatasetType/CountItemsProperties.php:14
-msgid "Count of items with properties"
-msgstr ""
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
+msgid "Data visualization"
+msgstr "Visualització de dades"
 
-#: src/DatasetType/CountItemsProperties.php:19
-msgid "Visualize the count of items that have selected properties."
-msgstr ""
+#: src/Site/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
+msgstr "Tria la visualització..."
 
-#: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:51
-msgid "Select properties…"
-msgstr "Seleccioneu propietats..."
+#: src/Controller/SiteAdmin/IndexController.php:44
+msgid "Configure your visualization below."
+msgstr "Configura la visualització."
 
-#: src/DatasetType/CountItemsPropertyValues.php:15
-msgid "Count of items with property values"
-msgstr ""
+#: src/Controller/SiteAdmin/IndexController.php:85
+msgid "Successfully added your visualization."
+msgstr "S'ha afegit la visualització."
 
-#: src/DatasetType/CountItemsPropertyValues.php:20
-msgid ""
-"Visualize the count of items that have selected values of a selected "
-"property."
-msgstr ""
+#: src/Controller/SiteAdmin/IndexController.php:130
+msgid "Successfully edited your visualization."
+msgstr "S'ha editat la visualització."
 
-#: src/DatasetType/CountItemsPropertyValues.php:34
-#: src/DatasetType/CountPropertyValues.php:34
-msgid "Value property"
-msgstr "Valor de la propietat"
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
+msgstr "S'ha suprimit la visualització."
 
-#: src/DatasetType/CountItemsPropertyValues.php:41
-#: src/DatasetType/CountPropertyValues.php:41
-msgid "Select one…"
-msgstr "Seleccioneu una..."
-
-#: src/DatasetType/CountItemsPropertyValues.php:50
-msgid "Enter values, separated by new lines."
-msgstr "Afegiu els valors separats per línies."
-
-#: src/DatasetType/CountItemsItemSets.php:14
-msgid "Count of items in item sets"
-msgstr ""
-
-#: src/DatasetType/CountItemsItemSets.php:19
-msgid "Visualize the count of items that are assigned to selected item sets."
-msgstr ""
-
-#: src/DatasetType/CountItemsItemSets.php:41
-msgid "Select item sets…"
-msgstr "Selecciona conjunts de recursos..."
-
-#: src/DatasetType/CountPropertyValues.php:15
-msgid "Count of property values"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:20
-msgid "Visualize the count of values of a selected property."
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:49
-msgid "Minimum count"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:53
-msgid "No minimum"
-msgstr "Sense mínim"
-
-#: src/DatasetType/CountPropertyValues.php:61
-msgid "Maximum count"
-msgstr ""
-
-#: src/DatasetType/CountPropertyValues.php:65
-msgid "No maximum"
-msgstr "Sense màxim"
-
-#: src/DatasetType/ItemRelationships.php:17
-msgid "Item relationships"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:22
-msgid "Visualize the relationships between items via their resource values."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:36
-msgid "Group by"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:44
-msgid "Limit relationships to these properties"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:45
-msgid "Selecting no properties will include all relationships."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:58
-msgid "Exclude items without relationships"
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:14
-msgid "Count of items with classes"
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:19
-msgid ""
-"Visualize the count of items that are instances of selected resource "
-"classes."
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:40
-msgid "Select classes…"
-msgstr "Selecciona classes..."
-
-#: src/Form/Element/GroupByControl.php:29
-msgid "Property value"
-msgstr ""
-
-#: src/Form/Element/GroupByControl.php:43
-msgid "Select a property…"
-msgstr ""
+#: src/Controller/SiteAdmin/IndexController.php:197
+msgid "Generating dataset. This may take a while."
+msgstr "S'està generant el conjunt de dades. Això pot trigar una estona."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
 "Configure the logical grouping of items that will be used for your dataset. "
 "No query means all items assigned to this site."
 msgstr ""
+"Configureu l'agrupament lògic dels elements que s'empraran per al vostre "
+"conjunt de dades. Si no s'indica cap consulta, tots els recursos "
+"s'assignaran a aquest espai."
 
 #: src/Form/DatavisForm.php:119
 msgid ""
@@ -299,13 +319,21 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Selecciona el tipus de diagrama"
 
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr "Valor de la propietat"
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr "Seleccione una propietat..."
+
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
-msgstr ""
+msgstr "Arc"
 
-#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
-#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
-#: src/DiagramType/NetworkGraph.php:28
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/PieChart.php:29
+#: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/BarChart.php:34
 msgid "Width"
 msgstr "Amplada"
 
@@ -326,24 +354,24 @@ msgstr "Marge esquerre"
 
 #: src/DiagramType/ArcVertical.php:87
 msgid "By group"
-msgstr ""
+msgstr "Per grup"
 
 #: src/DiagramType/ArcVertical.php:88
 msgid "By label"
-msgstr ""
+msgstr "Per etiqueta"
 
 #: src/DiagramType/ArcVertical.php:100
 msgid "Label font size"
-msgstr ""
+msgstr "Mida de la font de l'etiqueta"
 
 #: src/DiagramType/ArcVertical.php:121
 msgid "Space between labels"
-msgstr ""
+msgstr "Espai entre etiquetes"
 
 #: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
 #: src/DiagramType/NetworkGraph.php:54
 msgid "Color scheme"
-msgstr ""
+msgstr "Esquemes de color"
 
 #: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
 #: src/DiagramType/NetworkGraph.php:55
@@ -351,15 +379,29 @@ msgid ""
 "Click <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
+"Feu clic per veure els <a href=\"https://d3js.org/d3-scale-"
+"chromatic/categorical\" target=\"_blank\">esquemes de color disponibles</a>."
+
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr "Gràfic de sectors"
+
+#: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
+msgid "Height"
+msgstr "Alçada"
+
+#: src/DiagramType/PieChart.php:55
+msgid "Margin"
+msgstr "Marges"
+
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr "Gràfic de xarxes"
 
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Gràfic de columnes"
-
-#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
-#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
-msgid "Height"
-msgstr "Alçada"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
@@ -387,46 +429,17 @@ msgstr "Etiqueta (descendent)"
 
 #: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
 msgid "Color fill"
-msgstr ""
+msgstr "Color d'emplenament"
 
 #: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
 msgid ""
 "Enter a three- or six-digit hexadecimal color. You can use any online hex "
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
-
-#: src/DiagramType/PieChart.php:13
-msgid "Pie chart"
-msgstr "Gràfic de sectors"
-
-#: src/DiagramType/PieChart.php:55
-msgid "Margin"
-msgstr "Marges"
+"Introduïu un color hexadecimal de tres o sis dígits. Podeu utilitzar "
+"qualsevol selector de color hexadecimal en línia per a seleccionar el color."
+" El valor per defecte és <code>#69b3a2</code>"
 
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Gràfic de barres"
-
-#: src/DiagramType/NetworkGraph.php:13
-msgid "Network graph"
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:44
-msgid "Configure your visualization below."
-msgstr "Configura la visualització."
-
-#: src/Controller/SiteAdmin/IndexController.php:85
-msgid "Successfully added your visualization."
-msgstr "S'ha afegit la visualització."
-
-#: src/Controller/SiteAdmin/IndexController.php:130
-msgid "Successfully edited your visualization."
-msgstr "S'ha editat la visualització."
-
-#: src/Controller/SiteAdmin/IndexController.php:164
-msgid "Successfully deleted your visualization."
-msgstr "S'ha suprimit la visualització."
-
-#: src/Controller/SiteAdmin/IndexController.php:197
-msgid "Generating dataset. This may take a while."
-msgstr ""

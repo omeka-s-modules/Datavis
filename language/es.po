@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:21-0400\n"
+"POT-Creation-Date: 2025-02-21 18:39-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Alfonso Montejo <almontejor@gmail.com>, 2021\n"
 "Language-Team: Spanish (https://app.transifex.com/omeka/teams/14184/es/)\n"
@@ -127,13 +127,124 @@ msgstr "Configuración del conjunto de datos"
 msgid "Diagram configuration"
 msgstr "Configuración del diagrama"
 
-#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
-msgid "Data visualization"
-msgstr "Visualización de datos"
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr ""
 
-#: src/Site/BlockLayout/Datavis.php:50
-msgid "Select visualization…"
-msgstr "Seleccionar visualización..."
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:44
+msgid "Limit relationships to these properties"
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:45
+msgid "Selecting no properties will include all relationships."
+msgstr ""
+
+#: src/DatasetType/ItemRelationships.php:51
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr "Seleccionar propiedades..."
+
+#: src/DatasetType/ItemRelationships.php:58
+msgid "Exclude items without relationships"
+msgstr ""
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr "Recuento de fichas en conjuntos de fichas"
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+"Visualizar el recuento de fichas asignadas a los conjuntos de fichas "
+"seleccionados."
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr "Seleccionar conjuntos de fichas…"
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr "Recuento de fichas con propiedades "
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr ""
+"Visualizar el recuento de fichas que responden a las propiedades "
+"seleccionadas."
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr "Recuento de fichas con clases"
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource "
+"classes."
+msgstr ""
+"Visualizar el recuento de fichas que son instancias de las clases de "
+"recursos seleccionadas."
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr "Seleccionar clases..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr "Recuento de fichas con valores de la propiedad"
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr ""
+"Visualizar el recuento de fichas que responden a los valores seleccionados "
+"de una propiedad escogida."
+
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr "Propiedad de valor"
+
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr "Seleccionar uno…"
+
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr "Introducir los valores, separados en líneas independientes."
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr "Recuento de valores de la propiedad"
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr "Visualizar el recuento de valores de una propiedad seleccionada."
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr "Recuento mínimo"
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr "Sin mínimo"
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr "Recuento máximo"
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr "Sin máximo"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
@@ -169,131 +280,32 @@ msgstr "Una visualización debe tener un tipo de conjunto de datos"
 msgid "A visualization must have a title"
 msgstr "Una visualización debe tener un título"
 
-#: src/DatasetType/CountItemsProperties.php:14
-msgid "Count of items with properties"
-msgstr "Recuento de fichas con propiedades "
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
+msgid "Data visualization"
+msgstr "Visualización de datos"
 
-#: src/DatasetType/CountItemsProperties.php:19
-msgid "Visualize the count of items that have selected properties."
-msgstr ""
-"Visualizar el recuento de fichas que responden a las propiedades "
-"seleccionadas."
+#: src/Site/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
+msgstr "Seleccionar visualización..."
 
-#: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:51
-msgid "Select properties…"
-msgstr "Seleccionar propiedades..."
+#: src/Controller/SiteAdmin/IndexController.php:44
+msgid "Configure your visualization below."
+msgstr "Configurar la visualización a continuación."
 
-#: src/DatasetType/CountItemsPropertyValues.php:15
-msgid "Count of items with property values"
-msgstr "Recuento de fichas con valores de la propiedad"
+#: src/Controller/SiteAdmin/IndexController.php:85
+msgid "Successfully added your visualization."
+msgstr "Visualización añadida con éxito."
 
-#: src/DatasetType/CountItemsPropertyValues.php:20
-msgid ""
-"Visualize the count of items that have selected values of a selected "
-"property."
-msgstr ""
-"Visualizar el recuento de fichas que responden a los valores seleccionados "
-"de una propiedad escogida."
+#: src/Controller/SiteAdmin/IndexController.php:130
+msgid "Successfully edited your visualization."
+msgstr "Visualización editada con éxito."
 
-#: src/DatasetType/CountItemsPropertyValues.php:34
-#: src/DatasetType/CountPropertyValues.php:34
-msgid "Value property"
-msgstr "Propiedad de valor"
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
+msgstr "Visualización eliminada con éxito."
 
-#: src/DatasetType/CountItemsPropertyValues.php:41
-#: src/DatasetType/CountPropertyValues.php:41
-msgid "Select one…"
-msgstr "Seleccionar uno…"
-
-#: src/DatasetType/CountItemsPropertyValues.php:50
-msgid "Enter values, separated by new lines."
-msgstr "Introducir los valores, separados en líneas independientes."
-
-#: src/DatasetType/CountItemsItemSets.php:14
-msgid "Count of items in item sets"
-msgstr "Recuento de fichas en conjuntos de fichas"
-
-#: src/DatasetType/CountItemsItemSets.php:19
-msgid "Visualize the count of items that are assigned to selected item sets."
-msgstr ""
-"Visualizar el recuento de fichas asignadas a los conjuntos de fichas "
-"seleccionados."
-
-#: src/DatasetType/CountItemsItemSets.php:41
-msgid "Select item sets…"
-msgstr "Seleccionar conjuntos de fichas…"
-
-#: src/DatasetType/CountPropertyValues.php:15
-msgid "Count of property values"
-msgstr "Recuento de valores de la propiedad"
-
-#: src/DatasetType/CountPropertyValues.php:20
-msgid "Visualize the count of values of a selected property."
-msgstr "Visualizar el recuento de valores de una propiedad seleccionada."
-
-#: src/DatasetType/CountPropertyValues.php:49
-msgid "Minimum count"
-msgstr "Recuento mínimo"
-
-#: src/DatasetType/CountPropertyValues.php:53
-msgid "No minimum"
-msgstr "Sin mínimo"
-
-#: src/DatasetType/CountPropertyValues.php:61
-msgid "Maximum count"
-msgstr "Recuento máximo"
-
-#: src/DatasetType/CountPropertyValues.php:65
-msgid "No maximum"
-msgstr "Sin máximo"
-
-#: src/DatasetType/ItemRelationships.php:17
-msgid "Item relationships"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:22
-msgid "Visualize the relationships between items via their resource values."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:36
-msgid "Group by"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:44
-msgid "Limit relationships to these properties"
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:45
-msgid "Selecting no properties will include all relationships."
-msgstr ""
-
-#: src/DatasetType/ItemRelationships.php:58
-msgid "Exclude items without relationships"
-msgstr ""
-
-#: src/DatasetType/CountItemsClasses.php:14
-msgid "Count of items with classes"
-msgstr "Recuento de fichas con clases"
-
-#: src/DatasetType/CountItemsClasses.php:19
-msgid ""
-"Visualize the count of items that are instances of selected resource "
-"classes."
-msgstr ""
-"Visualizar el recuento de fichas que son instancias de las clases de "
-"recursos seleccionadas."
-
-#: src/DatasetType/CountItemsClasses.php:40
-msgid "Select classes…"
-msgstr "Seleccionar clases..."
-
-#: src/Form/Element/GroupByControl.php:29
-msgid "Property value"
-msgstr ""
-
-#: src/Form/Element/GroupByControl.php:43
-msgid "Select a property…"
+#: src/Controller/SiteAdmin/IndexController.php:197
+msgid "Generating dataset. This may take a while."
 msgstr ""
 
 #: src/Form/DatavisForm.php:59
@@ -316,13 +328,21 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Seleccionar tipo de diagrama"
 
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr ""
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr ""
+
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
 msgstr ""
 
-#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
-#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
-#: src/DiagramType/NetworkGraph.php:28
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/PieChart.php:29
+#: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/BarChart.php:34
 msgid "Width"
 msgstr "Ancho"
 
@@ -369,14 +389,26 @@ msgid ""
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
 
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr "Gráfico circular"
+
+#: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
+msgid "Height"
+msgstr "Alto"
+
+#: src/DiagramType/PieChart.php:55
+msgid "Margin"
+msgstr "Margen"
+
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr ""
+
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Gráfico de columnas"
-
-#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
-#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
-msgid "Height"
-msgstr "Alto"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
@@ -412,38 +444,6 @@ msgid ""
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
 
-#: src/DiagramType/PieChart.php:13
-msgid "Pie chart"
-msgstr "Gráfico circular"
-
-#: src/DiagramType/PieChart.php:55
-msgid "Margin"
-msgstr "Margen"
-
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Gráfico de barras"
-
-#: src/DiagramType/NetworkGraph.php:13
-msgid "Network graph"
-msgstr ""
-
-#: src/Controller/SiteAdmin/IndexController.php:44
-msgid "Configure your visualization below."
-msgstr "Configurar la visualización a continuación."
-
-#: src/Controller/SiteAdmin/IndexController.php:85
-msgid "Successfully added your visualization."
-msgstr "Visualización añadida con éxito."
-
-#: src/Controller/SiteAdmin/IndexController.php:130
-msgid "Successfully edited your visualization."
-msgstr "Visualización editada con éxito."
-
-#: src/Controller/SiteAdmin/IndexController.php:164
-msgid "Successfully deleted your visualization."
-msgstr "Visualización eliminada con éxito."
-
-#: src/Controller/SiteAdmin/IndexController.php:197
-msgid "Generating dataset. This may take a while."
-msgstr ""
