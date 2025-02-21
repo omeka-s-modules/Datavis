@@ -94,9 +94,21 @@ class CountPropertyValues extends AbstractDatasetType
             if ($datasetData['count_max'] && ($result['count'] > $datasetData['count_max'])) {
                 continue;
             }
+            $urlQuery = [
+                'datavis_id' => $vis->id(),
+                'property' => [
+                    [
+                        'joiner' => 'and',
+                        'type' => 'eq',
+                        'property' => $datasetData['property_id'],
+                        'text' => $result['value'],
+                    ],
+                ],
+            ];
             $dataset[] = [
                 'label' => $result['value'],
                 'value' => (int) $result['count'],
+                'url' => $this->getUrl($services, $vis, 'item', $urlQuery),
             ];
         }
         return $dataset;

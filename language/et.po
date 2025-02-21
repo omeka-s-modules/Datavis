@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:21-0400\n"
+"POT-Creation-Date: 2025-02-21 18:39-0500\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
 "Last-Translator: Rivo Zängov <eraser@eraser.ee>, 2024\n"
 "Language-Team: Estonian (https://app.transifex.com/omeka/teams/14184/et/)\n"
@@ -127,13 +127,120 @@ msgstr "Andmekogu seadistamine"
 msgid "Diagram configuration"
 msgstr "Diagrammi seaded"
 
-#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
-msgid "Data visualization"
-msgstr "Andmete visualiseerimine"
+#: src/DatasetType/ItemRelationships.php:17
+msgid "Item relationships"
+msgstr "Ühiku seosed"
 
-#: src/Site/BlockLayout/Datavis.php:50
-msgid "Select visualization…"
-msgstr "Vali visualiseerimine..."
+#: src/DatasetType/ItemRelationships.php:22
+msgid "Visualize the relationships between items via their resource values."
+msgstr "Visualiseeri seoseid ühikute vahel läbi nende ressursside väärtuste."
+
+#: src/DatasetType/ItemRelationships.php:36
+msgid "Group by"
+msgstr "Grupeeri"
+
+#: src/DatasetType/ItemRelationships.php:44
+msgid "Limit relationships to these properties"
+msgstr "Piira seoseid nende omadustega"
+
+#: src/DatasetType/ItemRelationships.php:45
+msgid "Selecting no properties will include all relationships."
+msgstr "Kui ühtegi omadust pole valitud, siis kaasatakse kõik seosed."
+
+#: src/DatasetType/ItemRelationships.php:51
+#: src/DatasetType/CountItemsProperties.php:40
+msgid "Select properties…"
+msgstr "Vali omadused..."
+
+#: src/DatasetType/ItemRelationships.php:58
+msgid "Exclude items without relationships"
+msgstr "Jäta välja ilma seoseta ühikud"
+
+#: src/DatasetType/CountItemsItemSets.php:14
+msgid "Count of items in item sets"
+msgstr "Loe ühikud ühikute kogus"
+
+#: src/DatasetType/CountItemsItemSets.php:19
+msgid "Visualize the count of items that are assigned to selected item sets."
+msgstr ""
+"Visualiseeri nende ühikute arvu, mis on määratud valitud ühikute "
+"komplektile."
+
+#: src/DatasetType/CountItemsItemSets.php:41
+msgid "Select item sets…"
+msgstr "Vali ühikute kogum..."
+
+#: src/DatasetType/CountItemsProperties.php:14
+msgid "Count of items with properties"
+msgstr "Selle omadusega ühikute arv"
+
+#: src/DatasetType/CountItemsProperties.php:19
+msgid "Visualize the count of items that have selected properties."
+msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
+
+#: src/DatasetType/CountItemsClasses.php:14
+msgid "Count of items with classes"
+msgstr "Loe ühikud, millel on klassid"
+
+#: src/DatasetType/CountItemsClasses.php:19
+msgid ""
+"Visualize the count of items that are instances of selected resource "
+"classes."
+msgstr ""
+"Visualiseeri nende ühikute arvu, mis on määratud valitud ressursi "
+"klassidesse."
+
+#: src/DatasetType/CountItemsClasses.php:40
+msgid "Select classes…"
+msgstr "Vali klassid..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:15
+msgid "Count of items with property values"
+msgstr "Loe kokku ühikud, millel on omadus"
+
+#: src/DatasetType/CountItemsPropertyValues.php:20
+msgid ""
+"Visualize the count of items that have selected values of a selected "
+"property."
+msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
+
+#: src/DatasetType/CountItemsPropertyValues.php:34
+#: src/DatasetType/CountPropertyValues.php:34
+msgid "Value property"
+msgstr "Väärtuse omadus"
+
+#: src/DatasetType/CountItemsPropertyValues.php:41
+#: src/DatasetType/CountPropertyValues.php:41
+msgid "Select one…"
+msgstr "Vali üks..."
+
+#: src/DatasetType/CountItemsPropertyValues.php:50
+msgid "Enter values, separated by new lines."
+msgstr "Sisesta väärtused. Iga väärtus uuele reale."
+
+#: src/DatasetType/CountPropertyValues.php:15
+msgid "Count of property values"
+msgstr "Loe kokku omaduste väärtused"
+
+#: src/DatasetType/CountPropertyValues.php:20
+msgid "Visualize the count of values of a selected property."
+msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
+
+#: src/DatasetType/CountPropertyValues.php:49
+msgid "Minimum count"
+msgstr "Minimaalne arv"
+
+#: src/DatasetType/CountPropertyValues.php:53
+msgid "No minimum"
+msgstr "Miinimumi pole"
+
+#: src/DatasetType/CountPropertyValues.php:61
+msgid "Maximum count"
+msgstr "Maksimaalne arv"
+
+#: src/DatasetType/CountPropertyValues.php:65
+msgid "No maximum"
+msgstr "Maksimumi pole"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
@@ -163,128 +270,33 @@ msgstr "Visualiseerimisel peab olema andmekogu liik"
 msgid "A visualization must have a title"
 msgstr "Visualiseerimisel peab olema pealkiri"
 
-#: src/DatasetType/CountItemsProperties.php:14
-msgid "Count of items with properties"
-msgstr "Selle omadusega ühikute arv"
+#: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
+msgid "Data visualization"
+msgstr "Andmete visualiseerimine"
 
-#: src/DatasetType/CountItemsProperties.php:19
-msgid "Visualize the count of items that have selected properties."
-msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
+#: src/Site/BlockLayout/Datavis.php:50
+msgid "Select visualization…"
+msgstr "Vali visualiseerimine..."
 
-#: src/DatasetType/CountItemsProperties.php:40
-#: src/DatasetType/ItemRelationships.php:51
-msgid "Select properties…"
-msgstr "Vali omadused..."
+#: src/Controller/SiteAdmin/IndexController.php:44
+msgid "Configure your visualization below."
+msgstr "Seadista oma visualiseerimist allpool."
 
-#: src/DatasetType/CountItemsPropertyValues.php:15
-msgid "Count of items with property values"
-msgstr "Loe kokku ühikud, millel on omadus"
+#: src/Controller/SiteAdmin/IndexController.php:85
+msgid "Successfully added your visualization."
+msgstr "Sinu visualiseermine on lisatud."
 
-#: src/DatasetType/CountItemsPropertyValues.php:20
-msgid ""
-"Visualize the count of items that have selected values of a selected "
-"property."
-msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
+#: src/Controller/SiteAdmin/IndexController.php:130
+msgid "Successfully edited your visualization."
+msgstr "Sinu visualiseermist on muudetud."
 
-#: src/DatasetType/CountItemsPropertyValues.php:34
-#: src/DatasetType/CountPropertyValues.php:34
-msgid "Value property"
-msgstr "Väärtuse omadus"
+#: src/Controller/SiteAdmin/IndexController.php:164
+msgid "Successfully deleted your visualization."
+msgstr "Sinu visualiseeirmine on kustutud."
 
-#: src/DatasetType/CountItemsPropertyValues.php:41
-#: src/DatasetType/CountPropertyValues.php:41
-msgid "Select one…"
-msgstr "Vali üks..."
-
-#: src/DatasetType/CountItemsPropertyValues.php:50
-msgid "Enter values, separated by new lines."
-msgstr "Sisesta väärtused. Iga väärtus uuele reale."
-
-#: src/DatasetType/CountItemsItemSets.php:14
-msgid "Count of items in item sets"
-msgstr "Loe ühikud ühikute kogus"
-
-#: src/DatasetType/CountItemsItemSets.php:19
-msgid "Visualize the count of items that are assigned to selected item sets."
-msgstr ""
-"Visualiseeri nende ühikute arvu, mis on määratud valitud ühikute "
-"komplektile."
-
-#: src/DatasetType/CountItemsItemSets.php:41
-msgid "Select item sets…"
-msgstr "Vali ühikute kogum..."
-
-#: src/DatasetType/CountPropertyValues.php:15
-msgid "Count of property values"
-msgstr "Loe kokku omaduste väärtused"
-
-#: src/DatasetType/CountPropertyValues.php:20
-msgid "Visualize the count of values of a selected property."
-msgstr "Visualiseeri nende ühikute arvu, millel on valitud omadused."
-
-#: src/DatasetType/CountPropertyValues.php:49
-msgid "Minimum count"
-msgstr "Minimaalne arv"
-
-#: src/DatasetType/CountPropertyValues.php:53
-msgid "No minimum"
-msgstr "Miinimumi pole"
-
-#: src/DatasetType/CountPropertyValues.php:61
-msgid "Maximum count"
-msgstr "Maksimaalne arv"
-
-#: src/DatasetType/CountPropertyValues.php:65
-msgid "No maximum"
-msgstr "Maksimumi pole"
-
-#: src/DatasetType/ItemRelationships.php:17
-msgid "Item relationships"
-msgstr "Ühiku seosed"
-
-#: src/DatasetType/ItemRelationships.php:22
-msgid "Visualize the relationships between items via their resource values."
-msgstr "Visualiseeri seoseid ühikute vahel läbi nende ressursside väärtuste."
-
-#: src/DatasetType/ItemRelationships.php:36
-msgid "Group by"
-msgstr "Grupeeri"
-
-#: src/DatasetType/ItemRelationships.php:44
-msgid "Limit relationships to these properties"
-msgstr "Piira seoseid nende omadustega"
-
-#: src/DatasetType/ItemRelationships.php:45
-msgid "Selecting no properties will include all relationships."
-msgstr "Kui ühtegi omadust pole valitud, siis kaasatakse kõik seosed."
-
-#: src/DatasetType/ItemRelationships.php:58
-msgid "Exclude items without relationships"
-msgstr "Jäta välja ilma seoseta ühikud"
-
-#: src/DatasetType/CountItemsClasses.php:14
-msgid "Count of items with classes"
-msgstr "Loe ühikud, millel on klassid"
-
-#: src/DatasetType/CountItemsClasses.php:19
-msgid ""
-"Visualize the count of items that are instances of selected resource "
-"classes."
-msgstr ""
-"Visualiseeri nende ühikute arvu, mis on määratud valitud ressursi "
-"klassidesse."
-
-#: src/DatasetType/CountItemsClasses.php:40
-msgid "Select classes…"
-msgstr "Vali klassid..."
-
-#: src/Form/Element/GroupByControl.php:29
-msgid "Property value"
-msgstr "Omaduse väärtus"
-
-#: src/Form/Element/GroupByControl.php:43
-msgid "Select a property…"
-msgstr "Vali omadus..."
+#: src/Controller/SiteAdmin/IndexController.php:197
+msgid "Generating dataset. This may take a while."
+msgstr "Andmekogu loomine. See võib veidi aega võtta."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
@@ -306,13 +318,21 @@ msgstr ""
 msgid "Select diagram type"
 msgstr "Vali diagrammi liik"
 
+#: src/Form/Element/GroupByControl.php:29
+msgid "Property value"
+msgstr "Omaduse väärtus"
+
+#: src/Form/Element/GroupByControl.php:43
+msgid "Select a property…"
+msgstr "Vali omadus..."
+
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
 msgstr "Kaar"
 
-#: src/DiagramType/ArcVertical.php:33 src/DiagramType/ColumnChart.php:34
-#: src/DiagramType/PieChart.php:29 src/DiagramType/BarChart.php:34
-#: src/DiagramType/NetworkGraph.php:28
+#: src/DiagramType/ArcVertical.php:33 src/DiagramType/PieChart.php:29
+#: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
+#: src/DiagramType/BarChart.php:34
 msgid "Width"
 msgstr "Laius"
 
@@ -350,7 +370,7 @@ msgstr "Vahe siltide vahel"
 #: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
 #: src/DiagramType/NetworkGraph.php:54
 msgid "Color scheme"
-msgstr ""
+msgstr "Värviskeem"
 
 #: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
 #: src/DiagramType/NetworkGraph.php:55
@@ -359,14 +379,26 @@ msgid ""
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
 
+#: src/DiagramType/PieChart.php:13
+msgid "Pie chart"
+msgstr "Sektordiagramm"
+
+#: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
+#: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
+msgid "Height"
+msgstr "Kõrgus"
+
+#: src/DiagramType/PieChart.php:55
+msgid "Margin"
+msgstr "Veeris"
+
+#: src/DiagramType/NetworkGraph.php:13
+msgid "Network graph"
+msgstr "Võrgustiku graafik"
+
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
 msgstr "Tulpdiagramm"
-
-#: src/DiagramType/ColumnChart.php:47 src/DiagramType/PieChart.php:42
-#: src/DiagramType/BarChart.php:47 src/DiagramType/NetworkGraph.php:41
-msgid "Height"
-msgstr "Kõrgus"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
@@ -394,7 +426,7 @@ msgstr "Sildi järgi (kahanevalt)"
 
 #: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
 msgid "Color fill"
-msgstr ""
+msgstr "Värvitäide"
 
 #: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
 msgid ""
@@ -402,38 +434,6 @@ msgid ""
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
 
-#: src/DiagramType/PieChart.php:13
-msgid "Pie chart"
-msgstr "Sektordiagramm"
-
-#: src/DiagramType/PieChart.php:55
-msgid "Margin"
-msgstr "Veeris"
-
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
 msgstr "Tulpdiagramm"
-
-#: src/DiagramType/NetworkGraph.php:13
-msgid "Network graph"
-msgstr "Võrgustiku graafik"
-
-#: src/Controller/SiteAdmin/IndexController.php:44
-msgid "Configure your visualization below."
-msgstr "Seadista oma visualiseerimist allpool."
-
-#: src/Controller/SiteAdmin/IndexController.php:85
-msgid "Successfully added your visualization."
-msgstr "Sinu visualiseermine on lisatud."
-
-#: src/Controller/SiteAdmin/IndexController.php:130
-msgid "Successfully edited your visualization."
-msgstr "Sinu visualiseermist on muudetud."
-
-#: src/Controller/SiteAdmin/IndexController.php:164
-msgid "Successfully deleted your visualization."
-msgstr "Sinu visualiseeirmine on kustutud."
-
-#: src/Controller/SiteAdmin/IndexController.php:197
-msgid "Generating dataset. This may take a while."
-msgstr "Andmekogu loomine. See võib veidi aega võtta."

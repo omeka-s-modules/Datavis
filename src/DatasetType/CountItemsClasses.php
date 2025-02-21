@@ -66,11 +66,16 @@ class CountItemsClasses extends AbstractDatasetType
             }
             $vocab = $class->getVocabulary();
             $query->setParameter('class_id', $class->getId());
+            $urlQuery = [
+                'datavis_id' => $vis->id(),
+                'resource_class_id' => $class->getId(),
+            ];
             $dataset[] = [
                 'id' => $class->getId(),
                 'label' => $class->getLabel(),
                 'label_long' => sprintf('%s (%s)', $class->getLabel(), $vocab->getLabel()),
                 'value' => (int) $query->getSingleScalarResult(),
+                'url' => $this->getUrl($services, $vis, 'item', $urlQuery),
             ];
         }
         return $dataset;

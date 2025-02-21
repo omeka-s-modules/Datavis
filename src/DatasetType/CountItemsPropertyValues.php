@@ -79,9 +79,21 @@ class CountItemsPropertyValues extends AbstractDatasetType
         $values = array_filter(array_unique(array_map('trim', explode("\n", $datasetData['values'] ?? ''))));
         foreach ($values as $value) {
             $query->setParameter('value', $value);
+            $urlQuery = [
+                'datavis_id' => $vis->id(),
+                'property' => [
+                    [
+                        'joiner' => 'and',
+                        'type' => 'eq',
+                        'property' => $datasetData['property_id'],
+                        'text' => $value,
+                    ],
+                ],
+            ];
             $dataset[] = [
                 'label' => $value,
                 'value' => (int) $query->getSingleScalarResult(),
+                'url' => $this->getUrl($services, $vis, 'item', $urlQuery),
             ];
         }
         return $dataset;
