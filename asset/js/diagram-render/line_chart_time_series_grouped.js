@@ -36,7 +36,7 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
 
     dataset.map(d => {
         // Set the Date object needed by d3.
-        d.datetime = d3.timeParse('%Y-%m-%dT%H:%M:%S')(d.label_1);
+        d.datetime = Datavis.parseISOString(d.label_1);
         // Format the label according to sample rate.
         let options;
         switch (datasetData.sample_rate) {
@@ -63,7 +63,7 @@ Datavis.addDiagramType('line_chart_time_series_grouped', (div, dataset, datasetD
             default:
                 options = {year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'}
         }
-        d.label = new Intl.DateTimeFormat([], options).format(d.datetime)
+        d.label = Datavis.formatDateTime(d.datetime, options);
         return d;
     });
 
