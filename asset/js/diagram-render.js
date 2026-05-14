@@ -47,23 +47,22 @@ const Datavis = {
     },
 
     /**
-     * Parses a strict ISO 8601 date-time string into a native Date object.
+     * Parses an ISO 8601 date-time string into a native Date object normalised to UTC.
      *
-     * EXPECTED FORMAT: "[-]YYYY-MM-DDTHH:mm:ss[Z|±HH:mm]" (Time and seconds are required).
+     * Expected format: [-]YYYY-MM-DDTHH:mm:ss[Z|±HH:mm] (time and seconds are required).
      *
-     * Bypasses native/library limitations with these specific behaviors:
-     * 1. Fixes D3 Crash: Avoids `d3.timeParse` failures on negative signs.
-     * 2. Fixes Native BCE Crash: Parses negative years where `new Date()` fails.
-     * 3. Enforces UTC: Assumes UTC for offsetless strings; applies offset shifts otherwise.
-     * 4. Historical Chronology: Adds +1 to years <= 0 to match historical BCE timelines.
-     * 5. Bypasses 20th-Century Bug: Uses `setUTCFullYear` to preserve years 0000–0099.
+     * Specific behaviors:
+     * 1. Negative years: parsed manually because `new Date()` fails on them.
+     * 2. UTC enforcement: offsetless strings are treated as UTC; offset strings are shifted.
+     * 3. Historical chronology: adds +1 to years < 0 to match historical BCE year numbering.
+     *    Year 0000 (a PHP DatePeriod artifact for 1 BCE) is left unadjusted at UTC year 0.
+     * 4. Years 0000–0099: `setUTCFullYear` is used to avoid the native Date 0-99 year bug.
      *
      * NOTE: When the TC39 Temporal API reaches broad support, this function can likely be
-     *       simplified significantly with `Temporal.ZonedDateTime.from(isoString)`, though
-     *       the BCE year adjustment (point 4) will remain necessary.
+     *       simplified, though the BCE year adjustment (point 3) will remain necessary.
      *
-     * @param {string} isoString - Expected format: [-]YYYY-MM-DDTHH:mm:ss[Z|±HH:mm]
-     * @returns {Date} Native Date object normalised to UTC.
+     * @param {string} isoString
+     * @returns {Date} Date object normalised to UTC.
      */
     parseISOString: isoString => {
         const match = isoString.match(/^(-?\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(Z|[+-]\d{2}:\d{2})?$/);
@@ -71,7 +70,7 @@ const Datavis = {
 
         const [, y, mo, d, h, min, s, offset] = match;
         let year = parseInt(y, 10);
-        if (year <= 0) year += 1;
+        if (year < 0) year += 1;
 
         const date = new Date(0);
         date.setUTCFullYear(year, parseInt(mo, 10) - 1, parseInt(d, 10));
@@ -89,16 +88,19 @@ const Datavis = {
     /**
      * Formats a native Date object as a locale-aware string.
      *
-     * Wraps `Intl.DateTimeFormat` with one behavioral addition:
-     * - BCE Era Label: Automatically appends `era: 'short'` for negative years (year <= 0),
-     *   producing labels like "500 BCE". Has no effect on CE dates.
+     * Wraps `Intl.DateTimeFormat` with two behavioral additions:
+     * - UTC display: enforces `timeZone: 'UTC'` to match the UTC-normalised dates
+     *   produced by `parseISOString`.
+     * - BCE era label: appends `era: 'short'` for BCE dates (UTC year <= 0),
+     *   producing labels like "500 BC".
      *
-     * @param {Date} date - A native Date object, e.g. as returned by `parseISOString`.
+     * @param {Date} date - A Date object, e.g. as returned by `parseISOString`.
      * @param {Object} options - Standard `Intl.DateTimeFormat` options.
      * @returns {string} Locale-aware formatted date string.
      */
     formatDateTime: (date, options) => {
-        const opts = date.getUTCFullYear() <= 0 ? { ...options, era: 'short' } : options;
+        const opts = { timeZone: 'UTC', ...options };
+        if (date.getUTCFullYear() <= 0) opts.era = 'short';
         return new Intl.DateTimeFormat([], opts).format(date);
     }
 };
