@@ -61,12 +61,13 @@ Datavis.addDiagramType('pie_chart', (div, dataset, datasetData, diagramData, blo
                 tooltip.style('display', 'none');
             });
 
-    // Add the labels to the slices.
+    // Add the labels to the slices. Labels are hidden on slices too small to
+    // contain them to prevent overlapping labels.
     svg.selectAll('slices')
         .data(datasetReady)
         .enter()
         .append('text')
-            .text(d => d.data.value.label)
+            .text(d => radius * Math.sin(Math.min((d.endAngle - d.startAngle) / 2, Math.PI / 2)) > 14 ? d.data.value.label : '')
             .attr('transform', d => `translate(${arcGenerator.centroid(d)})`)
             .style('text-anchor', 'middle')
             .style('font-size', 14)
