@@ -61,7 +61,7 @@ Datavis.addDiagramType('network_graph', (div, dataset, datasetData, diagramData,
         .append('svg')
         .attr("width", width)
         .attr("height", height)
-        .attr("viewBox", [0, 0, width, height])
+        .attr("viewBox", [-10, -10, width + 20, height + 20])
         .attr("style", "max-width: 100%; height: auto;");
 
     // Add a line for each link.
