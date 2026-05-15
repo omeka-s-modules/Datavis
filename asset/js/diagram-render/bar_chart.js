@@ -81,6 +81,20 @@ Datavis.addDiagramType('bar_chart', (div, dataset, datasetData, diagramData, blo
             }
         });
 
+    // Truncate Y axis labels that overflow the left margin.
+    const maxLabelWidth = margin.left - 12;
+    yGroup.selectAll('text').each(function() {
+        if (this.getComputedTextLength() <= maxLabelWidth) return;
+        const textEl = d3.select(this);
+        const fullText = textEl.text();
+        let text = fullText;
+        while (text.length && this.getComputedTextLength() > maxLabelWidth) {
+            text = text.slice(0, -1);
+            textEl.text(text + '…');
+        }
+        d3.select(this.parentNode).append('title').text(fullText);
+    });
+
     // Add the tooltip div.
     const tooltip = d3.select(div)
         .append('div')
