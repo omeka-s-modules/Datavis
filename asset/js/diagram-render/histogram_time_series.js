@@ -88,6 +88,7 @@ Datavis.addDiagramType('histogram_time_series', (div, dataset, datasetData, diag
         .attr('class', 'tooltip');
 
     // Add the bars.
+    const colorFill = diagramData.color_fill ?? '#69b3a2';
     svg.selectAll('bar')
         .data(dataset)
         .enter()
@@ -96,7 +97,7 @@ Datavis.addDiagramType('histogram_time_series', (div, dataset, datasetData, diag
             .attr('y', d => y(d.value))
             .attr('width', (width / dataset.length) - 1)
             .attr('height', d => height - y(d.value))
-            .attr('fill', '#69b3a2')
+            .attr('fill', colorFill)
             .style('cursor', 'crosshair')
             .on('mousemove', (e, d) => {
                 tooltip.style('display', 'inline-block')
