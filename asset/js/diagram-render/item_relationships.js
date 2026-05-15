@@ -98,14 +98,19 @@ Datavis.ItemRelationships = {
         if (linked.links.length) {
             linked.links.forEach(link => {
                 const linkTr = document.createElement('tr');
+                const isSource = link.source === node.id;
                 // Add source node cell.
                 const sourceTd = document.createElement('td');
-                const sourceLink = document.createElement('a');
-                sourceLink.title = link.source_label;
-                sourceLink.href = link.source_url;
-                sourceLink.target = '_blank';
-                sourceLink.appendChild(document.createTextNode(link.source_label));
-                sourceTd.appendChild(sourceLink);
+                if (isSource) {
+                    sourceTd.appendChild(document.createTextNode('(this item)'));
+                } else {
+                    const sourceLink = document.createElement('a');
+                    sourceLink.title = link.source_label;
+                    sourceLink.href = link.source_url;
+                    sourceLink.target = '_blank';
+                    sourceLink.appendChild(document.createTextNode(link.source_label));
+                    sourceTd.appendChild(sourceLink);
+                }
                 linkTr.appendChild(sourceTd);
                 // Add link cell.
                 const linkTd = document.createElement('td');
@@ -113,12 +118,16 @@ Datavis.ItemRelationships = {
                 linkTr.appendChild(linkTd);
                 // Add target node cell.
                 const targetTd = document.createElement('td');
-                const targetLink = document.createElement('a');
-                targetLink.title = link.target_label;
-                targetLink.href = link.target_url;
-                targetLink.target = '_blank';
-                targetLink.appendChild(document.createTextNode(link.target_label));
-                targetTd.appendChild(targetLink);
+                if (!isSource) {
+                    targetTd.appendChild(document.createTextNode('(this item)'));
+                } else {
+                    const targetLink = document.createElement('a');
+                    targetLink.title = link.target_label;
+                    targetLink.href = link.target_url;
+                    targetLink.target = '_blank';
+                    targetLink.appendChild(document.createTextNode(link.target_label));
+                    targetTd.appendChild(targetLink);
+                }
                 linkTr.appendChild(targetTd);
                 linksTable.appendChild(linkTr);
             });
