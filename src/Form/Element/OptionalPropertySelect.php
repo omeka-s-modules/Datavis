@@ -9,7 +9,7 @@ use Zend\InputFilter\InputProviderInterface;
  */
 class OptionalPropertySelect extends PropertySelect implements InputProviderInterface
 {
-    public function getInputSpecification() : array
+    public function getInputSpecification(): array
     {
         return [
             'name' => $this->getName(),

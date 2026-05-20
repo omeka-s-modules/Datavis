@@ -6,7 +6,7 @@ use Laminas\ServiceManager\ServiceManager;
 
 abstract class AbstractDatasetType implements DatasetTypeInterface
 {
-    public function getDescription() : ?string
+    public function getDescription(): ?string
     {
         return null;
     }

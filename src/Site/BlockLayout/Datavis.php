@@ -17,7 +17,7 @@ class Datavis extends AbstractBlockLayout
     }
 
     public function form(PhpRenderer $view, SiteRepresentation $site,
-        SitePageRepresentation $page = null, SitePageBlockRepresentation $block = null
+        ?SitePageRepresentation $page = null, ?SitePageBlockRepresentation $block = null
     ) {
         $vises = $view->api()->search('datavis_visualizations', [
             'site_id' => $site->id(),

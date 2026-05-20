@@ -8,12 +8,12 @@ use Omeka\Api\Representation\SiteRepresentation;
 
 class NetworkGraph implements DiagramTypeInterface
 {
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return 'Network graph'; // @translate
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
         $defaults = [
             'width' => 700,
@@ -74,7 +74,7 @@ class NetworkGraph implements DiagramTypeInterface
         ]);
     }
 
-    public function prepareRender(PhpRenderer $view) : void
+    public function prepareRender(PhpRenderer $view): void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
         $view->headScript()->appendFile('https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js');

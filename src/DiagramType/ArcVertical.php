@@ -8,12 +8,12 @@ use Omeka\Api\Representation\SiteRepresentation;
 
 class ArcVertical implements DiagramTypeInterface
 {
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return 'Arc'; // @translate
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
         $defaults = [
             'width' => 800,
@@ -154,7 +154,7 @@ class ArcVertical implements DiagramTypeInterface
         ]);
     }
 
-    public function prepareRender(PhpRenderer $view) : void
+    public function prepareRender(PhpRenderer $view): void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
         $view->headScript()->appendFile('https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js');

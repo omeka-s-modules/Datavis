@@ -9,22 +9,22 @@ use Omeka\Form\Element\PropertySelect;
 
 class CountItemsProperties extends AbstractDatasetType
 {
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return 'Count of items with properties'; // @translate
     }
 
-    public function getDescription() : ?string
+    public function getDescription(): ?string
     {
         return 'Visualize the count of items that have selected properties.'; // @translate
     }
 
-    public function getDiagramTypeNames() : array
+    public function getDiagramTypeNames(): array
     {
         return ['bar_chart', 'column_chart', 'pie_chart'];
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
         $fieldset->add([
             'type' => PropertySelect::class,
@@ -42,7 +42,7 @@ class CountItemsProperties extends AbstractDatasetType
         ]);
     }
 
-    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
+    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis): array
     {
         $em = $services->get('Omeka\EntityManager');
 

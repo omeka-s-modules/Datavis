@@ -12,22 +12,22 @@ use Omeka\Api\Representation\SiteRepresentation;
 
 class ItemRelationships extends AbstractDatasetType
 {
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return 'Item relationships'; // @translate
     }
 
-    public function getDescription() : ?string
+    public function getDescription(): ?string
     {
         return 'Visualize the relationships between items via their resource values.'; // @translate
     }
 
-    public function getDiagramTypeNames() : array
+    public function getDiagramTypeNames(): array
     {
         return ['network_graph', 'arc_vertical'];
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
         $fieldset->add([
             'type' => GroupByControl::class,
@@ -61,7 +61,7 @@ class ItemRelationships extends AbstractDatasetType
         ]);
     }
 
-    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
+    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis): array
     {
         $api = $services->get('Omeka\ApiManager');
         $conn = $services->get('Omeka\Connection');

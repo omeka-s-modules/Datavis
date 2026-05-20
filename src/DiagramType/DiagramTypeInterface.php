@@ -12,7 +12,7 @@ interface DiagramTypeInterface
      *
      * @return string
      */
-    public function getLabel() : string;
+    public function getLabel(): string;
 
     /**
      * Add the form elements used for the diagram data.
@@ -20,12 +20,12 @@ interface DiagramTypeInterface
      * @param SiteRepresentation $site
      * @param Fieldset $fieldset
      */
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void;
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void;
 
     /**
      * Prepare the render of this diagram type.
      *
      * @param PhpRenderer $view
      */
-    public function prepareRender(PhpRenderer $view) : void;
+    public function prepareRender(PhpRenderer $view): void;
 }

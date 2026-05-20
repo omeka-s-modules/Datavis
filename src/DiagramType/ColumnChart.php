@@ -9,12 +9,12 @@ use Omeka\Form\Element as OmekaElement;
 
 class ColumnChart implements DiagramTypeInterface
 {
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return 'Column chart'; // @translate
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
         $defaults = [
             'width' => 700,
@@ -137,7 +137,7 @@ class ColumnChart implements DiagramTypeInterface
         ]);
     }
 
-    public function prepareRender(PhpRenderer $view) : void
+    public function prepareRender(PhpRenderer $view): void
     {
         $view->headScript()->appendFile('https://d3js.org/d3.v6.js');
         $view->headScript()->appendFile($view->assetUrl('js/diagram-render/column_chart.js', 'Datavis'));

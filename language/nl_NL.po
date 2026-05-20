@@ -4,7 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 2b019265641dfb6bf87696b9851ef6cd_2798cfc <e6832017c56bb8e26082a549400c6ce9_896430>, 2021
+# E R, 2024
+# Ik Jij, 2026
 # 
 #, fuzzy
 msgid ""
@@ -13,119 +14,119 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-20 11:46-0400\n"
 "PO-Revision-Date: 2021-06-25 00:54+0000\n"
-"Last-Translator: 2b019265641dfb6bf87696b9851ef6cd_2798cfc <e6832017c56bb8e26082a549400c6ce9_896430>, 2021\n"
-"Language-Team: Spanish (https://app.transifex.com/omeka/teams/14184/es/)\n"
+"Last-Translator: Ik Jij, 2026\n"
+"Language-Team: Dutch (Netherlands) (https://app.transifex.com/omeka/teams/14184/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Controller/SiteAdmin/IndexController.php:203
 msgid "See this job for progress."
-msgstr "Ver este trabajo para consultar el progreso."
+msgstr "Bekijk de voortgang van deze taak."
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:9
 msgid "Select a visualization"
-msgstr ""
+msgstr "Selecteer een visualisatie"
 
 #: view/common/datavis/navigation-link-form/datavis.phtml:18
 #: view/datavis/site-admin/index/browse.phtml:34
 msgid "Visualization"
-msgstr "Visualización"
+msgstr "Visualisatie"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/form.phtml:20
 msgid "Add visualization"
-msgstr "Añadir visualización"
+msgstr "Voeg visualisatie toe"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:3
 #: view/datavis/site-admin/index/browse.phtml:5
 #: view/datavis/site-admin/index/form.phtml:18
 #: view/datavis/site-admin/index/form.phtml:20
 msgid "Data Visualization"
-msgstr "Visualización de datos"
+msgstr "Data Visualisatie"
 
 #: view/datavis/site-admin/index/add-dataset-type.phtml:13
 msgid "What would you like to visualize?"
-msgstr "¿Qué se va a visualizar?"
+msgstr "Wat wil je visualiseren?"
 
 #: view/datavis/site-admin/index/browse.phtml:5
 msgid "Visualizations"
-msgstr "Visualizaciones"
+msgstr "Visualisaties"
 
 #: view/datavis/site-admin/index/browse.phtml:10
 msgid "Add new visualization"
-msgstr "Añadir nueva visualización"
+msgstr "Voeg nieuwe visualisatie toe"
 
 #: view/datavis/site-admin/index/browse.phtml:19
 msgid "Date created"
-msgstr "Fecha de creación"
+msgstr "Aanmaakdatum"
 
 #: view/datavis/site-admin/index/browse.phtml:35
 msgid "Dataset type"
-msgstr "Tipo de conjunto de datos"
+msgstr "Dataset type"
 
 #: view/datavis/site-admin/index/browse.phtml:36
 msgid "Diagram type"
-msgstr "Tipo de diagrama"
+msgstr "Grafiektype"
 
 #: view/datavis/site-admin/index/browse.phtml:49
 msgid "View diagram"
-msgstr "Ver diagrama"
+msgstr "Bekijk grafiek"
 
 #: view/datavis/site-admin/index/browse.phtml:52
 msgid "View dataset"
-msgstr "Ver conjunto de datos"
+msgstr "Bekijk dataset"
 
 #: view/datavis/site-admin/index/browse.phtml:84
 #, php-format
 msgid "No visualizations found. %s"
-msgstr "No se han encontrado visualizaciones. %s"
+msgstr "Geen visualisaties gevonden. %s"
 
 #: view/datavis/site-admin/index/browse.phtml:85
 msgid "Add a new visualization."
-msgstr "Añadir una nueva visualización."
+msgstr "Voeg een nieuwe visualisatie toe."
 
 #: view/datavis/site-admin/index/browse.phtml:88
 msgid "No visualizations found."
-msgstr "No se han encontrado visualizaciones."
+msgstr "Geen visualisaties gevonden."
 
 #: view/datavis/site-admin/index/form.phtml:18
 msgid "Edit visualization"
-msgstr "Editar visualizaciones"
+msgstr "Bewerk visualisatie"
 
 #: view/datavis/site-admin/index/form.phtml:33
 msgid "View&hellip;"
-msgstr "Ver y…"
+msgstr ""
 
 #: view/datavis/site-admin/index/form.phtml:37
 msgid "Diagram"
-msgstr "Diagrama"
+msgstr "Grafiek"
 
 #: view/datavis/site-admin/index/form.phtml:44
 msgid "Save and&hellip;"
-msgstr "Guardar y…"
+msgstr ""
 
 #: view/datavis/site-admin/index/form.phtml:46
 msgid "Generate dataset"
-msgstr "Generar conjunto de datos"
+msgstr "Maak dataset"
 
 #: view/datavis/site-admin/index/form.phtml:47
 msgid "Return to visualizations"
-msgstr "Volver a las visualizaciones"
+msgstr "Terug naar visualisaties"
 
 #: view/datavis/site-admin/index/form.phtml:48
 msgid "Stay on this visualization"
-msgstr "Permanecer en esta visualización"
+msgstr "Blijf op deze visualisatie"
 
 #: view/datavis/site-admin/index/form.phtml:57
 msgid "Dataset configuration"
-msgstr "Configuración del conjunto de datos"
+msgstr "Dataset configuratie"
 
 #: view/datavis/site-admin/index/form.phtml:62
 msgid "Diagram configuration"
-msgstr "Configuración del diagrama"
+msgstr "Grafiek configuratie"
 
 #: src/DatasetType/ItemRelationships.php:17
 msgid "Item relationships"
@@ -133,7 +134,7 @@ msgstr ""
 
 #: src/DatasetType/ItemRelationships.php:22
 msgid "Visualize the relationships between items via their resource values."
-msgstr ""
+msgstr "Visualiseer de relaties tussen items via hun objectwaarden."
 
 #: src/DatasetType/ItemRelationships.php:36
 msgid "Group by"
@@ -141,7 +142,7 @@ msgstr ""
 
 #: src/DatasetType/ItemRelationships.php:44
 msgid "Limit relationships to these properties"
-msgstr ""
+msgstr "Beperk relaties tot deze eigenschappen"
 
 #: src/DatasetType/ItemRelationships.php:45
 msgid "Selecting no properties will include all relationships."
@@ -150,7 +151,7 @@ msgstr ""
 #: src/DatasetType/ItemRelationships.php:51
 #: src/DatasetType/CountItemsProperties.php:40
 msgid "Select properties…"
-msgstr "Seleccionar propiedades..."
+msgstr "Selecteer eigenschappen..."
 
 #: src/DatasetType/ItemRelationships.php:58
 msgid "Exclude items without relationships"
@@ -158,183 +159,170 @@ msgstr ""
 
 #: src/DatasetType/CountItemsItemSets.php:14
 msgid "Count of items in item sets"
-msgstr "Recuento de fichas en conjuntos de fichas"
+msgstr "Aantal items in collecties"
 
 #: src/DatasetType/CountItemsItemSets.php:19
 msgid "Visualize the count of items that are assigned to selected item sets."
 msgstr ""
-"Visualizar el recuento de fichas asignadas a los conjuntos de fichas "
-"seleccionados."
+"Visualiseer het aantal items dat aan een gekozen collectie is toegewezen."
 
 #: src/DatasetType/CountItemsItemSets.php:41
 msgid "Select item sets…"
-msgstr "Seleccionar conjuntos de fichas…"
+msgstr "Selecteer collecties..."
 
 #: src/DatasetType/CountItemsProperties.php:14
 msgid "Count of items with properties"
-msgstr "Recuento de fichas con propiedades "
+msgstr "Aantal items met eigenschappen"
 
 #: src/DatasetType/CountItemsProperties.php:19
 msgid "Visualize the count of items that have selected properties."
-msgstr ""
-"Visualizar el recuento de fichas que responden a las propiedades "
-"seleccionadas."
+msgstr "Visualiseer het aantal items dat gekozen eigenschappen heeft."
 
 #: src/DatasetType/CountItemsClasses.php:14
 msgid "Count of items with classes"
-msgstr "Recuento de fichas con clases"
+msgstr "Aantal items met klassen"
 
 #: src/DatasetType/CountItemsClasses.php:19
 msgid ""
 "Visualize the count of items that are instances of selected resource "
 "classes."
-msgstr ""
-"Visualizar el recuento de fichas que son instancias de las clases de "
-"recursos seleccionadas."
+msgstr "Visualiseer het aantal items dat bij een gekozen objectklasse hoort."
 
 #: src/DatasetType/CountItemsClasses.php:40
 msgid "Select classes…"
-msgstr "Seleccionar clases..."
+msgstr "Selecteer klasse…"
 
 #: src/DatasetType/CountItemsPropertyValues.php:15
 msgid "Count of items with property values"
-msgstr "Recuento de fichas con valores de la propiedad"
+msgstr "Aantal items met eigenschapwaarden"
 
 #: src/DatasetType/CountItemsPropertyValues.php:20
 msgid ""
 "Visualize the count of items that have selected values of a selected "
 "property."
 msgstr ""
-"Visualizar el recuento de fichas que responden a los valores seleccionados "
-"de una propiedad escogida."
+"Visualiseer het aantal items dat een bepaalde waarde heeft voor een gekozen "
+"eigenschap."
 
 #: src/DatasetType/CountItemsPropertyValues.php:34
 #: src/DatasetType/CountPropertyValues.php:34
 msgid "Value property"
-msgstr "Propiedad de valor"
+msgstr "Waarde van eigenschap"
 
 #: src/DatasetType/CountItemsPropertyValues.php:41
 #: src/DatasetType/CountPropertyValues.php:41
 msgid "Select one…"
-msgstr "Seleccionar uno…"
+msgstr "Selecteren..."
 
 #: src/DatasetType/CountItemsPropertyValues.php:50
 msgid "Enter values, separated by new lines."
-msgstr "Introducir los valores, separados en líneas independientes."
+msgstr "Voer waarden in, elk op nieuwe regel."
 
 #: src/DatasetType/CountPropertyValues.php:15
 msgid "Count of property values"
-msgstr "Recuento de valores de la propiedad"
+msgstr "Aantal eigenschapwaarden"
 
 #: src/DatasetType/CountPropertyValues.php:20
 msgid "Visualize the count of values of a selected property."
-msgstr "Visualizar el recuento de valores de una propiedad seleccionada."
+msgstr "Visualiseer het aantal waardes van een gekozen eigenschap."
 
 #: src/DatasetType/CountPropertyValues.php:49
 msgid "Minimum count"
-msgstr "Recuento mínimo"
+msgstr "Minimum aantal"
 
 #: src/DatasetType/CountPropertyValues.php:53
 msgid "No minimum"
-msgstr "Sin mínimo"
+msgstr "Geen minimum"
 
 #: src/DatasetType/CountPropertyValues.php:61
 msgid "Maximum count"
-msgstr "Recuento máximo"
+msgstr "Maximum aantal"
 
 #: src/DatasetType/CountPropertyValues.php:65
 msgid "No maximum"
-msgstr "Sin máximo"
+msgstr "Geen maximum"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:61
 msgid "A site must have an ID"
-msgstr "Un sitio debe tener una ID"
+msgstr "Een website moet een ID hebben"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:64
 msgid "dataset_type must be a string"
 msgstr ""
-"El tipo de conjunto de datos (dataset_type) debe almacenarse en una cadena o"
-" \"string\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:68
 msgid "dataset_data must be an array"
 msgstr ""
-"Los datos del conjunto de datos (dataset_data) deben almacenarse en un "
-"vector o \"array\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:71
 msgid "diagram_data must be an array"
 msgstr ""
-"Los datos del diagrama (diagram_data) deben almacenarse en un vector o "
-"\"array\""
 
 #: src/Api/Adapter/DatavisVisAdapter.php:113
 msgid "A visualization must have a site"
-msgstr "Una visualización debe tener un sitio"
+msgstr "Een visualisatie moet een site hebben"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:116
 msgid "A visualization must have a dataset type"
-msgstr "Una visualización debe tener un tipo de conjunto de datos"
+msgstr "Een visualisatie moet een dataset type hebben"
 
 #: src/Api/Adapter/DatavisVisAdapter.php:119
 msgid "A visualization must have a title"
-msgstr "Una visualización debe tener un título"
+msgstr "Een visualisatie moet een titel hebben"
 
 #: src/Site/BlockLayout/Datavis.php:16 src/Site/NavigationLink/Datavis.php:13
 msgid "Data visualization"
-msgstr "Visualización de datos"
+msgstr "Data visualisatie"
 
 #: src/Site/BlockLayout/Datavis.php:50
 msgid "Select visualization…"
-msgstr "Seleccionar visualización..."
+msgstr "Selecteer visualisatie..."
 
 #: src/Controller/SiteAdmin/IndexController.php:44
 msgid "Configure your visualization below."
-msgstr "Configurar la visualización a continuación."
+msgstr "Configureer je visualisatie hieronder."
 
 #: src/Controller/SiteAdmin/IndexController.php:85
 msgid "Successfully added your visualization."
-msgstr "Visualización añadida con éxito."
+msgstr "Met succes visualisatie toegevoegd."
 
 #: src/Controller/SiteAdmin/IndexController.php:130
 msgid "Successfully edited your visualization."
-msgstr "Visualización editada con éxito."
+msgstr "Met succes visualisatie bewerkt."
 
 #: src/Controller/SiteAdmin/IndexController.php:164
 msgid "Successfully deleted your visualization."
-msgstr "Visualización eliminada con éxito."
+msgstr "Met succes visualisatie verwijderd."
 
 #: src/Controller/SiteAdmin/IndexController.php:197
 msgid "Generating dataset. This may take a while."
-msgstr ""
+msgstr "Maken dataset. Dit kan even duren."
 
 #: src/Form/DatavisForm.php:59
 msgid ""
 "Configure the logical grouping of items that will be used for your dataset. "
 "No query means all items assigned to this site."
 msgstr ""
-"Configurar la agrupación lógica de fichas que será usada en el conjunto de "
-"datos. Una consulta vacía devolverá todas las fichas del sitio."
 
 #: src/Form/DatavisForm.php:119
 msgid ""
 "Warning: you will lose the current diagram configuration if you change the "
 "diagram type."
 msgstr ""
-"Atención: se perderá la configuración actual del diagrama si se cambia su "
-"tipo."
+"Waarschuwing: je verliest de huidige grafiekinstellingen als je het "
+"grafiektype wijzigt."
 
 #: src/Form/DatavisForm.php:120
 msgid "Select diagram type"
-msgstr "Seleccionar tipo de diagrama"
+msgstr "Selecteer grafiektype"
 
 #: src/Form/Element/GroupByControl.php:29
 msgid "Property value"
-msgstr ""
+msgstr "Eigenschapwaarde"
 
 #: src/Form/Element/GroupByControl.php:43
 msgid "Select a property…"
-msgstr ""
+msgstr "Selecteer een eigenschap..."
 
 #: src/DiagramType/ArcVertical.php:13
 msgid "Arc"
@@ -344,43 +332,43 @@ msgstr ""
 #: src/DiagramType/NetworkGraph.php:28 src/DiagramType/ColumnChart.php:34
 #: src/DiagramType/BarChart.php:34
 msgid "Width"
-msgstr "Ancho"
+msgstr "Breedte"
 
 #: src/DiagramType/ArcVertical.php:46 src/DiagramType/ColumnChart.php:60
 #: src/DiagramType/BarChart.php:60
 msgid "Margin top"
-msgstr "Margen superior"
+msgstr "Marge boven"
 
 #: src/DiagramType/ArcVertical.php:59 src/DiagramType/ColumnChart.php:86
 #: src/DiagramType/BarChart.php:86
 msgid "Margin bottom"
-msgstr "Margen inferior"
+msgstr "Marge onder"
 
 #: src/DiagramType/ArcVertical.php:72 src/DiagramType/ColumnChart.php:99
 #: src/DiagramType/BarChart.php:99
 msgid "Margin left"
-msgstr "Margen izquierdo"
+msgstr "Marge links"
 
 #: src/DiagramType/ArcVertical.php:87
 msgid "By group"
-msgstr ""
+msgstr "Op groep"
 
 #: src/DiagramType/ArcVertical.php:88
 msgid "By label"
-msgstr ""
+msgstr "Op label"
 
 #: src/DiagramType/ArcVertical.php:100
 msgid "Label font size"
-msgstr ""
+msgstr "Label lettergrootte"
 
 #: src/DiagramType/ArcVertical.php:121
 msgid "Space between labels"
-msgstr ""
+msgstr "Ruimte tussen labels"
 
 #: src/DiagramType/ArcVertical.php:134 src/DiagramType/PieChart.php:68
 #: src/DiagramType/NetworkGraph.php:54
 msgid "Color scheme"
-msgstr ""
+msgstr "Kleurschema"
 
 #: src/DiagramType/ArcVertical.php:135 src/DiagramType/PieChart.php:69
 #: src/DiagramType/NetworkGraph.php:55
@@ -388,62 +376,67 @@ msgid ""
 "Click <a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
 "target=\"_blank\">here</a> to view the available color schemes."
 msgstr ""
+"Klik<a href=\"https://d3js.org/d3-scale-chromatic/categorical\" "
+"target=\"_blank\">hier</a> om de beschikbare kleurenschema te bekijken."
 
 #: src/DiagramType/PieChart.php:13
 msgid "Pie chart"
-msgstr "Gráfico circular"
+msgstr "Cirkeldiagram"
 
 #: src/DiagramType/PieChart.php:42 src/DiagramType/NetworkGraph.php:41
 #: src/DiagramType/ColumnChart.php:47 src/DiagramType/BarChart.php:47
 msgid "Height"
-msgstr "Alto"
+msgstr "Hoogte"
 
 #: src/DiagramType/PieChart.php:55
 msgid "Margin"
-msgstr "Margen"
+msgstr "Marge"
 
 #: src/DiagramType/NetworkGraph.php:13
 msgid "Network graph"
-msgstr ""
+msgstr "Netwerkgrafiek"
 
 #: src/DiagramType/ColumnChart.php:14
 msgid "Column chart"
-msgstr "Gráfico de columnas"
+msgstr "Kolomgrafiek"
 
 #: src/DiagramType/ColumnChart.php:73 src/DiagramType/BarChart.php:73
 msgid "Margin right"
-msgstr "Margen derecho"
+msgstr "Marge rechts"
 
 #: src/DiagramType/ColumnChart.php:112 src/DiagramType/BarChart.php:112
 msgid "Order"
-msgstr "Ordenar"
+msgstr "Volgorde"
 
 #: src/DiagramType/ColumnChart.php:114 src/DiagramType/BarChart.php:114
 msgid "By value (ascending)"
-msgstr "Por valor (ascendente)"
+msgstr "Op waarde (oplopend)"
 
 #: src/DiagramType/ColumnChart.php:115 src/DiagramType/BarChart.php:115
 msgid "By value (descending)"
-msgstr "Por valor (descendente)"
+msgstr "Op waarde (aflopend)"
 
 #: src/DiagramType/ColumnChart.php:116 src/DiagramType/BarChart.php:116
 msgid "By label (ascending)"
-msgstr "Por etiqueta (ascendente)"
+msgstr "Op label (oplopend)"
 
 #: src/DiagramType/ColumnChart.php:117 src/DiagramType/BarChart.php:117
 msgid "By label (descending)"
-msgstr "Por etiqueta (descendente)"
+msgstr "Op label (aflopend)"
 
 #: src/DiagramType/ColumnChart.php:129 src/DiagramType/BarChart.php:129
 msgid "Color fill"
-msgstr ""
+msgstr "Kleurvulling"
 
 #: src/DiagramType/ColumnChart.php:130 src/DiagramType/BarChart.php:130
 msgid ""
 "Enter a three- or six-digit hexadecimal color. You can use any online hex "
 "color picker to select the color. The default is <code>#69b3a2</code>"
 msgstr ""
+"Voer een drie- of zescijferige hexadecimale kleurcode in. Je kunt iedere "
+"online hex color picker gebruiken om een kleur te selecteren. De "
+"standaardkleur is <code>#69b3a2</code>"
 
 #: src/DiagramType/BarChart.php:14
 msgid "Bar chart"
-msgstr "Gráfico de barras"
+msgstr "Staafdiagram"

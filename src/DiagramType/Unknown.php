@@ -14,16 +14,16 @@ class Unknown implements DiagramTypeInterface
         $this->name = $name;
     }
 
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return '[Unknown]'; // @translate
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
     }
 
-    public function prepareRender(PhpRenderer $view) : void
+    public function prepareRender(PhpRenderer $view): void
     {
     }
 }

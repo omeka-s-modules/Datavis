@@ -143,67 +143,67 @@ class DatavisVis extends AbstractEntity
         return $this->id;
     }
 
-    public function setOwner(?User $owner = null) : void
+    public function setOwner(?User $owner = null): void
     {
         $this->owner = $owner;
     }
 
-    public function getOwner() : ?User
+    public function getOwner(): ?User
     {
         return $this->owner;
     }
 
-    public function setSite(Site $site) : void
+    public function setSite(Site $site): void
     {
         $this->site = $site;
     }
 
-    public function getSite() : Site
+    public function getSite(): Site
     {
         return $this->site;
     }
 
-    public function setCreated(DateTime $created) : void
+    public function setCreated(DateTime $created): void
     {
         $this->created = $created;
     }
 
-    public function getCreated() : DateTime
+    public function getCreated(): DateTime
     {
         return $this->created;
     }
 
-    public function setModified(DateTime $modified) : void
+    public function setModified(DateTime $modified): void
     {
         $this->modified = $modified;
     }
 
-    public function getModified() : ?DateTime
+    public function getModified(): ?DateTime
     {
         return $this->modified;
     }
 
-    public function setDatasetModified(DateTime $datasetModified) : void
+    public function setDatasetModified(DateTime $datasetModified): void
     {
         $this->datasetModified = $datasetModified;
     }
 
-    public function getDatasetModified() : ?DateTime
+    public function getDatasetModified(): ?DateTime
     {
         return $this->datasetModified;
     }
 
-    public function setDatasetType(string $datasetType) : void
+    public function setDatasetType(string $datasetType): void
     {
         $this->datasetType = $datasetType;
     }
 
-    public function getDatasetType() : string
+    public function getDatasetType(): string
     {
         return $this->datasetType;
     }
 
-    public function setDiagramType(?string $diagramType) : void
+    public function setDiagramType(?string $diagramType): void
     {
         if (is_string($diagramType) && '' === trim($diagramType)) {
             $diagramType = null;
@@ -211,52 +211,52 @@ class DatavisVis extends AbstractEntity
         $this->diagramType = $diagramType;
     }
 
-    public function getDiagramType() : ?string
+    public function getDiagramType(): ?string
     {
         return $this->diagramType;
     }
 
-    public function setDatasetData(array $datasetData) : void
+    public function setDatasetData(array $datasetData): void
     {
         $this->datasetData = $datasetData;
     }
 
-    public function getDatasetData() : array
+    public function getDatasetData(): array
     {
         return $this->datasetData;
     }
 
-    public function setDiagramData(array $diagramData) : void
+    public function setDiagramData(array $diagramData): void
     {
         $this->diagramData = $diagramData;
     }
 
-    public function getDiagramData() : array
+    public function getDiagramData(): array
     {
         return $this->diagramData;
     }
 
-    public function setDataset(?array $dataset) : void
+    public function setDataset(?array $dataset): void
     {
         $this->dataset = $dataset;
     }
 
-    public function getDataset() : ?array
+    public function getDataset(): ?array
     {
         return $this->dataset;
     }
 
-    public function setTitle(string $title) : void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    public function getTitle() : string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setDescription(?string $description) : void
+    public function setDescription(?string $description): void
     {
         if (is_string($description) && '' === trim($description)) {
             $description = null;
@@ -264,17 +264,17 @@ class DatavisVis extends AbstractEntity
         $this->description = $description;
     }
 
-    public function getDescription() : ?string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    public function setQuery(string $query) : void
+    public function setQuery(string $query): void
     {
         $this->query = $query;
     }
 
-    public function getQuery() : string
+    public function getQuery(): string
     {
         return $this->query;
     }
@@ -282,7 +282,7 @@ class DatavisVis extends AbstractEntity
     /**
      * @PrePersist
      */
-    public function prePersist(LifecycleEventArgs $eventArgs) : void
+    public function prePersist(LifecycleEventArgs $eventArgs): void
     {
         $this->setCreated(new DateTime('now'));
     }

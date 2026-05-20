@@ -13,21 +13,21 @@ interface DatasetTypeInterface
      *
      * @return string
      */
-    public function getLabel() : string;
+    public function getLabel(): string;
 
     /**
      * Get the description of this dataset type.
      *
      * @return string
      */
-    public function getDescription() : ?string;
+    public function getDescription(): ?string;
 
     /**
      * Get the names of the diagram types that are compatible with this dataset.
      *
      * @return array
      */
-    public function getDiagramTypeNames() : array;
+    public function getDiagramTypeNames(): array;
 
     /**
      * Add the form elements used for the dataset data.
@@ -35,7 +35,7 @@ interface DatasetTypeInterface
      * @param SiteRepresentation $site
      * @param Fieldset $fieldset
      */
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void;
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void;
 
     /**
      * Generate and return the JSON dataset given a visualiation.
@@ -44,5 +44,5 @@ interface DatasetTypeInterface
      * @param DatavisVisRepresentation $vis
      * @return array
      */
-    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array;
+    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis): array;
 }

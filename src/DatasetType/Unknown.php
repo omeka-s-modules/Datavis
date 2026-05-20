@@ -15,26 +15,26 @@ class Unknown implements DatasetTypeInterface
         $this->name = $name;
     }
 
-    public function getLabel() : string
+    public function getLabel(): string
     {
         return '[Unknown]'; // @translate
     }
 
-    public function getDescription() : ?string
+    public function getDescription(): ?string
     {
         return null;
     }
 
-    public function getDiagramTypeNames() : array
+    public function getDiagramTypeNames(): array
     {
         return [];
     }
 
-    public function addElements(SiteRepresentation $site, Fieldset $fieldset) : void
+    public function addElements(SiteRepresentation $site, Fieldset $fieldset): void
     {
     }
 
-    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis) : array
+    public function getDataset(ServiceManager $services, DatavisVisRepresentation $vis): array
     {
         return [];
     }
